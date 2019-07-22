@@ -10,13 +10,25 @@
 from src.utils import mysqlhelper
 from src.config import config
 
-mysqlinstance_localhost = mysqlhelper.MysqlHelper(**config.along_localhost)
 
-sql = '''
-select * 
-from  subject 
-'''
+import os
 
-data = mysqlinstance_localhost.get_df(sql)
+print(os.getcwd())
 
-print(data)
+print(os.path.abspath(os.path.join(os.getcwd()) + 'src/templates'))
+
+
+#
+# mysqlinstance_localhost = mysqlhelper.MysqlHelper(**config.along_localhost)
+#
+# sql = '''
+# select *
+# from  subject
+# '''
+#
+# data = mysqlinstance_localhost.get_df(sql)
+#
+# print(data)
+
+
+

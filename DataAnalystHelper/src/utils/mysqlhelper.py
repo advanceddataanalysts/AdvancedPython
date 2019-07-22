@@ -46,18 +46,6 @@ class MysqlHelper(object):
         if self.pools:
             self.dbinstance = ConnectionPools()
 
-    def to_print(self, df, index=0, toprint=None):
-        print("   get[{0}]原始数据shape:{1}".format(index + 1, df.shape))
-        if toprint:
-            if isinstance(toprint, str):
-                toprint = [toprint]
-            for method in toprint:
-                mtd = getattr(df, method)
-                if callable(mtd):
-                    print("   get原始数据{0}:\n{1}".format(method, mtd()))
-                else:
-                    print("   get原始数据{0}:\n{1}".format(method, mtd))
-
     def __get_df(self, sql, conn=None, index=0, toprint=None):
         sql = self.sql_clean(sql)
         if not conn:
@@ -307,6 +295,20 @@ class MysqlHelper(object):
         if not self.pools:
             print("数据库连接关闭")
 
+    @staticmethod
+    def to_print(self, df, index=0, toprint=None):
+        print("   get[{0}]原始数据shape:{1}".format(index + 1, df.shape))
+        if toprint:
+            if isinstance(toprint, str):
+                toprint = [toprint]
+            for method in toprint:
+                mtd = getattr(df, method)
+                if callable(mtd):
+                    print("   get原始数据{0}:\n{1}".format(method, mtd()))
+                else:
+                    print("   get原始数据{0}:\n{1}".format(method, mtd))
+
+    @staticmethod
     def sql_clean(self, sql):
 
         sql = re.sub('\,\s*\)', ')', sql)
