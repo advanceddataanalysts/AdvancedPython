@@ -10,16 +10,52 @@ import time
 
 cur_time = time.strftime('%Y-%m-%d  %H:%M:%S', time.localtime())
 
-# 新的脱敏库-hfjy数据库信息
+testing_email = ["yanglong_yan@163.com"]
+
+environ = 'test'
+
+if environ == 'develop':
+
+    try_rerun_n = 3
+    try_rerun_sleep = 5
+
+    try_rerun_mysql_n = 120
+    try_rerun_mysql_sleep = 600
+
+    try_rerun_prosto_n = 120
+    try_rerun_prosto_sleep = 900
+
+    try_rerun_email_n = 1080
+    try_rerun_email_sleep = 10
+
+    depend_on_check_n = 120
+    depend_on_check_sleep = 900
+
+elif environ == 'test':
+
+    try_rerun_n = 1
+    try_rerun_sleep = 5
+
+    try_rerun_mysql_n = 1
+    try_rerun_mysql_sleep = 5
+
+    try_rerun_prosto_n = 1
+    try_rerun_prosto_sleep = 5
+
+    try_rerun_email_n = 1
+    try_rerun_email_sleep = 5
+
+    depend_on_check_n = 1
+    depend_on_check_sleep = 5
+
 along_localhost = {}
-along_localhost["host"] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-along_localhost["port"] = "xxxxxxxxxxxxxxxxxxxxxx"
-along_localhost["user"] = "xxxxxxxxxxxxxxxxxxxxxx"
-along_localhost["passwd"] = "xxxxxxxxxxxxxxxxxxxxxx"
-along_localhost["db"] = "xxxxxxxxxxxxxxxxxxxxxx"
+along_localhost["host"] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+along_localhost["port"] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+along_localhost["user"] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+along_localhost["passwd"] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+along_localhost["db"] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
-SECRET_KEY = 'xxxxx'
-
+SECRET_KEY = 'xxxxxx'
 
 # 数据库连接编码
 DB_CHARSET = "utf8"
