@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* grid */
+        table.grid {
+            font-family: verdana, arial, sans-serif;
+            font-size: 11px;
+            color: #333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        table.grid caption {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+        }
+
+        table.grid th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+        }
+
+        table.grid td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+        }
+
+        /* /grid */
+    </style>
+</head>
+<body>
+
+各位好：
+
+<br>
+{% if greeting %}
+<caption> &nbsp;&nbsp;&nbsp;&nbsp;{{greeting}}</caption>
+{% else %}
+<caption> &nbsp;&nbsp;&nbsp;&nbsp;数据详见附件</caption>
+{% endif %}
+
+<br>
+
+<table class='grid'>
+    {% if caption %}
+    <caption>{{caption}}</caption>
+    {% endif %}
+
+    {% for col in df.columns %}
+    <th> {{col}}</th>
+    {% endfor %}
+
+    {% for i in range(df.shape[0]) %}
+    <tr>
+        {% for j in range(df.shape[1]) %}
+        <td> {{(df.iloc[i, j])}}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+
+</table>
+
+
+<br>
+{% if annotate %}
+<p style='font-size:8px;'> {{annotate}} </p>
+{% endif %}
+
+<br>
+
+{% if admin %}
+<h5> 如有异常请及时联系管理员: {{admin}}</h5>
+{% else %}
+<h5> 此数据由数据增长部-数据分析组推送，如有异常请及时联系管理员: along</h5>
+{% endif %}
+
+
+</body>
+</html>
