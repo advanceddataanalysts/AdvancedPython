@@ -2,7 +2,7 @@
 
 - git push 之前先 git pull
 
-```python
+```shell
 1.查看状态
 $ git status
 
