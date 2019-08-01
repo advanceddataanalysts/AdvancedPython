@@ -1,8 +1,12 @@
-## Git 基本的使用
+---
+typora-root-url: ..
+---
 
-- git push 之前先 git pull
+# Git 基本的使用
 
-```shell
+> > **git push 之前先 git pull**
+
+```python
 1.查看状态
 $ git status
 
@@ -13,10 +17,10 @@ $ git fetch --只拉取不合并
 3.将自己的文件夹添加到暂存区
 $ git add .<*要上传的文件目录(可选)>
 
-4.从暂存区将代码提交到$ git本地仓库
+4.从暂存区将代码提交到 git本地仓库
 $ git commit (--all) -m 'modify_reaon'
 
-5.从本地仓库到线上$ git
+5.从本地仓库到远程仓库
 $ git push [地址] [master(默认)]
 
 6.设置用户名和邮箱
@@ -30,14 +34,14 @@ $ git checkout <需要忽略的文件/文件目录>
 $ git log 
 $ git log --oneline ##简洁版
 
-3.回退版本
-$ git reset --hard <指定回退到版本的id标识>
-$ git reset --hard <Head~(n)往前推回退几个版本>
-
-4.查看每一次切换版本记录(用于当reset之后需要再次回退到回退之前的版本时)
+4.查看所有版本提交日志
 $ git reflog 
 
-5.创建dev分支(刚创建是dev分支和master分支的东西是一样的)
+3.回退版本(soft, mixed, hard, keep)
+$ git reset --hard <指定回退到版本对象数的id标识>
+$ git reset --hard <Head~(n)往前推回退几个版本>
+
+5.创建dev分支(刚创建时dev分支和master分支的东西是一样的)
 $ git branch dev
 
 6.切换分支
@@ -58,16 +62,27 @@ $ ssh-keygen -t rsa
 11.将文件暂存起来放在暂存区(只能在add/commit之后才能暂存)(方便切换到其他分支工作)
 $ git stash
 
-11.恢复暂存区文件
-$ git stash apply
+12.恢复暂存区文件
+$ git stash apply (stash@{<n>}n为第几个暂存区文件)(默认恢复最近的文件)
+$ git stash drop 
+-- $ git stash pop (恢复最近的暂存区文件并删除缓存区中的该文件)
 $ git stash list (查看暂存区)
-$ git stash drop (stash@{<n>})(默认恢复最近的文件)(n为第几个暂存区文件)
 
-12.忽略一些配置文件提交(添加.gitignore.txt文件)
-$ touch .gitignore.txt
-$ vim .gitignore.txt(添加需要忽略的文件)
+13.忽略提交(添加.gitignore文件)
+$ touch .gitignore
+$ vim .gitignore(编辑需要忽略的文件,支持正则)
 
-13. 删除git全局配置项
+14. 删除git全局配置项
 $ git config --global --unset remote.origin.url
 
 ```
+## git命令
+
+[Git-tips](https://github.com/yanyanglong/git-tips/raw/master/assets/git.png)
+
+![PNG](/image/git-tips.png)
+
+
+
+
+

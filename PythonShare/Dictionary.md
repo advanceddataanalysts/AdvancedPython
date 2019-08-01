@@ -59,8 +59,6 @@ s_dic['d'] = 4
 print(dict(s_dic)) ## {'a': 1, 'b': 2, 'c': 3, 'd': 4}
 ```
 
-
-
 ### Q 构建字典时
 
 > 从已有的字典中提取子集
@@ -71,8 +69,6 @@ pairs = {'apple':2.5, 'orange':2.2, 'banana':2.6, 'tuberose':999999999}
 dic = {key:value for key,value in pairs.items() if key in ['apple','orange']}
 print(dic)
 ```
-
-
 
 ### Q 构建字典时
 
@@ -105,6 +101,19 @@ print({key:value for key,value in cm_pairs.items()})
 
 
 
+
+### Q 对字典进行计算
+
+> 将字典的key替换, value不变
+
+```python
+pairs = {'apple':2.5, 'orange':2.2, 'banana':2.6, 'tuberose':999999999}
+## 方法一:
+pairs['new_apple'] = pairs.pop('apple')
+## 方法二:
+pairs.update({'new_apple':pairs.pop("apple")})
+```
+
 ### Q 对字典进行计算
 
 > 求value最值对应的*key:value*对
@@ -118,8 +127,6 @@ print(max(zip(prices.values(),prices.keys()))) ## (9.06, 'D')
 ## 多条记录value相等时  取第一次出现的键值对
 print(max(prices, key=lambda k: prices[k]), prices[max(prices, key=lambda k: prices[k])]) ## B 9.06
 ```
-
-
 
 ### Q 对字典进行计算
 
@@ -135,8 +142,6 @@ print(a_dict.items() & b_dict.items()) ## {('x', 1), ('y', 2)}
 c = {key:a_dict[key] for key in a_dict.keys() - {'z','w'}} 
 print(c) ##{'x': 1, 'y': 2}
 ```
-
-
 
 ### Q 对字典进行计算
 
@@ -156,9 +161,14 @@ sorted(rows, key=lambda x:(x['fname'],x['lname']))
 from operator import itemgetter
 sorted(rows, key=itemgetter('uid'), reverse=True)
 sorted(rows, key=itemgetter('fname','lname'),reverse=False)
+
+## 方法三:
+## 抓成df,排序结束再用df.to_dict()/df.to_json()转
+import pandas as pd
+data = pd.DataFrame(rows)
+data.sort_values(by=['uid'],inplace=True)
+data.to_dict(orient='records')
 ```
-
-
 
 ### Q 对字典进行计算
 
@@ -184,9 +194,7 @@ for key, value in groupby(rows, key=itemgetter('date')):
 ## 方法二:
 ## 转成df,groupby之后再转成字典
 import pandas as pd
-data = pd.DataFrame()
-for i in rows:
-    data = pd.concat([data,pd.DataFrame(i,index=[0])])
-for key,value in data.reset_index(drop=True).groupby(by=['date']):
+data = pd.DataFrame(rows)
+for key,value in data.groupby(by=['date']):
     print(key,list(value.T.to_dict().values()))
 ```

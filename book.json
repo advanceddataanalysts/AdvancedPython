@@ -1,0 +1,74 @@
+{
+    "author": "https://github.com/advanceddataanalysts/AdvancedPython",
+    "description": "AdvancedPython'HOME",
+    "extension": null,
+    "generator": "site",
+    "isbn": "null",
+    "links": {
+        "sharing": {
+            "all": null,
+            "facebook": null,
+            "google": null,
+            "twitter": null,
+            "weibo": null
+        },
+        "sidebar": {
+            "Project GitHub": "https://github.com/advanceddataanalysts/AdvancedPython"
+        }
+    },
+    "output": null,
+    "pdf": {
+        "fontSize": 12,
+        "footerTemplate": null,
+        "headerTemplate": null,
+        "margin": {
+            "bottom": 36,
+            "left": 62,
+            "right": 62,
+            "top": 36
+        },
+        "pageNumbers": true,
+        "paperSize": "a4"
+    },
+    "plugins": [
+            "theme-comscore",
+            "splitter",
+            "github",
+            "-lunr", 
+            "-search",
+            "code", 
+            "chapter-fold",
+            "back-to-top-button",
+            "search-pro",
+            "-sharing", 
+            "sharing-plus",
+            "simple-page-toc",
+            "page-toc-button",
+            "multipart"],
+
+    "title": "PythonShare",
+    "variables": {},
+    "styles": {
+        "website": "website.css"
+    },
+    "pluginsConfig": {
+        "github": {
+            "url": "https://github.com/advanceddataanalysts/AdvancedPython"
+        },
+        "sharing": {
+             "douban": true,
+             "facebook": true,
+             "google": true,
+             "pocket": true,
+             "qq": true,
+             "qzone": true,
+             "twitter": true,
+             "weibo": true,
+          "all": [
+               "douban", "facebook", "google", "instapaper", "linkedin","twitter", "weibo", 
+               "messenger","qq", "qzone","viber","whatsapp"
+           ]
+       }
+    }
+}
+
