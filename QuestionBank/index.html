@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>GitCommon · PythonShare</title>
+        <title>QuestionBank · PythonShare</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -77,10 +77,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="QuicklyBuildGitBook.html" />
+    <link rel="next" href="20190807.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="../PythonShare/Numbers&Datatime.html" />
     
 
     </head>
@@ -157,9 +157,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="./">
+        <li class="chapter " data-level="1.4" data-path="../GitTips/">
             
-                <a href="./">
+                <a href="../GitTips/">
             
                     
                     GitTips
@@ -171,9 +171,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.4.1" data-path="GitCommon.html">
+        <li class="chapter " data-level="1.4.1" data-path="../GitTips/GitCommon.html">
             
-                <a href="GitCommon.html">
+                <a href="../GitTips/GitCommon.html">
             
                     
                     GitCommon
@@ -184,9 +184,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="QuicklyBuildGitBook.html">
+        <li class="chapter " data-level="1.4.2" data-path="../GitTips/QuicklyBuildGitBook.html">
             
-                <a href="QuicklyBuildGitBook.html">
+                <a href="../GitTips/QuicklyBuildGitBook.html">
             
                     
                     QuicklyBuildGitBook
@@ -273,9 +273,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../QuestionBank/">
+        <li class="chapter active" data-level="1.6" data-path="./">
             
-                <a href="../QuestionBank/">
+                <a href="./">
             
                     
                     QuestionBank
@@ -287,9 +287,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../QuestionBank/20190807.html">
+        <li class="chapter " data-level="1.6.1" data-path="20190807.html">
             
-                <a href="../QuestionBank/20190807.html">
+                <a href="20190807.html">
             
                     
                     20190807
@@ -335,7 +335,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >GitCommon</a>
+        <a href=".." >QuestionBank</a>
     </h1>
 </div>
 
@@ -350,83 +350,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="git-&#x57FA;&#x672C;&#x7684;&#x4F7F;&#x7528;">Git &#x57FA;&#x672C;&#x7684;&#x4F7F;&#x7528;</h1>
-<blockquote>
-<blockquote>
-<p><strong>git push &#x4E4B;&#x524D;&#x5148; git pull</strong></p>
-</blockquote>
-</blockquote>
-<pre><code class="lang-python"><span class="hljs-number">1.</span>&#x67E5;&#x770B;&#x72B6;&#x6001;
-$ git status
-
-<span class="hljs-number">2.</span>&#x4ECE;&#x7EBF;&#x4E0A;&#x62C9;&#x4E0B;&#x6765;&#x6700;&#x65B0;&#x7684;&#x4E0E;&#x81EA;&#x5DF1;&#x7684;&#x8FDB;&#x884C;&#x5408;&#x5E76;
-$ git pull
-$ git fetch --&#x53EA;&#x62C9;&#x53D6;&#x4E0D;&#x5408;&#x5E76;
-
-<span class="hljs-number">3.</span>&#x5C06;&#x81EA;&#x5DF1;&#x7684;&#x6587;&#x4EF6;&#x5939;&#x6DFB;&#x52A0;&#x5230;&#x6682;&#x5B58;&#x533A;
-$ git add .&lt;*&#x8981;&#x4E0A;&#x4F20;&#x7684;&#x6587;&#x4EF6;&#x76EE;&#x5F55;(&#x53EF;&#x9009;)&gt;
-
-<span class="hljs-number">4.</span>&#x4ECE;&#x6682;&#x5B58;&#x533A;&#x5C06;&#x4EE3;&#x7801;&#x63D0;&#x4EA4;&#x5230; git&#x672C;&#x5730;&#x4ED3;&#x5E93;
-$ git commit (--all) -m <span class="hljs-string">&apos;modify_reaon&apos;</span>
-
-<span class="hljs-number">5.</span>&#x4ECE;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;
-$ git push [&#x5730;&#x5740;] [master(&#x9ED8;&#x8BA4;)]
-
-<span class="hljs-number">6.</span>&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;&#x548C;&#x90AE;&#x7BB1;
-$ git config --<span class="hljs-keyword">global</span> user.name(user.email) <span class="hljs-string">&apos;name/email&apos;</span>
-<span class="hljs-comment">## &lt;&#x4EE5;&#x4E0A;&#x4E3A;&#x5E38;&#x7528;--------------------------------------&gt;</span>
-
-<span class="hljs-number">1.</span>&#x53D6;&#x6D88;&#x6587;&#x4EF6;&#x4FEE;&#x6539;
-$ git checkout &lt;&#x9700;&#x8981;&#x5FFD;&#x7565;&#x7684;&#x6587;&#x4EF6;/&#x6587;&#x4EF6;&#x76EE;&#x5F55;&gt;
-
-<span class="hljs-number">2.</span>&#x67E5;&#x770B;&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;
-$ git log 
-$ git log --oneline <span class="hljs-comment">##&#x7B80;&#x6D01;&#x7248;</span>
-
-<span class="hljs-number">4.</span>&#x67E5;&#x770B;&#x6240;&#x6709;&#x7248;&#x672C;&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;
-$ git reflog 
-
-<span class="hljs-number">3.</span>&#x56DE;&#x9000;&#x7248;&#x672C;(soft, mixed, hard, keep)
-$ git reset --hard &lt;&#x6307;&#x5B9A;&#x56DE;&#x9000;&#x5230;&#x7248;&#x672C;&#x5BF9;&#x8C61;&#x6570;&#x7684;id&#x6807;&#x8BC6;&gt;
-$ git reset --hard &lt;Head~(n)&#x5F80;&#x524D;&#x63A8;&#x56DE;&#x9000;&#x51E0;&#x4E2A;&#x7248;&#x672C;&gt;
-
-<span class="hljs-number">5.</span>&#x521B;&#x5EFA;dev&#x5206;&#x652F;(&#x521A;&#x521B;&#x5EFA;&#x65F6;dev&#x5206;&#x652F;&#x548C;master&#x5206;&#x652F;&#x7684;&#x4E1C;&#x897F;&#x662F;&#x4E00;&#x6837;&#x7684;)
-$ git branch dev
-
-<span class="hljs-number">6.</span>&#x5207;&#x6362;&#x5206;&#x652F;
-$ git checkout dev
-
-<span class="hljs-number">7.</span>&#x67E5;&#x770B;&#x5206;&#x652F;(&#x8F93;&#x5165;&#x547D;&#x4EE4;&#x6253;&#x5370;&#x540E;&#x524D;&#x9762;&#x5E26;*&#x53F7;&#x7684;&#x4E3A;&#x5F53;&#x524D;&#x5206;&#x652F;)
-$ git branch
-
-<span class="hljs-number">8.</span>&#x5408;&#x5E76;&#x5206;&#x652F;
-$ git merge dev
-
-<span class="hljs-number">9.</span>&#x5220;&#x9664;&#x5206;&#x652F;(&#x4E0D;&#x80FD;&#x81EA;&#x5DF1;&#x5220;&#x9664;&#x81EA;&#x5DF1;&#x5F53;&#x524D;&#x5206;&#x652F;)
-$ git branch -d dev
-
-<span class="hljs-number">10.</span>&#x751F;&#x6210;&#x516C;&#x79C1;&#x94A5;(ssh)
-$ ssh-keygen -t rsa 
-
-<span class="hljs-number">11.</span>&#x5C06;&#x6587;&#x4EF6;&#x6682;&#x5B58;&#x8D77;&#x6765;&#x653E;&#x5728;&#x6682;&#x5B58;&#x533A;(&#x53EA;&#x80FD;&#x5728;add/commit&#x4E4B;&#x540E;&#x624D;&#x80FD;&#x6682;&#x5B58;)(&#x65B9;&#x4FBF;&#x5207;&#x6362;&#x5230;&#x5176;&#x4ED6;&#x5206;&#x652F;&#x5DE5;&#x4F5C;)
-$ git stash
-
-<span class="hljs-number">12.</span>&#x6062;&#x590D;&#x6682;&#x5B58;&#x533A;&#x6587;&#x4EF6;
-$ git stash apply (stash@{&lt;n&gt;}n&#x4E3A;&#x7B2C;&#x51E0;&#x4E2A;&#x6682;&#x5B58;&#x533A;&#x6587;&#x4EF6;)(&#x9ED8;&#x8BA4;&#x6062;&#x590D;&#x6700;&#x8FD1;&#x7684;&#x6587;&#x4EF6;)
-$ git stash drop 
--- $ git stash pop (&#x6062;&#x590D;&#x6700;&#x8FD1;&#x7684;&#x6682;&#x5B58;&#x533A;&#x6587;&#x4EF6;&#x5E76;&#x5220;&#x9664;&#x7F13;&#x5B58;&#x533A;&#x4E2D;&#x7684;&#x8BE5;&#x6587;&#x4EF6;)
-$ git stash list (&#x67E5;&#x770B;&#x6682;&#x5B58;&#x533A;)
-
-<span class="hljs-number">13.</span>&#x5FFD;&#x7565;&#x63D0;&#x4EA4;(&#x6DFB;&#x52A0;.gitignore&#x6587;&#x4EF6;)
-$ touch .gitignore
-$ vim .gitignore(&#x7F16;&#x8F91;&#x9700;&#x8981;&#x5FFD;&#x7565;&#x7684;&#x6587;&#x4EF6;,&#x652F;&#x6301;&#x6B63;&#x5219;)
-
-<span class="hljs-number">14.</span> &#x5220;&#x9664;git&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x9879;
-$ git config --<span class="hljs-keyword">global</span> --unset remote.origin.url
-</code></pre>
-<h2 id="git&#x547D;&#x4EE4;">git&#x547D;&#x4EE4;</h2>
-<p><a href="https://github.com/yanyanglong/git-tips/raw/master/assets/git.png" target="_blank">Git-tips</a></p>
-<p><img src="../image/git-tips.png" alt="PNG"></p>
+                                <h1 id="introduction">Introduction</h1>
+<p>&#x5B9A;&#x671F;&#x9009;&#x62E9;&#x529B;&#x6263;&#x9898;&#x76EE;&#xFF0C;&#x5171;&#x540C;&#x7814;&#x7A76;&#x5B66;&#x4E60;&#xFF0C;&#x63D0;&#x9AD8;&#x4EE3;&#x7801;&#x638C;&#x63A7;&#x529B;&#x548C;&#x903B;&#x8F91;&#x601D;&#x7EF4;&#x80FD;&#x529B;&#xFF0C;&#x66F4;&#x597D;&#x66F4;&#x5FEB;&#x7684;&#x5199;&#x51FA;&#x4F18;&#x96C5;&#x8D35;&#x6C14;&#x7684;&#x4EE3;&#x7801;</p>
 
                                 
                                 </section>
@@ -454,12 +379,12 @@ $ git config --<span class="hljs-keyword">global</span> --unset remote.origin.ur
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: GitTips">
+                <a href="../PythonShare/Numbers&Datatime.html" class="navigation navigation-prev " aria-label="Previous page: Numbers&Datatime">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="QuicklyBuildGitBook.html" class="navigation navigation-next " aria-label="Next page: QuicklyBuildGitBook">
+                <a href="20190807.html" class="navigation navigation-next " aria-label="Next page: 20190807">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -470,7 +395,7 @@ $ git config --<span class="hljs-keyword">global</span> --unset remote.origin.ur
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"typora-root-url":"..","title":"GitCommon","level":"1.4.1","depth":2,"next":{"title":"QuicklyBuildGitBook","level":"1.4.2","depth":2,"path":"GitTips/QuicklyBuildGitBook.md","ref":"GitTips/QuicklyBuildGitBook.md","articles":[]},"previous":{"title":"GitTips","level":"1.4","depth":1,"path":"GitTips/README.md","ref":"GitTips/README.md","articles":[{"title":"GitCommon","level":"1.4.1","depth":2,"path":"GitTips/GitCommon.md","ref":"GitTips/GitCommon.md","articles":[]},{"title":"QuicklyBuildGitBook","level":"1.4.2","depth":2,"path":"GitTips/QuicklyBuildGitBook.md","ref":"GitTips/QuicklyBuildGitBook.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-comscore","splitter","github","-lunr","-search","code","chapter-fold","back-to-top-button","search-pro","-sharing","sharing-plus","simple-page-toc","page-toc-button","multipart","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"livereload":{},"simple-page-toc":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":true,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"GitTips/GitCommon.md","mtime":"2019-08-07T08:44:33.953Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-07T09:33:11.302Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"QuestionBank","level":"1.6","depth":1,"next":{"title":"20190807","level":"1.6.1","depth":2,"path":"QuestionBank/20190807.md","ref":"QuestionBank/20190807.md","articles":[]},"previous":{"title":"Numbers&Datatime","level":"1.5.4","depth":2,"path":"PythonShare/Numbers&Datatime.md","ref":"PythonShare/Numbers&Datatime.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","splitter","github","-lunr","-search","code","chapter-fold","back-to-top-button","search-pro","-sharing","sharing-plus","simple-page-toc","page-toc-button","multipart","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"livereload":{},"simple-page-toc":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":true,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"QuestionBank/README.md","mtime":"2019-08-07T09:32:50.949Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-07T09:33:11.302Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
