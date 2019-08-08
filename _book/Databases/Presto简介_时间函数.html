@@ -406,7 +406,7 @@
 </blockquote>
 <h2 id="presto&#x6A21;&#x578B;">Presto&#x6A21;&#x578B;</h2>
 <blockquote>
-<p>&#x67E5;&#x8BE2;&#x793A;&#x4F8B;&#xFF1A;<em>select \</em> from hive.dwd_db_hfjydb.view_tms_contract_payment a left join hive.dwd_db_hfjydb.view_tms_contract b on a.contract_id = b.contract_id*</p>
+<p>&#x67E5;&#x8BE2;&#x793A;&#x4F8B;&#xFF1A;<em>select \</em> from hive.table1 a left join hive.table2 b on a.id = b.id*</p>
 <p><strong>Catalog:&#x5C31;&#x662F;&#x6570;&#x636E;&#x6E90;&#x3002;Hive&#xFF0C;Mysql&#x662F;&#x6570;&#x636E;&#x6E90;&#xFF0C;Hive &#x548C;Mysql&#x90FD;&#x662F;&#x6570;&#x636E;&#x6E90;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x4EE5;&#x8FDE;&#x63A5;&#x591A;&#x4E2A;Hive&#x548C;&#x591A;&#x4E2A;Mysql&#x3002;</strong></p>
 <p><strong>Schema&#xFF1A;&#x76F8;&#x5F53;&#x4E8E;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x5B9E;&#x4F8B;&#xFF0C;&#x4E00;&#x4E2A;Schema&#x5305;&#x542B;&#x591A;&#x5F20;&#x6570;&#x636E;&#x8868;&#x3002;</strong></p>
 <p><strong>Table&#xFF1A;&#x6570;&#x636E;&#x8868;&#xFF0C;&#x4E0E;&#x4E00;&#x822C;&#x610F;&#x4E49;&#x4E0A;&#x7684;&#x6570;&#x636E;&#x5E93;&#x8868;&#x76F8;&#x540C;&#x3002;</strong></p>
@@ -443,8 +443,8 @@
 <p>&#x200B;         select current_date &gt; date&apos;2019-07-31&apos; ;</p>
 <p>&#x200B;         select &apos;2019-08-01&apos; &gt; &apos;2019-07-31&apos; ;</p>
 <p>&#x200B;    select substr(lp.adjust_start_time,1,10) ,lp.adjust_start_time
-&#x200B;      from dwd_db_hfjydb.lesson_plan lp
-&#x200B;    where substr(lp.adjust_start_time,1,10) = &apos;2019-08-01&apos; limit 1;</p>
+&#x200B;      from table lp
+&#x200B;    where substr(lp.time,1,10) = &apos;2019-08-01&apos; limit 1;</p>
 </blockquote>
 <h2 id="&#x622A;&#x53D6;&#x51FD;&#x6570;"><strong>&#x622A;&#x53D6;&#x51FD;&#x6570;</strong></h2>
 <p>&#x200B;    <strong>date_trunc(unit, x) &#x8FD4;&#x56DE;x&#x622A;&#x53D6;&#x5230;&#x5355;&#x4F4D;unit&#x4E4B;&#x540E;&#x7684;&#x503C;</strong></p>
@@ -598,36 +598,6 @@ TIMEZONE_MINUTE  timezone_minute()
 </code></pre><p><strong>&#x793A;&#x4F8B;:select year(now()) ,month(now()),day(now()),doy(now()),quarter(now()),week(now());</strong></p>
 <h1 id="&#x8865;&#x5145;-sum-over">&#x8865;&#x5145;: sum() over()</h1>
 <p><strong>sum() over(PARTITION BY columnA order by columnB )</strong> :&#x7C7B;&#x4F3C;&#x4E8E;Python&#x4E2D; cumsum(),&#x5B9E;&#x73B0;&#x7D2F;&#x8BA1;&#x548C;&#x529F;&#x80FD;</p>
-<p>&#x793A;&#x4F8B;: <code>SELECT</code>
-    <code>aa.&quot;&#x90E8;&#x95E8;&quot;,</code>
-    <code>aa.date,</code>
-    <code>aa.&quot;&#x5F53;&#x6708;&#x4E1A;&#x7EE9;&quot;,</code>
-    <code>sum( aa.&quot;&#x5F53;&#x6708;&#x4E1A;&#x7EE9;&quot; ) over ( PARTITION BY aa.&quot;&#x90E8;&#x95E8;&quot; ORDER BY aa.date ) &quot;&#x7D2F;&#x8BA1;&#x548C;&quot;,</code>
-    <code>sum( aa.&quot;&#x5F53;&#x6708;&#x4E1A;&#x7EE9;&quot; ) over ( PARTITION BY aa.&quot;&#x90E8;&#x95E8;&quot; ) &quot;&#x4E09;&#x5929;&#x603B;&#x4E1A;&#x7EE9;&quot;,</code>
-    <code>cast(round( aa.&quot;&#x5F53;&#x6708;&#x4E1A;&#x7EE9;&quot; * 100 / sum( aa.&quot;&#x5F53;&#x6708;&#x4E1A;&#x7EE9;&quot; ) over ( PARTITION BY aa.&quot;&#x90E8;&#x95E8;&quot; ), 2 ) AS VARCHAR ) || &apos;%&apos; &quot;&#x65E5;&#x5360;&#x6BD4;&quot;</code> 
-<code>FROM</code>
-    <code>(</code>
-    <code>SELECT</code>
-        <code>substr( sd.department_name, 1, 7 ) &quot;&#x90E8;&#x95E8;&quot;,</code>
-        <code>substr( tcp.pay_date, 1, 10 ) date,</code>
-        <code>sum( tcp.sum / 100 ) &quot;&#x5F53;&#x6708;&#x4E1A;&#x7EE9;&quot;</code> 
-    <code>FROM</code>
-        <code>dwd_db_hfjydb.view_tms_contract_payment tcp</code>
-        <code>LEFT JOIN dwd_db_hfjydb.view_tms_contract tc ON tc.contract_id = tcp.contract_id</code>
-        <code>LEFT JOIN dwd_db_hfjydb.view_user_info ui ON ui.user_id = tc.submit_user_id</code>
-        <code>LEFT JOIN dwd_db_hfjydb.sys_user_role sur ON ui.user_id = sur.user_id</code>
-        <code>LEFT JOIN dwd_db_hfjydb.sys_role sr ON sur.role_id = sr.role_id</code>
-        <code>LEFT JOIN dwd_db_hfjydb.sys_department sd ON sr.department_id = sd.department_id</code> 
-    <code>WHERE</code>
-        <code>substr( tcp.pay_date, 1, 10 ) &gt;= &apos;2019-07-01&apos;</code> 
-        <code>AND substr( tcp.pay_date, 1, 10 ) &lt; &apos;2019-07-04&apos;</code> 
-        <code>AND tc.STATUS NOT IN ( 7, 8 ) -- &#x5254;&#x9664;&#x5408;&#x540C;&#x7EC8;&#x6B62;&#x548C;&#x5E9F;&#x5F03;</code>
-        <code>AND tcp.pay_status IN ( 2, 4 )</code> 
-        <code>AND ui.account_type = 1</code> 
-        <code>AND regexp_like ( sd.department_name, &apos;&#x6C5F;&#x82CF;&#x9500;&#x552E;&apos; )</code> 
-        <code>AND sd.department_name NOT LIKE &apos;%&#x8003;&#x6838;%&apos;</code> 
-    <code>GROUP BY 1,2</code> 
-    <code>) aa</code> </p>
 <h1 id="&#x5B98;&#x65B9;&#x6587;&#x6863;">&#x5B98;&#x65B9;&#x6587;&#x6863;</h1>
 <p><a href="http://prestodb.jd.com/docs/current/index.html*" target="_blank">http://prestodb.jd.com/docs/current/index.html*</a></p>
 
@@ -673,7 +643,7 @@ TIMEZONE_MINUTE  timezone_minute()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Presto简介 时间函数","level":"1.2.1.1","depth":3,"next":{"title":"DataAnalystHelper","level":"1.3","depth":1,"path":"DataAnalystHelper/README.md","ref":"DataAnalystHelper/README.md","articles":[]},"previous":{"title":"Presto","level":"1.2.1","depth":2,"path":"Databases/README.md","ref":"Databases/README.md","articles":[{"title":"Presto简介 时间函数","level":"1.2.1.1","depth":3,"path":"Databases/Presto简介_时间函数.md","ref":"Databases/Presto简介_时间函数.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-comscore","splitter","github","-lunr","-search","code","chapter-fold","back-to-top-button","search-pro","-sharing","sharing-plus","simple-page-toc","page-toc-button","multipart"],"styles":{"website":"website.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"simple-page-toc":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":true,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Databases/Presto简介_时间函数.md","mtime":"2019-08-02T10:09:21.702Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-08T08:36:42.855Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Presto简介 时间函数","level":"1.2.1.1","depth":3,"next":{"title":"DataAnalystHelper","level":"1.3","depth":1,"path":"DataAnalystHelper/README.md","ref":"DataAnalystHelper/README.md","articles":[]},"previous":{"title":"Presto","level":"1.2.1","depth":2,"path":"Databases/README.md","ref":"Databases/README.md","articles":[{"title":"Presto简介 时间函数","level":"1.2.1.1","depth":3,"path":"Databases/Presto简介_时间函数.md","ref":"Databases/Presto简介_时间函数.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-comscore","splitter","github","-lunr","-search","code","chapter-fold","back-to-top-button","search-pro","-sharing","sharing-plus","simple-page-toc","page-toc-button","multipart","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"livereload":{},"simple-page-toc":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":true,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Databases/Presto简介_时间函数.md","mtime":"2019-08-08T13:21:09.030Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-08T13:21:13.137Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -716,6 +686,10 @@ TIMEZONE_MINUTE  timezone_minute()
     
         
         <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
