@@ -24,7 +24,7 @@
 
 ## Presto模型
 
-> 查询示例：*select \* from hive.dwd_db_hfjydb.view_tms_contract_payment a left join hive.dwd_db_hfjydb.view_tms_contract b on a.contract_id = b.contract_id*
+> 查询示例：*select \* from hive.table1 a left join hive.table2 b on a.id = b.id*
 >
 > **Catalog:就是数据源。Hive，Mysql是数据源，Hive 和Mysql都是数据源类型，可以连接多个Hive和多个Mysql。**
 >
@@ -82,8 +82,8 @@
 > ​		 select '2019-08-01' > '2019-07-31' ;
 >
 > ​    select substr(lp.adjust_start_time,1,10) ,lp.adjust_start_time
-> ​      from dwd_db_hfjydb.lesson_plan lp
-> ​    where substr(lp.adjust_start_time,1,10) = '2019-08-01' limit 1;
+> ​      from table lp
+> ​    where substr(lp.time,1,10) = '2019-08-01' limit 1;
 
 ## **截取函数**
 
@@ -296,36 +296,6 @@ TIMEZONE_MINUTE  timezone_minute()
 
 **sum() over(PARTITION BY columnA order by columnB )** :类似于Python中 cumsum(),实现累计和功能
 
-示例: `SELECT`
-	`aa."部门",`
-	`aa.date,`
-	`aa."当月业绩",`
-	`sum( aa."当月业绩" ) over ( PARTITION BY aa."部门" ORDER BY aa.date ) "累计和",`
-	`sum( aa."当月业绩" ) over ( PARTITION BY aa."部门" ) "三天总业绩",`
-	`cast(round( aa."当月业绩" * 100 / sum( aa."当月业绩" ) over ( PARTITION BY aa."部门" ), 2 ) AS VARCHAR ) || '%' "日占比"` 
-`FROM`
-	`(`
-	`SELECT`
-		`substr( sd.department_name, 1, 7 ) "部门",`
-		`substr( tcp.pay_date, 1, 10 ) date,`
-		`sum( tcp.sum / 100 ) "当月业绩"` 
-	`FROM`
-		`dwd_db_hfjydb.view_tms_contract_payment tcp`
-		`LEFT JOIN dwd_db_hfjydb.view_tms_contract tc ON tc.contract_id = tcp.contract_id`
-		`LEFT JOIN dwd_db_hfjydb.view_user_info ui ON ui.user_id = tc.submit_user_id`
-		`LEFT JOIN dwd_db_hfjydb.sys_user_role sur ON ui.user_id = sur.user_id`
-		`LEFT JOIN dwd_db_hfjydb.sys_role sr ON sur.role_id = sr.role_id`
-		`LEFT JOIN dwd_db_hfjydb.sys_department sd ON sr.department_id = sd.department_id` 
-	`WHERE`
-		`substr( tcp.pay_date, 1, 10 ) >= '2019-07-01'` 
-		`AND substr( tcp.pay_date, 1, 10 ) < '2019-07-04'` 
-		`AND tc.STATUS NOT IN ( 7, 8 ) -- 剔除合同终止和废弃`
-		`AND tcp.pay_status IN ( 2, 4 )` 
-		`AND ui.account_type = 1` 
-		`AND regexp_like ( sd.department_name, '江苏销售' )` 
-		`AND sd.department_name NOT LIKE '%考核%'` 
-	`GROUP BY 1,2` 
-	`) aa` 
 
 # 官方文档
 
