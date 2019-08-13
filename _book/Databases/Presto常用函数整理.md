@@ -84,7 +84,7 @@ select regexp_replace('aabb','b','c')
 select regexp_extract('123abc456','([0-9]*)([a-z]*)([0-9]*)',3)
 ```
 
-#### 9.coalesce:返回参数列表中第一个非null值
+#### 9.coalesce:返回参数列表中第一个非null值(非空值)
 
 ```
 select coalesce(null,'a','b')
