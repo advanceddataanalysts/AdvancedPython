@@ -39,7 +39,7 @@ select split_part('北京,上海,广州',',',1)
 <font color=#008000 >类似于mysql中的locate函数,但locate是子字符串在前.</font>
 
 ```sql
-select strpos('上海销售分公司四中心二区二部精英学院','精英学院')
+select strpos('上海黄浦区','黄浦')
 ```
 
 ## 组合使用
@@ -55,7 +55,6 @@ select strpos('上海销售分公司四中心二区二部精英学院','精英�
 ```sql
 select element_at(split('北京,上海,广州',','),-1)
 select element_at(split('北京,上海,广州',','),2)
-select element_at(split('客户关系部,课程顾问部,江苏分公司,江苏销售一中心,江苏销售一中心一区,江苏销售一中心一区二部',','),-1)
 ```
 
 
