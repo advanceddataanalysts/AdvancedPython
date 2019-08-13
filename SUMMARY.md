@@ -5,6 +5,7 @@
     * [Presto](Databases/README.md) 
       * [Presto简介 时间函数](Databases/Presto简介_时间函数.md) 
       * [Presto数组_字符串函数](Databases/Presto数组_字符串函数.md) 
+      * [Presto常用函数整理](Databases/Presto常用函数整理.md)
 * [DataAnalystHelper](DataAnalystHelper/README.md)
 * [GitTips](GitTips/README.md)
   * [GitCommon](GitTips/GitCommon.md) 
