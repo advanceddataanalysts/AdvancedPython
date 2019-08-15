@@ -423,6 +423,12 @@
 <p>&#x805A;&#x5408;&#x51FD;&#x6570;&#xFF0C;&#x5C06;&#x4E00;&#x5217;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x53D8;&#x6210;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x8FD4;&#x56DE;&#x3002;</p>
 <p><strong>array_join(<em>array,delimiter,null_value_replacement</em>)</strong></p>
 <p>&#x5C06;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#x4EE5;delimiter&#x6307;&#x5B9A;&#x7684;&#x5206;&#x9694;&#x7B26;&#x8FDE;&#x63A5;&#x8D77;&#x6765;&#xFF0C;null&#x503C;&#x7528;null_value_replacement&#x4EE3;&#x66FF;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;</p>
+<p><strong>filter(<em>array,function</em>)</strong></p>
+<p>&#x5C06;&#x51FD;&#x6570;function&#x4E2D;&#x8FD4;&#x56DE;true&#x7684;&#x5143;&#x7D20;&#x6765;&#x6784;&#x9020;&#x65B0;&#x6570;&#x7EC4;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> filter(<span class="hljs-built_in">ARRAY</span> [], x -&gt; <span class="hljs-literal">true</span>); <span class="hljs-comment">-- []</span>
+<span class="hljs-keyword">SELECT</span> filter(<span class="hljs-built_in">ARRAY</span> [<span class="hljs-number">5</span>, <span class="hljs-number">-6</span>, <span class="hljs-literal">NULL</span>, <span class="hljs-number">7</span>], x -&gt; x &gt; <span class="hljs-number">0</span>); <span class="hljs-comment">-- [5, 7]</span>
+<span class="hljs-keyword">SELECT</span> filter(<span class="hljs-built_in">ARRAY</span> [<span class="hljs-number">5</span>, <span class="hljs-literal">NULL</span>, <span class="hljs-number">7</span>, <span class="hljs-literal">NULL</span>], x -&gt; x <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>); <span class="hljs-comment">-- [5, 7]</span>
+</code></pre>
 <h2 id="&#x5B57;&#x7B26;&#x4E32;&#x51FD;&#x6570;">&#x5B57;&#x7B26;&#x4E32;&#x51FD;&#x6570;</h2>
 <p><strong>split(<em>string</em>&#xFF0C;<em>delimiter</em>)</strong> </p>
 <p>&#x4EE5;delimiter&#x5206;&#x9694;&#x7B26;&#x62C6;&#x5206;&#x5B57;&#x7B26;&#x4E32;,&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x3002;</p>
@@ -430,23 +436,49 @@
 <p>&#x4EE5;delimiter&#x5206;&#x9694;&#x7B26;&#x62C6;&#x5206;&#x5B57;&#x7B26;&#x4E32;,&#x8FD4;&#x56DE;&#x7D22;&#x5F15;&#x5BF9;&#x5E94;&#x7684;&#x5B57;&#x7B26;&#x4E32;.&#x5B57;&#x6BB5;&#x7D22;&#x5F15;&#x4EE5;1&#x5F00;&#x5934;(&#x4E0D;&#x53EF;&#x4E3A;&#x8D1F;&#x6570;).&#x5982;&#x679C;&#x7D22;&#x5F15;&#x5927;&#x4E8E;&#x5B57;&#x6BB5;&#x6570;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;null.</p>
 <font color="#008000">&#x7C7B;&#x4F3C;&#x4E8E;mysql&#x4E2D;substring_index&#x51FD;&#x6570;(index&gt;0).</font>
 
-<pre><code class="lang-sql"><span class="hljs-keyword">select</span> split_part(<span class="hljs-string">&apos;&#x5317;&#x4EAC;,&#x4E0A;&#x6D77;,&#x5E7F;&#x5DDE;&apos;</span>,<span class="hljs-string">&apos;,&apos;</span>,<span class="hljs-number">1</span>)
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> split_part(<span class="hljs-string">&apos;&#x5317;&#x4EAC;,&#x4E0A;&#x6D77;,&#x5E7F;&#x5DDE;&apos;</span>,<span class="hljs-string">&apos;,&apos;</span>,<span class="hljs-number">1</span>) <span class="hljs-comment">-- &#x5317;&#x4EAC;</span>
 </code></pre>
 <p><strong>strpos(<em>string</em>&#xFF0C;<em>substring</em>)</strong> </p>
 <p>&#x8FD4;&#x56DE;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7B2C;&#x4E00;&#x6B21;&#x51FA;&#x73B0;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x4ECE;1&#x5F00;&#x59CB;&#x3002;&#x5982;&#x679C;&#x672A;&#x627E;&#x5230;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;0&#x3002;</p>
 <font color="#008000">&#x7C7B;&#x4F3C;&#x4E8E;mysql&#x4E2D;&#x7684;locate&#x51FD;&#x6570;,&#x4F46;locate&#x662F;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#x5728;&#x524D;.</font>
 
-<pre><code class="lang-sql"><span class="hljs-keyword">select</span> strpos(<span class="hljs-string">&apos;&#x4E0A;&#x6D77;&#x9EC4;&#x6D66;&#x533A;&apos;</span>,<span class="hljs-string">&apos;&#x9EC4;&#x6D66;&apos;</span>)
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> strpos(<span class="hljs-string">&apos;&#x4E0A;&#x6D77;&#x9500;&#x552E;&#x5206;&#x516C;&#x53F8;&#x56DB;&#x4E2D;&#x5FC3;&#x4E8C;&#x533A;&#x4E8C;&#x90E8;&#x7CBE;&#x82F1;&#x5B66;&#x9662;&apos;</span>,<span class="hljs-string">&apos;&#x7CBE;&#x82F1;&#x5B66;&#x9662;&apos;</span>) <span class="hljs-comment">-- 15</span>
 </code></pre>
+<p><strong>substr(<em>string,start</em>)</strong></p>
+<p>&#x4ECE;start&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x3002;&#x4F4D;&#x7F6E;&#x4ECE;1&#x5F00;&#x59CB;&#x3002;&#x5982;&#x679C;start&#x4E3A;&#x8D1F;&#xFF0C;&#x5219;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x4EE3;&#x8868;&#x4ECE;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x672B;&#x5C3E;&#x5F00;&#x59CB;&#x5012;&#x6570;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">substr</span>(<span class="hljs-string">&apos;&#x6570;&#x5B66;,&#x82F1;&#x8BED;,&apos;</span>, <span class="hljs-number">-1</span>)  <span class="hljs-comment">-- ,</span>
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">substr</span>(<span class="hljs-string">&apos;&#x6570;&#x5B66;,&#x82F1;&#x8BED;,&apos;</span>, <span class="hljs-number">-1</span>)  <span class="hljs-comment">-- &#x82F1;&#x8BED;,</span>
+</code></pre>
+<p><strong>substr(<em>string, start, length</em>)</strong></p>
+<p>&#x4ECE;start&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x8FD4;&#x56DE;&#x957F;&#x5EA6;&#x4E3A;length&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5B50;&#x4E32;&#x3002;&#x4F4D;&#x7F6E;&#x4ECE;1&#x5F00;&#x59CB;&#x3002;&#x5982;&#x679C;start&#x4E3A;&#x8D1F;&#xFF0C;&#x5219;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x4EE3;&#x8868;&#x4ECE;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x672B;&#x5C3E;&#x5F00;&#x59CB;&#x5012;&#x6570;</p>
 <h2 id="&#x7EC4;&#x5408;&#x4F7F;&#x7528;">&#x7EC4;&#x5408;&#x4F7F;&#x7528;</h2>
 <p><strong>array_join(<em>array_agg(),delimiter,null_value_replacement</em>)</strong></p>
 <font color="#008000">&#x7C7B;&#x4F3C;&#x4E8E;mysql&#x4E2D;&#x7684;group_concat&#x51FD;&#x6570;.</font>
 
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> tcp.contract_id,array_join(array_agg(pay_method_new),<span class="hljs-string">&apos;,&apos;</span>)
+<span class="hljs-keyword">from</span> table1 tcp
+<span class="hljs-keyword">left</span> <span class="hljs-keyword">join</span> table2 tc <span class="hljs-keyword">on</span> tc.contract_id = tcp.contract_id
+<span class="hljs-keyword">where</span> tcp.contract_id = <span class="hljs-string">&apos;X20011907000631&apos;</span>
+<span class="hljs-keyword">and</span> tcp.pay_status <span class="hljs-keyword">in</span> (<span class="hljs-number">2</span>,<span class="hljs-number">4</span>)
+<span class="hljs-keyword">and</span> tc.<span class="hljs-keyword">status</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> (<span class="hljs-number">7</span>,<span class="hljs-number">8</span>)
+<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> tcp.contract_id
+</code></pre>
+<p><strong>array_join(<em>filter(array_agg(conditon),function),delimiter</em>)</strong></p>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> array_join(filter(array_agg(<span class="hljs-keyword">case</span> <span class="hljs-keyword">when</span> is_success_extend = <span class="hljs-number">0</span> <span class="hljs-keyword">then</span> tbk.extend_subject_name <span class="hljs-keyword">else</span> <span class="hljs-literal">null</span> <span class="hljs-keyword">end</span>),x -&gt; x <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>),<span class="hljs-string">&apos;,&apos;</span>)
+</code></pre>
+<font color="#008000">&#x5F53;&#x9700;&#x8981;&#x52A0;&#x5224;&#x65AD;&#x6761;&#x4EF6;&#x65F6;,&#x5982;&#x679C;&#x4E0D;&#x52A0;filter&#x51FD;&#x6570;,&#x7528;&#x4EE5;&#x4E0B;&#x5199;&#x6CD5;,&#x5B57;&#x6BB5;&#x6700;&#x540E;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x9017;&#x53F7;</font>
+
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> array_join(array_agg(<span class="hljs-keyword">case</span> <span class="hljs-keyword">when</span> is_success_extend = <span class="hljs-number">0</span> <span class="hljs-keyword">then</span>  tbk.extend_subject_name <span class="hljs-keyword">end</span>), <span class="hljs-string">&apos;,&apos;</span>)  extend_fail_subject_name
+</code></pre>
 <p><strong>element_at(<em>split(string,delimiter),index</em>)</strong></p>
 <font color="#008000">&#x7C7B;&#x4F3C;&#x4E8E;mysql&#x4E2D;&#x7684;substring_index&#x51FD;&#x6570;.</font>
 
-<pre><code class="lang-sql"><span class="hljs-keyword">select</span> element_at(<span class="hljs-keyword">split</span>(<span class="hljs-string">&apos;&#x5317;&#x4EAC;,&#x4E0A;&#x6D77;,&#x5E7F;&#x5DDE;&apos;</span>,<span class="hljs-string">&apos;,&apos;</span>),<span class="hljs-number">-1</span>)
-<span class="hljs-keyword">select</span> element_at(<span class="hljs-keyword">split</span>(<span class="hljs-string">&apos;&#x5317;&#x4EAC;,&#x4E0A;&#x6D77;,&#x5E7F;&#x5DDE;&apos;</span>,<span class="hljs-string">&apos;,&apos;</span>),<span class="hljs-number">2</span>)
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> element_at(<span class="hljs-keyword">split</span>(<span class="hljs-string">&apos;&#x5317;&#x4EAC;,&#x4E0A;&#x6D77;,&#x5E7F;&#x5DDE;&apos;</span>,<span class="hljs-string">&apos;,&apos;</span>),<span class="hljs-number">-1</span>) <span class="hljs-comment">-- &#x5E7F;&#x5DDE;</span>
+<span class="hljs-keyword">select</span> element_at(<span class="hljs-keyword">split</span>(<span class="hljs-string">&apos;&#x5317;&#x4EAC;,&#x4E0A;&#x6D77;,&#x5E7F;&#x5DDE;&apos;</span>,<span class="hljs-string">&apos;,&apos;</span>),<span class="hljs-number">2</span>)  <span class="hljs-comment">-- &#x4E0A;&#x6D77;</span>
+<span class="hljs-keyword">select</span> element_at(<span class="hljs-keyword">split</span>(<span class="hljs-string">&apos;&#x5BA2;&#x6237;&#x5173;&#x7CFB;&#x90E8;,&#x8BFE;&#x7A0B;&#x987E;&#x95EE;&#x90E8;,&#x6C5F;&#x82CF;&#x5206;&#x516C;&#x53F8;,&#x6C5F;&#x82CF;&#x9500;&#x552E;&#x4E00;&#x4E2D;&#x5FC3;,&#x6C5F;&#x82CF;&#x9500;&#x552E;&#x4E00;&#x4E2D;&#x5FC3;&#x4E00;&#x533A;,&#x6C5F;&#x82CF;&#x9500;&#x552E;&#x4E00;&#x4E2D;&#x5FC3;&#x4E00;&#x533A;&#x4E8C;&#x90E8;&apos;</span>,<span class="hljs-string">&apos;,&apos;</span>),<span class="hljs-number">-1</span>)
+</code></pre>
+<p><strong>&#x53BB;&#x6389;&#x5B57;&#x7B26;&#x4E32;&#x672B;&#x5C3E;&#x7684;&#x9017;&#x53F7;</strong></p>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> (<span class="hljs-keyword">case</span> <span class="hljs-keyword">when</span> <span class="hljs-keyword">substr</span>(<span class="hljs-string">&apos;&#x6570;&#x5B66;,&#x82F1;&#x8BED;,&apos;</span>, <span class="hljs-number">-1</span>) = <span class="hljs-string">&apos;,&apos;</span> <span class="hljs-keyword">then</span> <span class="hljs-keyword">substr</span>(<span class="hljs-string">&apos;&#x6570;&#x5B66;,&#x82F1;&#x8BED;,&apos;</span>,<span class="hljs-number">1</span>,<span class="hljs-keyword">length</span>(<span class="hljs-string">&apos;&#x6570;&#x5B66;,&#x82F1;&#x8BED;,&apos;</span>)<span class="hljs-number">-1</span>) <span class="hljs-keyword">end</span>)  <span class="hljs-comment">-- &#x6570;&#x5B66;,&#x82F1;&#x8BED;</span>
 </code></pre>
 
                                 
@@ -491,7 +523,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Presto数组_字符串函数","level":"1.2.1.2","depth":3,"next":{"title":"Presto常用函数整理","level":"1.2.1.3","depth":3,"path":"Databases/Presto常用函数整理.md","ref":"Databases/Presto常用函数整理.md","articles":[]},"previous":{"title":"Presto简介 时间函数","level":"1.2.1.1","depth":3,"path":"Databases/Presto简介_时间函数.md","ref":"Databases/Presto简介_时间函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","splitter","github","-lunr","-search","code","chapter-fold","back-to-top-button","search-pro","-sharing","sharing-plus","simple-page-toc","page-toc-button","multipart","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"livereload":{},"simple-page-toc":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":true,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Databases/Presto数组_字符串函数.md","mtime":"2019-08-13T06:48:11.225Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-13T08:10:27.857Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Presto数组_字符串函数","level":"1.2.1.2","depth":3,"next":{"title":"Presto常用函数整理","level":"1.2.1.3","depth":3,"path":"Databases/Presto常用函数整理.md","ref":"Databases/Presto常用函数整理.md","articles":[]},"previous":{"title":"Presto简介 时间函数","level":"1.2.1.1","depth":3,"path":"Databases/Presto简介_时间函数.md","ref":"Databases/Presto简介_时间函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","splitter","github","-lunr","-search","code","chapter-fold","back-to-top-button","search-pro","-sharing","sharing-plus","simple-page-toc","page-toc-button","multipart"],"styles":{"website":"website.css"},"pluginsConfig":{"chapter-fold":{},"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"simple-page-toc":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":true,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Databases/Presto数组_字符串函数.md","mtime":"2019-08-15T03:46:26.811Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-15T03:49:30.530Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -534,10 +566,6 @@
     
         
         <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
