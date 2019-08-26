@@ -9,18 +9,20 @@
 import random
 from src.utils.mysqlhelper import MysqlHelper
 from src.utils.emailhelper import EmailMessage
+from src.utils.prestohelper import PrestoHelper
 from src.config import config
 
-mysqlinstance_localhost = MysqlHelper(**config.along_localhost)
+# mysqlinstance_localhost = MysqlHelper(**config.along_localhost)
+prestoinstance = PrestoHelper(**config.hive_prosto)
 
 sql = '''
 select *  
 from  subject
 '''
 
-data = mysqlinstance_localhost.get_df(sql)
+data = prestoinstance.get_df(sql)
 
-# print(data)
+print(data)
 
 title = 'test' + str(random.random())
 receivers = ["yanglong_yan@163.com"]
