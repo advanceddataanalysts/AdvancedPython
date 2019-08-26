@@ -50,6 +50,13 @@ along_localhost = {"host": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                    "user": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                    "passwd": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                    "db": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
+
+dmart_dmart = {"host": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+               "port": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+               "user": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+               "passwd": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+               "db": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
+
 hive_prosto = {"host": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                "port": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
 

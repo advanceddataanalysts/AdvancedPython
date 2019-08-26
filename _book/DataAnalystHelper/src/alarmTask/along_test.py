@@ -12,7 +12,7 @@ from src.utils.emailhelper import EmailMessage
 from src.utils.prestohelper import PrestoHelper
 from src.config import config
 
-# mysqlinstance_localhost = MysqlHelper(**config.along_localhost)
+mysqlinstance_localhost = MysqlHelper(**config.along_localhost)
 prestoinstance = PrestoHelper(**config.hive_prosto)
 
 sql = '''
@@ -20,7 +20,7 @@ select *
 from  subject
 '''
 
-data = prestoinstance.get_df(sql)
+data = mysqlinstance_localhost.get_df(sql)
 
 print(data)
 

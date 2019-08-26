@@ -7,9 +7,11 @@
 # @Software: PyCharm
 
 import requests
+from src.utils.try_rerun import try_rerun
 from src.utils.ding_robot import dingdingrobot
 
 
+@try_rerun(dingding=True, n=10, sleep_time=5)
 def get_next_time(crontab):
     url = "http://api.bejson.com/btools/othertools/cron/"
     data = {"crontxt": crontab}
