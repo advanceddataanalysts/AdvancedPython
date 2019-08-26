@@ -9,11 +9,11 @@
 
 import requests
 from src.config import public_config
-from src.utils.get_source import get_source
+from src.utils.stringhelper import StringHelper
 
 
 def dingdingrobot(content='', subject='test', title=''):
-    suffix = get_alarm_suffix()
+    suffix = StringHelper.get_alarm_suffix()
 
     if title:
         content = title + '\n' + content + suffix
@@ -79,15 +79,6 @@ def dingdingrobot(content='', subject='test', title=''):
     url = public_config.ding_token[subject]
 
     requests.post(url, json=msg1)
-
-
-def get_alarm_suffix():
-    mac, ip, somebody = get_source()
-    if somebody == 'unknown':
-        suffix = "\n--来自数据分析组\nmac: {0}\nip: {1}\nSomebody: {2}".format(mac, ip, somebody)
-    else:
-        suffix = "\n--来自数据分析组\nSomebody: {0}".format(somebody)
-    return suffix
 
 
 if __name__ == '__main__':

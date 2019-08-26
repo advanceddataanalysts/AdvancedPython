@@ -11,14 +11,14 @@ import socket
 
 
 def get_source():
-    # 获取执行脚本机器的MAC地址
+    """获取执行脚本机器的MAC地址"""
     seriers = uuid.UUID(int=uuid.getnode()).hex[-12:]
     mac = ":".join([seriers[e:e + 2] for e in range(0, 11, 2)])
 
-    # 获取执行脚本机器的电脑名
+    """获取执行脚本机器的电脑名"""
     # myname = socket.getfqdn(socket.gethostname())
 
-    # 获取执行脚本机器的IP地址
+    """获取执行脚本机器的IP地址"""
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         s.connect(('8.8.8.8', 80))
@@ -26,7 +26,7 @@ def get_source():
     finally:
         s.close()
 
-    ips = {'10.51.12.19': '闫洋龙', }
+    ips = {'10.51.12.65': '闫洋龙', }
     if ip in ips:
         somebody = ips[ip]
     else:

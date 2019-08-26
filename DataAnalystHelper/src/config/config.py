@@ -6,10 +6,6 @@
 # @File    : config.py
 # @Software: PyCharm
 
-import time
-
-cur_time = time.strftime('%Y-%m-%d  %H:%M:%S', time.localtime())
-
 testing_email = ["yanglong_yan@163.com"]
 
 environ = 'test'
@@ -48,12 +44,20 @@ elif environ == 'test':
     depend_on_check_n = 1
     depend_on_check_sleep = 5
 
-along_localhost = {}
-along_localhost["host"] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-along_localhost["port"] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-along_localhost["user"] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-along_localhost["passwd"] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-along_localhost["db"] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+"""数据库连接"""
+along_localhost = {"host": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                   "port": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                   "user": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                   "passwd": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                   "db": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
+hive_prosto = {"host": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+               "port": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
+
+"""邮件服务器"""
+emailsetting_data = {"host": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                     "user": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                     "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                     "sender": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
 
 SECRET_KEY = 'xxxxxx'
 
