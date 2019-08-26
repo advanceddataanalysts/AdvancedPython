@@ -6,29 +6,26 @@
 # @File    : along_test.py
 # @Software: PyCharm
 
-
-from src.utils import mysqlhelper
+import random
+from src.utils.mysqlhelper import MysqlHelper
+from src.utils.emailhelper import EmailMessage
 from src.config import config
 
+mysqlinstance_localhost = MysqlHelper(**config.along_localhost)
 
-import os
+sql = '''
+select *  
+from  subject
+'''
 
-print(os.getcwd())
+data = mysqlinstance_localhost.get_df(sql)
 
-print(os.path.abspath(os.path.join(os.getcwd()) + 'src/templates'))
-
-
-#
-# mysqlinstance_localhost = mysqlhelper.MysqlHelper(**config.along_localhost)
-#
-# sql = '''
-# select *
-# from  subject
-# '''
-#
-# data = mysqlinstance_localhost.get_df(sql)
-#
 # print(data)
 
+title = 'test' + str(random.random())
+receivers = ["yanglong_yan@163.com"]
+message = EmailMessage(subject=title, receivers=receivers, dfs=data, sheets_name=["test"])
 
+# mysqlinstance_localhost.execute(sql)
 
+# mysqlinstance_localhost.insertmany_byengin(data, 'along_subject_copy', if_exists='replace')
