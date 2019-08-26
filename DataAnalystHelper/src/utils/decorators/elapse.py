@@ -11,7 +11,7 @@ import time
 from src.config import public_config
 
 
-def elapse(dingding=True, des="", subject="inform"):
+def elapse(dingding=True, des="", subject="test"):
     """定义装饰器用于查询SQL时打印报错信息并推送到钉钉"""
 
     def wrapper(func):

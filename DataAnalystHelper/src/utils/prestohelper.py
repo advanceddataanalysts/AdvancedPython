@@ -51,7 +51,7 @@ class PrestoHelper(object):
             error_content = StringHelper.error(content)
 
             if StringHelper.sql_error_check(content):
-                dingdingrobot(content=f"(presto)sql语法不正确\n{error_content}\n路径try_rerun", subject="alarm的堂哥")
+                dingdingrobot(content=f"(presto)sql语法不正确\n{error_content}\n路径try_rerun", subject="test")
                 raise
 
         return df
