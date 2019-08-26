@@ -49,7 +49,8 @@ class EmailHelper(object):
     @try_rerun(dingding=True, n=n, sleep_time=sleep_time)
     def send(self, message):
         smtpObj = smtplib.SMTP()
-        smtpObj.connect(self.mail_host, 25)  # 25 为 SMTP 端口号
+        """25 为 SMTP 端口号"""
+        smtpObj.connect(self.mail_host, 25)
         smtpObj.login(self.mail_user, self.mail_pass)
         smtpObj.sendmail(message.sender, message.send_to, msg=message.as_string())
         smtpObj.quit()
@@ -102,7 +103,7 @@ class EmailMessage(object):
 
     def _message(self):
 
-        # 判断是否测试环境
+        """判断是否测试环境"""
         self.is_test()
 
         message = MIMEMultipart()

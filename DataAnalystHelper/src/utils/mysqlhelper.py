@@ -17,8 +17,8 @@ from math import ceil
 import multiprocessing
 from queue import Queue
 from src.config import config
-from src.utils import try_rerun, hflog
 from src.utils import encryption
+from src.utils.try_rerun import try_rerun
 from src.utils.decorators.elapse import elapse
 from src.utils.ding_robot import dingdingrobot
 from src.utils.mydbpools import ConnectionPools
@@ -49,8 +49,8 @@ class MysqlHelper(object):
         if self.pools:
             self.dbinstance = ConnectionPools()
 
-    @elapse(dingding=False, des="从数据库get数据")
-    # @try_rerun(dingding=True, n=config.try_rerun_mysql_n, sleep_time=config.try_rerun_mysql_sleep)
+    @elapse(dingding=False, des="(mysql)从数据库get数据")
+    @try_rerun(dingding=True, n=config.try_rerun_mysql_n, sleep_time=config.try_rerun_mysql_sleep)
     def __get_df(self, sql, conn=None, index=0, toprint=None, connect_once=True):
         sql = self.sql_clean(sql)
 
@@ -109,7 +109,7 @@ class MysqlHelper(object):
             dfs = [dfs]
         return dfs if len(dfs) > 1 else dfs[0]
 
-    @elapse(dingding=False, des="从数据库insert数据")
+    @elapse(dingding=False, des="(mysql)从数据库insert数据")
     def insertmany_bydf(self, df, tb, if_exists="append", n=6):
         """数据插入数据库的封装方法用于 处理空值&打印过程信息&打印插入信息 """
 
@@ -138,7 +138,7 @@ class MysqlHelper(object):
                 conn.commit()
 
                 print("insert数据行数:{0}".format(insert_rows))
-                print("数据库insert成功")
+                print("(mysql)数据库insert成功")
 
                 endTime = time.time()
                 time_eclipse = round((endTime - startTime), 2)
@@ -175,7 +175,7 @@ class MysqlHelper(object):
 
                 self.close(conn, cursor)
 
-    @elapse(dingding=False, des="多线程从数据库insert数据")
+    @elapse(dingding=False, des="(mysql)多线程从数据库insert数据")
     def insertmany_bydf_thread(self, big_df, tb, if_exists="append", pools=True):
 
         self.pools = pools
@@ -203,8 +203,8 @@ class MysqlHelper(object):
                 for t in thread_list:
                     t.join()
 
-    @elapse(dingding=False, des="sqlalchemy从数据库insert数据")
-    # @try_rerun(dingding=True)
+    @elapse(dingding=False, des="(mysql)sqlalchemy从数据库insert数据")
+    @try_rerun(dingding=True)
     def insertmany_byengin(self, df, tb, if_exists="append"):
 
         from sqlalchemy import create_engine
@@ -237,7 +237,7 @@ class MysqlHelper(object):
         pd.io.sql.to_sql(df, tb, con=engine, index=False, if_exists=if_exists, chunksize=102400, method="multi")
         print("Write to MySQL successfully!")
 
-    # @try_rerun(dingding=True)
+    @try_rerun(dingding=True)
     def updatemany_bydf(self, df, sql, batch=False, multip=False, processes=4):
         df = df.where(pd.notnull(df), "None")
         df = df.astype("str")
@@ -251,7 +251,7 @@ class MysqlHelper(object):
                 if not batch:
                     rows = cursor.executemany(sql, para)
                     print("update数据行数:{0}".format(rows))
-                    print("数据库update完成")
+                    print("(mysql)数据库update完成")
                 else:
                     nrows = df.shape[0]
                     nceil = ceil(nrows / 100) + 1
@@ -261,7 +261,7 @@ class MysqlHelper(object):
                         else:
                             rows = cursor.executemany(sql, para[100 * i:100 * (i + 1)])
                         print("update数据行数[{0}]:{1}".format(i, rows))
-                        print("数据库update完成")
+                        print("(mysql)数据库update完成")
             except Exception as e:
                 print("start分割线----------------------------分割线start")
                 print(para)
@@ -320,17 +320,17 @@ class MysqlHelper(object):
             rows = cursor.execute(sql)
             conn.commit()
             if re.search('(delete)|(truncate)|(drop)', sql, flags=re.I):
-                print("execute[{0}]删除表行数:{1}".format(index, rows))
+                print("(mysql)execute[{0}]删除表行数:{1}".format(index, rows))
                 endTime = time.time()
                 time_eclipse = round((endTime - startTime), 2)
                 # hflog.info({"filename": filename, "sql": sql, "rows": rows, "time_eclipse": time_eclipse})
             elif re.search('create', sql, flags=re.I):
-                print("execute[{0}]创建表成功".format(index))
+                print("(mysql)execute[{0}]创建表成功".format(index))
             elif re.search('update', sql, flags=re.I):
-                print("execute[{0}]更新表行数:{1}".format(index, rows))
+                print("(mysql)execute[{0}]更新表行数:{1}".format(index, rows))
             else:
-                print("execute[{0}]数据行数:{1}".format(index, rows))
-            print("sql语句执行成功")
+                print("(mysql)execute[{0}]数据行数:{1}".format(index, rows))
+            print("(mysql)sql语句执行成功")
             self.close(conn, cursor)
         except Exception as e:
             print("start分割线----------------------------分割线start")
@@ -352,14 +352,14 @@ class MysqlHelper(object):
                 sql = self.sql_clean(sql)
                 self.execute(sql, index=index)
 
-    # @try_rerun(dingding=True, n=6, sleep_time=5)
+    @try_rerun(dingding=True, n=6, sleep_time=5)
     def getconn(self):
         if self.pools:
             conn = self.dbinstance.getconn(self.host, self.port, self.user, self.passwd, self.db, self.charset)
         else:
             conn = pymysql.connect(host=self.host, port=self.port, user=self.user, passwd=self.passwd, db=self.db,
                                    read_timeout=self.read_timeout, charset=self.charset)
-            print("\n数据库连接成功")
+            print("\n(mysql)数据库连接成功")
         return conn
 
     def close(self, conn, cursor=None):
@@ -368,26 +368,26 @@ class MysqlHelper(object):
                 cursor.close()
             conn.close()
             if not self.pools:
-                print("数据库连接关闭")
+                print("(mysql)数据库连接关闭")
         except:
             pass
 
     @staticmethod
     def to_print(df, index=0, toprint=None):
-        print(f"get[{index + 1}]原始数据shape:{df.shape}")
+        print(f"(mysql)get[{index + 1}]原始数据shape:{df.shape}")
         if toprint:
             if isinstance(toprint, str):
                 toprint = [toprint]
             for method in toprint:
                 mtd = getattr(df, method)
                 if callable(mtd):
-                    print(f"get原始数据{method}:\n{mtd()}")
+                    print(f"(mysql)get原始数据{method}:\n{mtd()}")
                 else:
-                    print(f"get原始数据{method}:\n{mtd}")
+                    print(f"(mysql)get原始数据{method}:\n{mtd}")
 
     @staticmethod
     def sql_clean(sql):
-        sql = re.sub('\,\s*\)', ')', sql)
-        sql = re.sub('\.0,', ',', sql)
+        sql = re.sub(r'\,\s*\)', ')', sql)
+        sql = re.sub(r'\.0,', ',', sql)
         sql = sql.replace(", nan", "").replace("nan, ", "").replace("None, ", "").replace(", None", "")
         return sql

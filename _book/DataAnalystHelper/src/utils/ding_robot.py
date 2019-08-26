@@ -20,7 +20,7 @@ def dingdingrobot(content='', subject='test', title=''):
     else:
         content = content + suffix
 
-    # text类型
+    """text类型"""
     msg1 = {
         'msgtype': 'text',
         'text': {
@@ -36,7 +36,7 @@ def dingdingrobot(content='', subject='test', title=''):
         }
     }
 
-    # link类型
+    """link类型"""
     msg2 = {
         'msgtype': 'link',
         'link': {
@@ -47,7 +47,7 @@ def dingdingrobot(content='', subject='test', title=''):
         }
     }
 
-    # markdown类型
+    """markdown类型"""
     msg3 = {
         'msgtype': 'markdown',
         'markdown': {
@@ -63,7 +63,7 @@ def dingdingrobot(content='', subject='test', title=''):
         }
     }
 
-    # 整体跳转ActionCard类型
+    """整体跳转ActionCard类型"""
     msg4 = {
         'actionCard': {
             'title': title,

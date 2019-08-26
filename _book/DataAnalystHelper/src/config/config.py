@@ -59,7 +59,7 @@ emailsetting_data = {"host": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                      "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                      "sender": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
 
-SECRET_KEY = 'xxxxxx'
+SECRET_KEY = '123456'
 
 # 数据库连接编码
 DB_CHARSET = "utf8"
