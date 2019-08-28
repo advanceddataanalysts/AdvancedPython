@@ -14,6 +14,7 @@
     * [Regex](PythonShare/Regex.md)
     * [Numbers&Datatime](PythonShare/Numbers&Datatime.md)
     * [IO&File](PythonShare/IO&File.md)
+    * [Function](PythonShare/Function.md)
 
 - [QuestionBank](QuestionBank/README.md)
   - [20190807](QuestionBank/20190807.md)
