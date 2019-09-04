@@ -321,4 +321,4 @@ class TimerHelper(object):
 
 if __name__ == "__main__":
     # 参数可以传入int类型的id  /  str的 file_basename
-    timerhelper().run(1, only=False)
+    TimerHelper().run(1, only=False)
