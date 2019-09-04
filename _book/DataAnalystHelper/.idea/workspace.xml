@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41377cbc-90b4-44ff-827f-25e241cc0069" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/timerhelper.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/timerhelper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/alarmTask/along_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/alarmTask/along_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/decorators/elapse.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/decorators/elapse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/prestohelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/prestohelper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/verify_crontab.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/verify_crontab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/timerhelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/timerhelper.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -215,7 +206,8 @@
       <option name="presentableId" value="Default" />
       <updated>1563692492613</updated>
       <workItem from="1563692494170" duration="16515000" />
-      <workItem from="1566799250523" duration="20991000" />
+      <workItem from="1566799250523" duration="23486000" />
+      <workItem from="1567484590076" duration="1646000" />
     </task>
     <servers />
   </component>
