@@ -77,7 +77,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../QuestionBank/" />
+    <link rel="next" href="LinuxChapterTwo.html" />
     
     
     <link rel="prev" href="LinuxAliases.html" />
@@ -377,6 +377,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6.3" data-path="LinuxChapterTwo.html">
+            
+                <a href="LinuxChapterTwo.html">
+            
+                    
+                    ChapterTwo
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -459,7 +472,143 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h1 id="linux--chapterone">Linux--ChapterOne</h1>
+<h2 id="&#x73AF;&#x5883;&#x53D8;&#x91CF;">&#x73AF;&#x5883;&#x53D8;&#x91CF;</h2>
+<pre><code class="lang-shell">echo $PATH
+</code></pre>
+<blockquote>
+<p>&#x5F53;&#x6267;&#x884C;&#x67D0;&#x4E00;&#x547D;&#x4EE4;&#x65F6;,&#x7CFB;&#x7EDF;&#x641C;&#x7D22;&#x547D;&#x4EE4;&#x7684;&#x8DEF;&#x5F84;</p>
+</blockquote>
+<h2 id="shell&#x547D;&#x4EE4;&#x5FEB;&#x6377;&#x952E;">shell&#x547D;&#x4EE4;&#x5FEB;&#x6377;&#x952E;</h2>
+<pre><code class="lang-shell">Ctrl + a  --&#x5149;&#x6807;&#x5230;&#x884C;&#x9996;
+
+Ctrl + e  --&#x5149;&#x6807;&#x5230;&#x884C;&#x5C3E;
+
+Ctrl + u  --&#x5220;&#x9664;&#x5149;&#x6807;&#x4E4B;&#x524D;&#x7684;&#x5185;&#x5BB9;
+
+Ctrl + l  --&#x6E05;&#x5C4F;  &#x76F8;&#x5F53;&#x4E8E;clear&#x547D;&#x4EE4;
+</code></pre>
+<h2 id="&#x6587;&#x4EF6;&#x641C;&#x7D22;&#x547D;&#x4EE4;">&#x6587;&#x4EF6;&#x641C;&#x7D22;&#x547D;&#x4EE4;</h2>
+<h3 id="locate--&#x6587;&#x4EF6;&#x540D;">locate  &#x6587;&#x4EF6;&#x540D;</h3>
+<p>&#x5728;&#x540E;&#x53F0;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x6309;&#x6587;&#x4EF6;&#x540D;&#x641C;&#x7D22;, &#x641C;&#x7D22;&#x901F;&#x5EA6;&#x5FEB;</p>
+<blockquote>
+<p>/var/lib/mlocate   -- locate&#x547D;&#x4EE4;&#x6240;&#x641C;&#x7D22;&#x7684;&#x540E;&#x53F0;&#x6570;&#x636E;&#x5E93;</p>
+</blockquote>
+<p>&#x6570;&#x636E;&#x5E93;&#x6BCF;&#x5929;&#x66F4;&#x65B0;&#x4E00;&#x6B21;, &#x65B0;&#x5EFA;&#x6587;&#x4EF6;&#x9700;&#x8981;&#x66F4;&#x65B0;&#x6570;&#x636E;&#x5E93;</p>
+<blockquote>
+<p>&#x66F4;&#x65B0;&#x903B;&#x8F91;&#x89C1; /etc/updatedb.conf &#x914D;&#x7F6E;&#x6587;&#x4EF6;</p>
+<p>PRUNE_BIND_MOUNTS = &quot;yes&quot;  --&#x5F00;&#x542F;&#x641C;&#x7D22;&#x9650;&#x5236;</p>
+<p>PRUNEFS  --&#x641C;&#x7D22;&#x65F6;,&#x4E0D;&#x641C;&#x7D22;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</p>
+<p>PRUNENAMES -- &#x641C;&#x7D22;&#x65F6;,&#x4E0D;&#x641C;&#x7D22;&#x7684;&#x6587;&#x4EF6;&#x7C7B;&#x578B;</p>
+<p>PRUNEPATHS -- &#x641C;&#x7D22;&#x65F6;,&#x4E0D;&#x641C;&#x7D22;&#x7684;&#x8DEF;&#x5F84;</p>
+</blockquote>
+<p>updatedb  --&#x66F4;&#x65B0;&#x6570;&#x636E;&#x5E93;</p>
+<h3 id="find-&#x641C;&#x7D22;&#x8303;&#x56F4;--&#x641C;&#x7D22;&#x6761;&#x4EF6;">find &#x641C;&#x7D22;&#x8303;&#x56F4;  &#x641C;&#x7D22;&#x6761;&#x4EF6;</h3>
+<blockquote>
+<p>&#x5E94;&#x907F;&#x514D;find&#x547D;&#x4EE4;&#x5927;&#x8303;&#x56F4;&#x641C;&#x7D22;,&#x4F1A;&#x975E;&#x5E38;&#x6D88;&#x8017;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;</p>
+<p>find&#x662F;&#x5728;&#x7CFB;&#x7EDF;&#x641C;&#x7D22;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#x540D;, &#x5982;&#x679C;&#x9700;&#x8981;&#x5339;&#x914D;,&#x4F7F;&#x7528;&#x901A;&#x914D;&#x7B26;&#x5339;&#x914D;,&#x901A;&#x914D;&#x7B26;&#x662F;&#x5B8C;&#x5168;&#x5339;&#x914D; </p>
+</blockquote>
+<pre><code class="lang-shell">find /opt/case/analysis/ -name along.log
+
+find /opt/case/analysis/ -iname along.log --&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;
+
+find /opt/case/analysis/ -name &quot;along*&quot; --&#x4F7F;&#x7528;&#x901A;&#x914D;&#x7B26;
+
+find /opt/case/analysis/  -user root  --&#x6309;&#x7167;&#x6240;&#x6709;&#x8005;&#x641C;&#x7D22;
+
+find /opt/case/analysis/ -nouser  --&#x67E5;&#x627E;&#x6CA1;&#x6709;&#x6240;&#x6709;&#x8005;&#x7684;&#x6587;&#x4EF6;
+
+find  /opt/case/analysis/ -mtime +10 -- &#x67E5;&#x627E;&#x5341;&#x5929;&#x524D;&#x4FEE;&#x6539;&#x7684;&#x6587;&#x4EF6;
+</code></pre>
+<blockquote>
+<p>-10 10&#x5929;&#x5185;&#x4FEE;&#x6539;&#x7684;&#x6587;&#x4EF6;</p>
+<p>10 10&#x5929;&#x5F53;&#x5929;&#x4FEE;&#x6539;&#x7684;&#x6587;&#x4EF6;</p>
+<p>+10 10&#x5929;&#x524D;&#x4FEE;&#x6539;&#x7684;&#x6587;&#x4EF6;</p>
+<p>atime &#x6587;&#x4EF6;&#x8BBF;&#x95EE;&#x65F6;&#x95F4;</p>
+<p>ctime &#x6539;&#x53D8;&#x6587;&#x4EF6;&#x5C5E;&#x6027;</p>
+<p>mtime &#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x5185;&#x5BB9;</p>
+</blockquote>
+<pre><code class="lang-shell">find  /opt/case/analysis/ -size 12k  --&#x6309;&#x7167;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x641C;&#x7D22;
+</code></pre>
+<blockquote>
+<p>&#x6587;&#x4EF6;&#x5355;&#x4F4D; k, M, G  &#x6CE8;&#x610F;&#x53EA;&#x6709;k&#x662F;&#x5C0F;&#x5199;,&#x5176;&#x4ED6;&#x90FD;&#x662F;&#x5927;&#x5199;
+-12k &#x5C0F;&#x4E8E;12KB&#x7684;&#x6587;&#x4EF6;
+12k &#x7B49;&#x4E8E;12KB&#x7684;&#x6587;&#x4EF6;
+-12k &#x5927;&#x4E8E;12KB&#x7684;&#x6587;&#x4EF6;</p>
+</blockquote>
+<pre><code class="lang-shell">find /opt/case/analysis/ -inum  134318202 --&#x67E5;&#x627E;i&#x8282;&#x70B9;&#x4E3A;134318202&#x7684;&#x6587;&#x4EF6;
+</code></pre>
+<pre><code class="lang-shell">find /opt/case/analysis/ -size +15k -a -size -20k
+-- &#x67E5;&#x627E; /opt/case/analysis/ &#x76EE;&#x5F55;&#x4E0B; &#x5927;&#x4E8E;15KB&#x5C0F;&#x4E8E;20KB&#x7684;&#x6587;&#x4EF6;
+</code></pre>
+<blockquote>
+<p>-exec/ok &#x547D;&#x4EE4; {}\;  &#x89C4;&#x5B9A;&#x5199;&#x6CD5;,&#x5BF9;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x6267;&#x884C;&#x64CD;&#x4F5C;,&#x6539;&#x547D;&#x4EE4;&#x5FC5;&#x987B;&#x662F;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x7684;&#x547D;&#x4EE4;
+find /opt/case/analysis/ -size +15k -a -size -20k  -exec ls -lh {} \;</p>
+</blockquote>
+<h2 id="&#x547D;&#x4EE4;&#x641C;&#x7D22;&#x547D;&#x4EE4;">&#x547D;&#x4EE4;&#x641C;&#x7D22;&#x547D;&#x4EE4;</h2>
+<h3 id="whereiswhich--&#x547D;&#x4EE4;&#x540D;">whereis/which  &#x547D;&#x4EE4;&#x540D;</h3>
+<blockquote>
+<p>&#x4F9D;&#x8D56;&#x73AF;&#x5883;&#x53D8;&#x91CF;</p>
+<p>&#x641C;&#x7D22;&#x547D;&#x4EE4;&#x7684;&#x547D;&#x4EE4;</p>
+</blockquote>
+<p>whereis &#x547D;&#x4EE4;&#x540D;</p>
+<blockquote>
+<p>&#x641C;&#x7D22;&#x547D;&#x4EE4;&#x6240;&#x5728;&#x8DEF;&#x5F84;&#x53CA;&#x5E2E;&#x52A9;&#x6587;&#x6863;&#x6240;&#x5728;&#x4F4D;&#x7F6E;</p>
+<p>-b  &#x53EA;&#x67E5;&#x627E;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;</p>
+<p>-m &#x53EA;&#x67E5;&#x627E;&#x5E2E;&#x52A9;&#x6587;&#x6863;</p>
+</blockquote>
+<p>which &#x547D;&#x4EE4;&#x540D;</p>
+<blockquote>
+<p>&#x641C;&#x7D22;&#x547D;&#x4EE4;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#x53CA;&#x522B;&#x540D;</p>
+</blockquote>
+<h2 id="&#x641C;&#x7D22;&#x5B57;&#x7B26;&#x4E32;&#x547D;&#x4EE4;">&#x641C;&#x7D22;&#x5B57;&#x7B26;&#x4E32;&#x547D;&#x4EE4;</h2>
+<h3 id="grep-&#x9009;&#x9879;-&#x5B57;&#x7B26;&#x4E32;-&#x6587;&#x4EF6;&#x540D;">grep [&#x9009;&#x9879;] &#x5B57;&#x7B26;&#x4E32; &#x6587;&#x4EF6;&#x540D;</h3>
+<blockquote>
+<p>-i &#x5FFD;&#x7565;&#x5927;&#x5C0F;&#x5199;</p>
+<p>-v &#x6392;&#x9664;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#x4E32;</p>
+<p>&#x5305;&#x542B;&#x641C;&#x7D22;,&#x5982;&#x679C;&#x9700;&#x8981;&#x5339;&#x914D;,&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x8FDB;&#x884C;&#x5339;&#x914D;, &#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x65F6;&#x5305;&#x542B;&#x5339;&#x914D;</p>
+</blockquote>
+<pre><code class="lang-shell">grep &quot;import&quot;  /opt/case/analysis/DataMachine_for_clean/src/along_test.py  --&#x641C;&#x7D22;&#x5305;&#x542B;import&#x7684;&#x884C;
+grep -v  &quot;import&quot;  ./along_test.py  --&#x641C;&#x7D22;&#x4E0D;&#x5305;&#x542B;import&#x7684;&#x884C;
+</code></pre>
+<h2 id="&#x5E2E;&#x52A9;&#x547D;&#x4EE4;">&#x5E2E;&#x52A9;&#x547D;&#x4EE4;</h2>
+<h3 id="manmanuals">man(manuals)</h3>
+<pre><code class="lang-shell">man ls
+</code></pre>
+<blockquote>
+<p>NAME  &#x547D;&#x4EE4;&#x540D;&#x79F0;&#x53CA;&#x529F;&#x80FD;&#x7B80;&#x8981;&#x8BF4;&#x660E;
+SYNOPSIS  &#x7528;&#x6CD5;&#x8BF4;&#x660E;&#xFF0C;&#x53EF;&#x7528;&#x7684;&#x9009;&#x9879;
+DESCRIPTION&#x547D;&#x4EE4;&#x529F;&#x80FD;&#x7684;&#x8BE6;&#x7EC6;&#x8BF4;&#x660E;&#x53CA;&#x610F;&#x4E49;
+SEE ALSO  &#x53E6;&#x5916;&#x53C2;&#x7167; </p>
+</blockquote>
+<h4 id="man&#x7684;&#x7EA7;&#x522B;">man&#x7684;&#x7EA7;&#x522B;</h4>
+<blockquote>
+<blockquote>
+<p>1&#xFF1A;&#x67E5;&#x770B;&#x547D;&#x4EE4;&#x7684;&#x5E2E;&#x52A9;</p>
+<p>2&#xFF1A;&#x67E5;&#x770B;&#x53EF;&#x88AB;&#x5185;&#x6838;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;&#x7684;&#x5E2E;&#x52A9;</p>
+<p>3&#xFF1A;&#x67E5;&#x770B;&#x51FD;&#x6570;&#x548C;&#x51FD;&#x6570;&#x5E93;&#x7684;&#x5E2E;&#x52A9;</p>
+<p>4&#xFF1A;&#x67E5;&#x770B;&#x7279;&#x6B8A;&#x6587;&#x4EF6;&#x7684;&#x5E2E;&#x52A9;&#xFF08;&#x4E3B;&#x8981;&#x662F;/dev&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#xFF09;</p>
+<p>5&#xFF1A;&#x67E5;&#x770B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x5E2E;&#x52A9;</p>
+<p>6&#xFF1A;&#x67E5;&#x770B;&#x6E38;&#x620F;&#x7684;&#x5E2E;&#x52A9;</p>
+<p>7&#xFF1A;&#x67E5;&#x770B;&#x5176;&#x5B83;&#x6742;&#x9879;&#x7684;&#x5E2E;&#x52A9;</p>
+<p>8&#xFF1A;&#x67E5;&#x770B;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;&#x5458;&#x53EF;&#x7528;&#x547D;&#x4EE4;&#x7684;&#x5E2E;&#x52A9;</p>
+<p>9&#xFF1A;&#x67E5;&#x770B;&#x548C;&#x5185;&#x6838;&#x76F8;&#x5173;&#x6587;&#x4EF6;&#x7684;&#x5E2E;&#x52A9;</p>
+</blockquote>
+</blockquote>
+<pre><code class="lang-shell">man -f &#x547D;&#x4EE4;  --&#x67E5;&#x770B;&#x547D;&#x4EE4;&#x7EA7;&#x522B;&#x548C;&#x529F;&#x80FD;&#x7B80;&#x8981;&#x8BF4;&#x660E;   &#x76F8;&#x5F53;&#x4E8E;whatis &#x547D;&#x4EE4;
+man -f ls; man -f passwd
+man -k passwd  --&#x67E5;&#x627E;&#x6240;&#x6709;&#x5173;&#x952E;&#x5B57;&#x5305;&#x542B;passwd&#x7684;&#x5E2E;&#x52A9;&#x6587;&#x6863;  &#x76F8;&#x5F53;&#x4E8E;apropos passwd
+</code></pre>
+<h3 id="&#x547D;&#x4EE4;---help">&#x547D;&#x4EE4; --help</h3>
+<blockquote>
+<p>&#x5982;&#x679C;&#x5B89;&#x88C5;Linux&#x6307;&#x5B9A;&#x8BED;&#x8A00;&#x4E3A;&#x4E2D;&#x6587;,&#x5219;&#x663E;&#x793A;&#x4E2D;&#x6587;&#x5E2E;&#x52A9;&#x6587;&#x6863;</p>
+</blockquote>
+<h3 id="help-shell&#x5185;&#x90E8;&#x547D;&#x4EE4;">help shell&#x5185;&#x90E8;&#x547D;&#x4EE4;</h3>
+<h3 id="info">info</h3>
+<blockquote>
+<p>&#x4F1A;&#x627E;&#x5230;&#x6240;&#x6709;&#x7684;&#x5E2E;&#x52A9;&#x6587;&#x6863;(&#x5404;&#x4E2A;&#x7248;&#x672C;)</p>
+</blockquote>
+
                                 
                                 </section>
                             
@@ -491,7 +640,7 @@
                 </a>
                 
                 
-                <a href="../QuestionBank/" class="navigation navigation-next " aria-label="Next page: QuestionBank">
+                <a href="LinuxChapterTwo.html" class="navigation navigation-next " aria-label="Next page: ChapterTwo">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -502,7 +651,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ChapterOne","level":"1.6.2","depth":2,"next":{"title":"QuestionBank","level":"1.7","depth":1,"path":"QuestionBank/README.md","ref":"QuestionBank/README.md","articles":[{"title":"20190807","level":"1.7.1","depth":2,"path":"QuestionBank/20190807.md","ref":"QuestionBank/20190807.md","articles":[]}]},"previous":{"title":"Alias","level":"1.6.1","depth":2,"path":"LinuxTips/LinuxAliases.md","ref":"LinuxTips/LinuxAliases.md","articles":[]},"dir":"neutral"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"livereload":{},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"LinuxTips/LinuxChapterOne.md","mtime":"2019-09-04T06:12:06.047Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-04T07:00:00.002Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ChapterOne","level":"1.6.2","depth":2,"next":{"title":"ChapterTwo","level":"1.6.3","depth":2,"path":"LinuxTips/LinuxChapterTwo.md","ref":"LinuxTips/LinuxChapterTwo.md","articles":[]},"previous":{"title":"Alias","level":"1.6.1","depth":2,"path":"LinuxTips/LinuxAliases.md","ref":"LinuxTips/LinuxAliases.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"livereload":{},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"LinuxTips/LinuxChapterOne.md","mtime":"2019-09-04T09:31:26.927Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-04T11:09:14.275Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

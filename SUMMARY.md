@@ -18,6 +18,7 @@
 * [LinuxTips](LinuxTips/README.md)
   * [Alias](LinuxTips/LinuxAliases.md)
   * [ChapterOne](LinuxTips/LinuxChapterOne.md)
+  * [ChapterTwo](LinuxTips/LinuxChapterTwo.md)
 * [QuestionBank](QuestionBank/README.md)
   * [20190807](QuestionBank/20190807.md)
 
