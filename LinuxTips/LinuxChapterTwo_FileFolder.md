@@ -1,4 +1,4 @@
-# Linux--ChapterOne
+# Linux--ChapterTwo
 
 ## 文件/文件夹
 
@@ -102,7 +102,7 @@ tar  -xvf  tar_test.tar
 
     > -z  压缩为.tar.gz 格式
     >
-    > -z  压缩为.tar.bz2 格式
+    > -j  压缩为.tar.bz2 格式
 
 - 解压并解包
 
