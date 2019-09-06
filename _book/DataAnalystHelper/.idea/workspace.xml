@@ -2,31 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41377cbc-90b4-44ff-827f-25e241cc0069" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/../SUMMARY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/DataAnalystHelper/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/DataAnalystHelper/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/Databases/Presto/Presto常用函数.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/Databases/Presto/Presto常用函数.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/Databases/Presto/Presto数组&amp;字符串函数.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/Databases/Presto/Presto数组&amp;字符串函数.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/Databases/Presto/Presto简介&amp;时间函数.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/Databases/Presto/Presto简介&amp;时间函数.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/Databases/Presto/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/Databases/Presto/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/Databases/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/Databases/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/GitTips/GitCommon.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/GitTips/GitCommon.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/GitTips/QuicklyBuildGitBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/GitTips/QuicklyBuildGitBook.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/GitTips/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/GitTips/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/LinuxTips/LinuxAliases.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/LinuxTips/LinuxAliases.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/LinuxTips/LinuxChapterOne_SearchCommand.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/LinuxTips/LinuxChapterOne_SearchCommand.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/LinuxTips/LinuxChapterTwo_FileFolder.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/LinuxTips/LinuxChapterTwo_FileFolder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/LinuxTips/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/LinuxTips/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/PythonShare/DataStructure.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/PythonShare/DataStructure.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/PythonShare/Dictionary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/PythonShare/Dictionary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/PythonShare/Function.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/PythonShare/Function.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/PythonShare/IO&amp;File.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/PythonShare/IO&amp;File.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/PythonShare/Numbers&amp;Datatime.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/PythonShare/Numbers&amp;Datatime.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/PythonShare/Regex.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/PythonShare/Regex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/PythonShare/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/PythonShare/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/QuestionBank/20190807.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/QuestionBank/20190807.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/QuestionBank/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/QuestionBank/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../_book/search_plus_index.json" beforeDir="false" afterPath="$PROJECT_DIR$/../_book/search_plus_index.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -231,7 +208,7 @@
       <workItem from="1563692494170" duration="16515000" />
       <workItem from="1566799250523" duration="23486000" />
       <workItem from="1567484590076" duration="1646000" />
-      <workItem from="1567660069055" duration="1229000" />
+      <workItem from="1567660069055" duration="1830000" />
     </task>
     <servers />
   </component>
