@@ -511,17 +511,17 @@
 <pre><code> select  &apos;www&apos; ||  &apos;iteblog&apos; || &apos;com&apos;
 </code></pre><h4 id="4&#x5B57;&#x7B26;&#x4E32;&#x622A;&#x53D6;&#x51FD;&#x6570;&#xFF1A;substrsubstring">4.&#x5B57;&#x7B26;&#x4E32;&#x622A;&#x53D6;&#x51FD;&#x6570;&#xFF1A;substr,substring</h4>
 <p>&#x8BED;&#x6CD5;: substr(string A, int start),substring(string A, int start) &#x8FD4;&#x56DE;&#x503C;: string &#x8BF4;&#x660E;&#xFF1A;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;A&#x4ECE;start&#x4F4D;&#x7F6E;&#x5230;&#x7ED3;&#x5C3E;&#x7684;&#x5B57;&#x7B26;&#x4E32;</p>
-<pre><code>  select substr(&apos;iteblog&apos;,3) 
+<pre><code>select substr(&apos;iteblog&apos;,3) 
 
-  select substr(&apos;iteblog&apos;,3,2) 
+select substr(&apos;iteblog&apos;,3,2) 
 
-  select substr(&apos;iteblog&apos;,-3,2)  
+select substr(&apos;iteblog&apos;,-3,2)  
 
-  select substring(&apos;iteblog&apos;,3) 
+select substring(&apos;iteblog&apos;,3) 
 
-  select substring(&apos;iteblog&apos;,3,2) 
+select substring(&apos;iteblog&apos;,3,2) 
 
-  select substring(&apos;iteblog&apos;,-3,2)
+select substring(&apos;iteblog&apos;,-3,2)
 </code></pre><h4 id="5replacestring-search-&#x2192;-varchar">5.replace(string, search) &#x2192; varchar</h4>
 <p>&#x5220;&#x9664;&#x5B57;&#x7B26;&#x4E32; string &#x4E2D;&#x7684;&#x6240;&#x6709;&#x5B50;&#x4E32; search &#x3002;</p>
 <pre><code>select replace(&apos;itebtlog&apos;, &apos;t&apos;)
@@ -607,7 +607,6 @@ group by lp.student_id
 <p>&#x5BF9;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x4F9D;&#x6B21;&#x8C03;&#x7528;function&#xFF0C;&#x751F;&#x6210;&#x65B0;&#x7684;&#x7ED3;&#x679C;U&#x3002;</p>
 <pre><code>select 
     lp.student_id,
-
     array_agg(distinct lp.lesson_type),
     filter(array_agg(distinct lp.lesson_type), x -&gt; x=3),
 
@@ -618,25 +617,6 @@ from lesson_plan  lp
 left join subject sj on sj.subject_id = lp.subject_id
 where student_id in (1537357,1537006,1537362,1537336,1537025)
 group by lp.student_id
-</code></pre><h4 id="-&#x4F8B;&#x53E5;">--&#x4F8B;&#x53E5;???</h4>
-<pre><code>select 
-
-    count(distinct student_id )
-from lesson_plan  lp
-where cast(substr(lp.adjust_start_time,1,11) as date) &gt;= date(&apos;2019-07-29&apos;)
-and cast(substr(lp.adjust_start_time,1,11) as date) &lt; current_date
-
-
-select 
-    count(student_id)
-from 
-(
-select 
-    distinct student_id
-from  lesson_plan lp 
-where cast(substr(lp.adjust_start_time,1,11) as date) &gt;= date(&apos;2019-07-29&apos;)
-and cast(substr(lp.adjust_start_time,1,11) as date) &lt; current_date
-)x
 </code></pre>
                                 
                                 </section>
@@ -680,7 +660,7 @@ and cast(substr(lp.adjust_start_time,1,11) as date) &lt; current_date
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Presto常用函数","level":"1.2.1.2","depth":3,"next":{"title":"Presto数组&字符串函数","level":"1.2.1.3","depth":3,"path":"Databases/Presto/Presto数组&字符串函数.md","ref":"Databases/Presto/Presto数组&字符串函数.md","articles":[]},"previous":{"title":"Presto简介&时间函数","level":"1.2.1.1","depth":3,"path":"Databases/Presto/Presto简介&时间函数.md","ref":"Databases/Presto/Presto简介&时间函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"livereload":{},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Databases/Presto/Presto常用函数.md","mtime":"2019-08-21T07:43:16.933Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-06T05:23:33.371Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Presto常用函数","level":"1.2.1.2","depth":3,"next":{"title":"Presto数组&字符串函数","level":"1.2.1.3","depth":3,"path":"Databases/Presto/Presto数组&字符串函数.md","ref":"Databases/Presto/Presto数组&字符串函数.md","articles":[]},"previous":{"title":"Presto简介&时间函数","level":"1.2.1.1","depth":3,"path":"Databases/Presto/Presto简介&时间函数.md","ref":"Databases/Presto/Presto简介&时间函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"livereload":{},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Databases/Presto/Presto常用函数.md","mtime":"2019-09-06T05:31:30.590Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-06T05:35:42.441Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

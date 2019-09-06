@@ -33,17 +33,17 @@ select reverse('iteblog')
 语法: substr(string A, int start),substring(string A, int start) 返回值: string 说明：返回字符串A从start位置到结尾的字符串
 
 ```
-  select substr('iteblog',3) 
+select substr('iteblog',3) 
 
-  select substr('iteblog',3,2) 
+select substr('iteblog',3,2) 
 
-  select substr('iteblog',-3,2)  
+select substr('iteblog',-3,2)  
 
-  select substring('iteblog',3) 
+select substring('iteblog',3) 
 
-  select substring('iteblog',3,2) 
+select substring('iteblog',3,2) 
 
-  select substring('iteblog',-3,2)
+select substring('iteblog',-3,2)
 ```
 
 #### 5.replace(string, search) → varchar
@@ -192,39 +192,14 @@ array中的每一个元素经过function过滤，返回都为true的元素
 ```
 select 
     lp.student_id,
-
     array_agg(distinct lp.lesson_type),
     filter(array_agg(distinct lp.lesson_type), x -> x=3),
 
     array_agg(distinct subject_name),
     transform(array_agg(distinct subject_name), x -> substr(x,1,2))
-
+    
 from lesson_plan  lp
 left join subject sj on sj.subject_id = lp.subject_id
 where student_id in (1537357,1537006,1537362,1537336,1537025)
 group by lp.student_id
-```
-
-#### --例句???
-
-```
-select 
-
-    count(distinct student_id )
-from lesson_plan  lp
-where cast(substr(lp.adjust_start_time,1,11) as date) >= date('2019-07-29')
-and cast(substr(lp.adjust_start_time,1,11) as date) < current_date
-
-
-select 
-    count(student_id)
-from 
-(
-select 
-    distinct student_id
-from  lesson_plan lp 
-where cast(substr(lp.adjust_start_time,1,11) as date) >= date('2019-07-29')
-and cast(substr(lp.adjust_start_time,1,11) as date) < current_date
-)x
-
 ```
