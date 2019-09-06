@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Databases · PythonShare</title>
+        <title>Presto常用函数 · PythonShare</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -77,8 +77,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="Presto数组-字符串函数.html" />
     
-    <link rel="prev" href="../" />
+    
+    <link rel="prev" href="Presto简介_时间函数.html" />
     
 
     </head>
@@ -129,7 +131,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="./">
             
                 <a href="./">
             
@@ -170,7 +172,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.2" data-path="Presto常用函数.html">
+        <li class="chapter active" data-level="1.2.1.2" data-path="Presto常用函数.html">
             
                 <a href="Presto常用函数.html">
             
@@ -481,7 +483,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Databases</a>
+        <a href=".." >Presto常用函数</a>
     </h1>
 </div>
 
@@ -496,15 +498,146 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
-<ul>
-<li>mysql</li>
-<li>hive</li>
-<li>presto</li>
-<li>mongodb</li>
-<li>redis</li>
-</ul>
+                                <h4 id="1&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#x8BA1;&#x7B97;&#x51FD;&#x6570;&#xFF1A;length">1.&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#x8BA1;&#x7B97;&#x51FD;&#x6570;&#xFF1A;length</h4>
+<p>&#x8BED;&#x6CD5;: length(string A)</p>
+<pre><code>select length(&apos;iteblog&apos;)
+</code></pre><h4 id="2&#x5B57;&#x7B26;&#x4E32;&#x53CD;&#x8F6C;&#x51FD;&#x6570;&#xFF1A;reverse">2.&#x5B57;&#x7B26;&#x4E32;&#x53CD;&#x8F6C;&#x51FD;&#x6570;&#xFF1A;reverse</h4>
+<p>&#x8BED;&#x6CD5;: reverse(string A) &#x8FD4;&#x56DE;&#x503C;: string &#x8BF4;&#x660E;&#xFF1A;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;A&#x7684;&#x53CD;&#x8F6C;&#x7ED3;&#x679C;</p>
+<pre><code>select reverse(&apos;iteblog&apos;)
+</code></pre><h4 id="3&#x5B57;&#x7B26;&#x4E32;&#x8FDE;&#x63A5;&#x51FD;&#x6570;&#xFF1A;concat">3.&#x5B57;&#x7B26;&#x4E32;&#x8FDE;&#x63A5;&#x51FD;&#x6570;&#xFF1A;concat</h4>
+<p>&#x8BED;&#x6CD5;: concat(string A, string B&#x2026;) &#x8FD4;&#x56DE;&#x503C;: string &#x8BF4;&#x660E;&#xFF1A;&#x8FD4;&#x56DE;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x8FDE;&#x63A5;&#x540E;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x652F;&#x6301;&#x4EFB;&#x610F;&#x4E2A;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;</p>
+<pre><code> select concat(&apos;www&apos;,&apos;iteblog&apos;,&apos;com&apos;)
+</code></pre><p>&#x4F7F;&#x7528;||&#x8FD0;&#x7B97;&#x7B26;&#x5B9E;&#x73B0;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x62FC;&#x63A5;(&#x5FEB;)</p>
+<pre><code> select  &apos;www&apos; ||  &apos;iteblog&apos; || &apos;com&apos;
+</code></pre><h4 id="4&#x5B57;&#x7B26;&#x4E32;&#x622A;&#x53D6;&#x51FD;&#x6570;&#xFF1A;substrsubstring">4.&#x5B57;&#x7B26;&#x4E32;&#x622A;&#x53D6;&#x51FD;&#x6570;&#xFF1A;substr,substring</h4>
+<p>&#x8BED;&#x6CD5;: substr(string A, int start),substring(string A, int start) &#x8FD4;&#x56DE;&#x503C;: string &#x8BF4;&#x660E;&#xFF1A;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;A&#x4ECE;start&#x4F4D;&#x7F6E;&#x5230;&#x7ED3;&#x5C3E;&#x7684;&#x5B57;&#x7B26;&#x4E32;</p>
+<pre><code>  select substr(&apos;iteblog&apos;,3) 
 
+  select substr(&apos;iteblog&apos;,3,2) 
+
+  select substr(&apos;iteblog&apos;,-3,2)  
+
+  select substring(&apos;iteblog&apos;,3) 
+
+  select substring(&apos;iteblog&apos;,3,2) 
+
+  select substring(&apos;iteblog&apos;,-3,2)
+</code></pre><h4 id="5replacestring-search-&#x2192;-varchar">5.replace(string, search) &#x2192; varchar</h4>
+<p>&#x5220;&#x9664;&#x5B57;&#x7B26;&#x4E32; string &#x4E2D;&#x7684;&#x6240;&#x6709;&#x5B50;&#x4E32; search &#x3002;</p>
+<pre><code>select replace(&apos;itebtlog&apos;, &apos;t&apos;)
+</code></pre><p>replace(string, search, replace) &#x2192; varchar</p>
+<p>&#x5C06;&#x5B57;&#x7B26;&#x4E32; string &#x4E2D;&#x6240;&#x6709;&#x5B50;&#x4E32; search &#x66FF;&#x6362;&#x4E3A; replace&#x3002;</p>
+<pre><code>select replace(&apos;itebtlog&apos;, &apos;t&apos;,&apos;k&apos;)
+</code></pre><h4 id="6strposstring-substring-&#x2192;-bigint">6.strpos(string, substring) &#x2192; bigint</h4>
+<p>&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x5B50;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x7B2C;&#x4E00;&#x6B21;&#x51FA;&#x73B0;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x3002;&#x4F4D;&#x7F6E;&#x4EE5; 1 &#x5F00;&#x59CB; &#xFF0C;&#x5982;&#x679C;&#x672A;&#x627E;&#x5230;&#x5219;&#x8FD4;&#x56DE; 0 &#x3002;</p>
+<pre><code>select  strpos(&apos;titebtlog&apos;, &apos;t&apos;)
+
+select  strpos(&apos;itebtlog&apos;, &apos;p&apos;)
+</code></pre><h4 id="7regexpreplace&#x5C06;&#x539F;&#x5B57;&#x7B26;&#x4E2D;&#x7684;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#x66FF;&#x6362;">7.regexp_replace:&#x5C06;&#x539F;&#x5B57;&#x7B26;&#x4E2D;&#x7684;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#x66FF;&#x6362;</h4>
+<pre><code>select regexp_replace(&apos;aabb&apos;,&apos;b&apos;,&apos;c&apos;)
+</code></pre><h4 id="8regexpextract&#xFF1A;&#x901A;&#x8FC7;&#x4E0B;&#x6807;&#x8FD4;&#x56DE;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x6307;&#x5B9A;&#x7684;&#x90E8;&#x5206;">8.regexp_extract&#xFF1A;&#x901A;&#x8FC7;&#x4E0B;&#x6807;&#x8FD4;&#x56DE;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x6307;&#x5B9A;&#x7684;&#x90E8;&#x5206;</h4>
+<pre><code>select regexp_extract(&apos;123abc456&apos;,&apos;([0-9]*)([a-z]*)([0-9]*)&apos;,3)
+</code></pre><h4 id="9coalesce&#x8FD4;&#x56DE;&#x53C2;&#x6570;&#x5217;&#x8868;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x975E;null&#x503C;&#x975E;&#x7A7A;&#x503C;">9.coalesce:&#x8FD4;&#x56DE;&#x53C2;&#x6570;&#x5217;&#x8868;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x975E;null&#x503C;(&#x975E;&#x7A7A;&#x503C;)</h4>
+<pre><code>select coalesce(null,&apos;a&apos;,&apos;b&apos;)
+
+select coalesce(null,null,null)
+</code></pre><p>&#x5C06;null&#x503C;&#x66FF;&#x6362;</p>
+<pre><code>select 
+    student_intention_id,
+    student_no,
+    name,
+    coalesce(name,&apos;&#x5C0F;&#x82B1;&apos;)
+from view_student 
+where name is null 
+limit 10
+</code></pre><h4 id="10&#x6761;&#x4EF6;&#x51FD;&#x6570;if">10.&#x6761;&#x4EF6;&#x51FD;&#x6570;:if</h4>
+<pre><code>select if(1+1=2,&apos;a&apos;,&apos;b&apos;)
+</code></pre><h4 id="11&#x7A97;&#x53E3;&#x51FD;&#x6570;">11.&#x7A97;&#x53E3;&#x51FD;&#x6570;</h4>
+<p>first_value(x):&#x8FD4;&#x56DE;&#x7A97;&#x53E3;&#x5185;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;value&#xFF0C;&#x4E00;&#x822C;&#x7528;&#x6CD5;&#x662F;&#x7A97;&#x53E3;&#x5185;&#x6570;&#x503C;&#x6392;&#x5E8F;&#xFF0C;&#x83B7;&#x53D6;&#x6700;&#x5927;&#x503C;&#x3002;</p>
+<p>last_value(x) &#x542B;&#x4E49;&#x548C;first value&#x76F8;&#x53CD;&#x3002;</p>
+<p>sum()</p>
+<pre><code>select 
+    lp.student_id,
+    cast(substr(lp.adjust_start_time,1,19) as timestamp) adjust,
+    teacher_id,
+    first_value(teacher_id) OVER (PARTITION BY student_id ORDER BY  cast(substr(lp.adjust_start_time,1,19) as timestamp) ),
+    first_value(lp.adjust_start_time) OVER (PARTITION BY student_id ORDER BY  cast(substr(lp.adjust_start_time,1,19) as timestamp) )
+from lesson_plan  lp
+where student_id in (1537357,1537006,1537362,1537336,1537025)
+</code></pre><h4 id="12&#x6570;&#x7EC4;&#x51FD;&#x6570;">12.&#x6570;&#x7EC4;&#x51FD;&#x6570;</h4>
+<p><strong>array_agg</strong> (key)&#x662F;&#x4E00;&#x4E2A;&#x805A;&#x5408;&#x51FD;&#x6570;&#xFF0C;&#x8868;&#x793A;&#x628A;key&#x8FD9;&#x4E00;&#x5217;&#x7684;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x53D8;&#x6210;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x8FD4;&#x56DE;&#x3002;</p>
+<p><strong>array_distinct</strong>&#xFF1A;&#x8FD4;&#x56DE;&#x53BB;&#x91CD;&#x540E;&#x7684;&#x6570;&#x7EC4;</p>
+<p><strong>array_max(array)</strong> -&gt; E &#x8FD4;&#x56DE;&#x6570;&#x7EC4;&#x4E2D;&#x6700;&#x5927;&#x7684;&#x5143;&#x7D20;</p>
+<p><strong>array_min(array)</strong> -&gt; E &#x8FD4;&#x56DE;&#x6570;&#x7EC4;&#x4E2D;&#x6700;&#x5C0F;&#x7684;&#x5143;&#x7D20;</p>
+<p><strong>array_position(x, element)</strong> -&gt; bigint &#x8FD4;&#x56DE;element&#x5728;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;</p>
+<p><strong>contains(x, element)</strong> -&gt; boolean &#x5224;&#x65AD;element&#x662F;&#x5426;&#x5728;&#x6570;&#x7EC4;x&#x4E2D;</p>
+<p><strong>array_remove(x, element)</strong> -&gt; x &#x79FB;&#x9664;&#x6570;&#x7EC4;x&#x4E2D;&#x7684;&#x6240;&#x6709;element&#x5143;&#x7D20;</p>
+<p><strong>cardinality(x)</strong> -&gt; bigint &#x8FD4;&#x56DE;&#x6570;&#x7EC4;&#x7684;&#x5143;&#x7D20;&#x4E2A;&#x6570;</p>
+<pre><code>select 
+    lp.student_id,
+
+    -- array_agg(sj.subject_name),
+
+    -- array_agg(distinct sj.subject_name),
+    -- array_distinct(array_agg(subject_name))
+
+    -- array_agg(distinct sj.subject_id),
+    -- array_max(array_agg(distinct sj.subject_id))
+
+
+    -- array_position(array_agg(distinct sj.subject_name),&apos;&#x4F53;&#x9A8C;&#x8BFE;&apos;),
+
+    -- contains(array_agg(distinct sj.subject_name),&apos;&#x4F53;&#x9A8C;&#x8BFE;&apos;),
+
+    -- array_remove(array_agg(distinct sj.subject_name),&apos;&#x4F53;&#x9A8C;&#x8BFE;&apos;)
+
+    -- cardinality(array_agg(distinct sj.subject_name))
+
+    --array_join(array_agg(distinct subject_name), &apos;-&apos;) subject_name
+
+from lesson_plan  lp
+left join subject sj on sj.subject_id = lp.subject_id
+where student_id in (1537357,1537006,1537362,1537336,1537025)
+group by lp.student_id
+</code></pre><h4 id="13lambda&#x51FD;&#x6570;"><strong>13.lambda&#x51FD;&#x6570;</strong></h4>
+<p>lambda&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x4E66;&#x5199;&#x5F62;&#x5F0F;&#x4E3A;<code>-&gt;</code></p>
+<p><strong>(1)filter(array, function) -&gt; array</strong></p>
+<p>array&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x7ECF;&#x8FC7;function&#x8FC7;&#x6EE4;&#xFF0C;&#x8FD4;&#x56DE;&#x90FD;&#x4E3A;true&#x7684;&#x5143;&#x7D20;</p>
+<p><strong>(2)transform(array, function) &#x2192; ARRAY</strong></p>
+<p>&#x5BF9;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x4F9D;&#x6B21;&#x8C03;&#x7528;function&#xFF0C;&#x751F;&#x6210;&#x65B0;&#x7684;&#x7ED3;&#x679C;U&#x3002;</p>
+<pre><code>select 
+    lp.student_id,
+
+    array_agg(distinct lp.lesson_type),
+    filter(array_agg(distinct lp.lesson_type), x -&gt; x=3),
+
+    array_agg(distinct subject_name),
+    transform(array_agg(distinct subject_name), x -&gt; substr(x,1,2))
+
+from lesson_plan  lp
+left join subject sj on sj.subject_id = lp.subject_id
+where student_id in (1537357,1537006,1537362,1537336,1537025)
+group by lp.student_id
+</code></pre><h4 id="-&#x4F8B;&#x53E5;">--&#x4F8B;&#x53E5;???</h4>
+<pre><code>select 
+
+    count(distinct student_id )
+from lesson_plan  lp
+where cast(substr(lp.adjust_start_time,1,11) as date) &gt;= date(&apos;2019-07-29&apos;)
+and cast(substr(lp.adjust_start_time,1,11) as date) &lt; current_date
+
+
+select 
+    count(student_id)
+from 
+(
+select 
+    distinct student_id
+from  lesson_plan lp 
+where cast(substr(lp.adjust_start_time,1,11) as date) &gt;= date(&apos;2019-07-29&apos;)
+and cast(substr(lp.adjust_start_time,1,11) as date) &lt; current_date
+)x
+</code></pre>
                                 
                                 </section>
                             
@@ -531,10 +664,14 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Introduction">
+                <a href="Presto简介_时间函数.html" class="navigation navigation-prev " aria-label="Previous page: Presto简介 时间函数">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="Presto数组-字符串函数.html" class="navigation navigation-next " aria-label="Next page: Presto数组-字符串函数">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -543,7 +680,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Databases","level":"1.2","depth":1,"next":{"title":"Presto","level":"1.2.1","depth":2,"ref":"","articles":[{"title":"Presto简介 时间函数","level":"1.2.1.1","depth":3,"path":"Databases/Presto简介_时间函数.md","ref":"Databases/Presto简介_时间函数.md","articles":[]},{"title":"Presto常用函数","level":"1.2.1.2","depth":3,"path":"Databases/Presto常用函数.md","ref":"Databases/Presto常用函数.md","articles":[]},{"title":"Presto数组-字符串函数","level":"1.2.1.3","depth":3,"path":"Databases/Presto数组-字符串函数.md","ref":"Databases/Presto数组-字符串函数.md","articles":[]}]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"livereload":{},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Databases/README.md","mtime":"2019-08-01T09:03:41.091Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-06T05:08:26.734Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Presto常用函数","level":"1.2.1.2","depth":3,"next":{"title":"Presto数组-字符串函数","level":"1.2.1.3","depth":3,"path":"Databases/Presto数组-字符串函数.md","ref":"Databases/Presto数组-字符串函数.md","articles":[]},"previous":{"title":"Presto简介 时间函数","level":"1.2.1.1","depth":3,"path":"Databases/Presto简介_时间函数.md","ref":"Databases/Presto简介_时间函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"livereload":{},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Databases/Presto常用函数.md","mtime":"2019-08-21T07:43:16.933Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-06T05:08:26.734Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
