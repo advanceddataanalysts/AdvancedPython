@@ -74,25 +74,30 @@ select substr('数学,英语,', -1)  -- 英语,
 <font color=#008000 >类似于mysql中的group_concat函数.</font>
 
 ```sql
-select tcp.contract_id,array_join(array_agg(pay_method_new),',')
+select 
+	tcp.contract_id,array_join(array_agg(pay_method_new),',')
 from table1 tcp
 left join table2 tc on tc.contract_id = tcp.contract_id
-where tcp.contract_id = 'X20011907000631'
-and tcp.pay_status in (2,4)
-and tc.status not in (7,8)
+where 
+	tcp.contract_id = 'X20011907000631'
+	and tcp.pay_status in (2,4)  and tc.status not in (7,8)
 group by tcp.contract_id
 ```
 
 **array_join(*filter(array_agg(conditon),function),delimiter*)**
 
 ```sql
-select array_join(filter(array_agg(case when is_success_extend = 0 then tbk.extend_subject_name else null end),x -> x is not null),',')
+select 
+	array_join(filter(
+				array_agg(case when is_success_extend = 0 then tbk.extend_subject_name else null end),x -> x is not null
+						),',')
 ```
 
 <font color=#008000 >当需要加判断条件时,如果不加filter函数,用以下写法,字段最后可能会出现逗号</font>
 
 ```sql
-select array_join(array_agg(case when is_success_extend = 0 then  tbk.extend_subject_name end), ',')  extend_fail_subject_name
+select array_join(
+		array_agg(case when is_success_extend = 0 then tbk.extend_subject_name end), ',') extend_fail_subject_name
 ```
 
 **element_at(*split(string,delimiter),index*)**
@@ -108,7 +113,9 @@ select element_at(split('客户关系部,课程顾问部,江苏分公司,江苏�
 **去掉字符串末尾的逗号**
 
 ```sql
-select (case when substr('数学,英语,', -1) = ',' then substr('数学,英语,',1,length('数学,英语,')-1) end)  -- 数学,英语
+select (case 
+		when substr('数学,英语,', -1) = ',' 
+			then substr('数学,英语,',1,length('数学,英语,')-1) end)  -- 数学,英语
 ```
 
 
