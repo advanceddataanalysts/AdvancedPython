@@ -17,6 +17,7 @@
 * [GitTips](GitTips/README.md)
   * [GitCommon](GitTips/GitCommon.md) 
   * [QuicklyBuildGitBook](GitTips/QuicklyBuildGitBook.md)
+  * [GitObject](GitTips/GitObject.md)
 * [LinuxTips](LinuxTips/README.md)
   * [Alias](LinuxTips/LinuxAliases.md)
   * [ChapterOne](LinuxTips/LinuxChapterOne_SearchCommand.md)
