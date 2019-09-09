@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41377cbc-90b4-44ff-827f-25e241cc0069" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/utils/ML/data_suit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/ML/model_suit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/ML/parameter_suit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/ML/plot_suit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/../SUMMARY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/alarmTask/along_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/alarmTask/along_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/emailhelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/emailhelper.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +43,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ToolWindowTODO.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/utils" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/utils/ML" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -54,12 +59,12 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Desktop\AdvancedPython\DataAnalystHelper\src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Desktop\AdvancedPython\DataAnalystHelper\src\utils" />
       <recent name="E:\Desktop\AdvancedPython\DataAnalystHelper\src\templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Desktop\AdvancedPython\DataAnalystHelper\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -74,7 +79,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.app">
+  <component name="RunManager" selected="Python.along_test">
     <configuration name="along_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DataAnalystHelper" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -187,10 +192,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.along_test" />
         <item itemvalue="Python.app" />
         <item itemvalue="Python.timerhelper" />
         <item itemvalue="Python.verify_crontab" />
-        <item itemvalue="Python.along_test" />
         <item itemvalue="Python.sql_format" />
       </list>
     </recent_temporary>
@@ -208,7 +213,7 @@
       <workItem from="1563692494170" duration="16515000" />
       <workItem from="1566799250523" duration="23486000" />
       <workItem from="1567484590076" duration="1646000" />
-      <workItem from="1567660069055" duration="1830000" />
+      <workItem from="1567660069055" duration="3434000" />
     </task>
     <servers />
   </component>
@@ -242,7 +247,7 @@
     <SUITE FILE_PATH="coverage/DataAnalystHelper$test.coverage" NAME="test Coverage Results" MODIFIED="1566801891753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils" />
     <SUITE FILE_PATH="coverage/DataAnalystHelper$encryption.coverage" NAME="encryption Coverage Results" MODIFIED="1566815747649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils" />
     <SUITE FILE_PATH="coverage/DataAnalystHelper$sql_format.coverage" NAME="sql_format Coverage Results" MODIFIED="1566816695930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils" />
-    <SUITE FILE_PATH="coverage/DataAnalystHelper$along_test.coverage" NAME="along_test Coverage Results" MODIFIED="1566817629748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/alarmTask" />
+    <SUITE FILE_PATH="coverage/DataAnalystHelper$along_test.coverage" NAME="along_test Coverage Results" MODIFIED="1568016599722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/alarmTask" />
     <SUITE FILE_PATH="coverage/DataAnalystHelper$hflog.coverage" NAME="hflog Coverage Results" MODIFIED="1566811269684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils" />
     <SUITE FILE_PATH="coverage/DataAnalystHelper$get_source.coverage" NAME="get_source Coverage Results" MODIFIED="1566801378415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils" />
     <SUITE FILE_PATH="coverage/DataAnalystHelper$public_config.coverage" NAME="public_config Coverage Results" MODIFIED="1566801998170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/config" />
