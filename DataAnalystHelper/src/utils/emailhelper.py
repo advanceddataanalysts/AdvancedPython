@@ -12,6 +12,7 @@ import time
 import socket
 import smtplib
 import zipfile
+import warnings
 from email.header import Header
 from src.utils.encryption import Encryption
 from src.utils.to_io import to_io
@@ -24,6 +25,7 @@ from email.mime.multipart import MIMEMultipart
 from src.utils.stringhelper import StringHelper
 from email.mime.application import MIMEApplication
 from src.utils.rander_template import render_template
+warnings.filterwarnings("ignore")
 
 n = config.try_rerun_email_n
 sleep_time = config.try_rerun_email_sleep
@@ -189,7 +191,7 @@ class Attachment(object):
 
         else:
 
-            from ML import data_suit
+            from src.utils.ML.data_suit import data_suit
 
             if len(self.dfs) == 1:
                 xl_fileabstractname = data_suit.data_save_csv(df=self.dfs[0], csv_name=self.book_name)

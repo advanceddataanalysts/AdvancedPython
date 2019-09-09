@@ -13,7 +13,7 @@ from src.utils.prestohelper import PrestoHelper
 from src.config import config
 
 mysqlinstance_localhost = MysqlHelper(**config.along_localhost)
-prestoinstance = PrestoHelper(**config.hive_prosto)
+# prestoinstance = PrestoHelper(**config.hive_prosto)
 
 sql = '''
 select *  
@@ -26,7 +26,7 @@ print(data)
 
 title = 'test' + str(random.random())
 receivers = ["yanglong_yan@163.com"]
-message = EmailMessage(subject=title, receivers=receivers, dfs=data, sheets_name=["test"])
+message = EmailMessage(subject=title, receivers=receivers, dfs=data, sheets_name=["test"], save_type="zip")
 
 # mysqlinstance_localhost.execute(sql)
 
