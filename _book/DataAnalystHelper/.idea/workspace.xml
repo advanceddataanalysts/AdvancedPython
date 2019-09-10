@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41377cbc-90b4-44ff-827f-25e241cc0069" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/utils/ML/data_suit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/ML/model_suit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/ML/parameter_suit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/ML/plot_suit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/alarmTask/along_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/alarmTask/along_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/emailhelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/emailhelper.py" afterDir="false" />
-    </list>
+    <list default="true" id="41377cbc-90b4-44ff-827f-25e241cc0069" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +205,7 @@
       <workItem from="1563692494170" duration="16515000" />
       <workItem from="1566799250523" duration="23486000" />
       <workItem from="1567484590076" duration="1646000" />
-      <workItem from="1567660069055" duration="3434000" />
+      <workItem from="1567660069055" duration="3622000" />
     </task>
     <servers />
   </component>
