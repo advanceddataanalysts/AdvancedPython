@@ -25,6 +25,9 @@
   * [Alias](LinuxTips/LinuxAliases.md)
   * [ChapterOne](LinuxTips/LinuxChapterOne_SearchCommand.md)
   * [ChapterTwo](LinuxTips/LinuxChapterTwo_FileFolder.md)
+  * [ChapterThree](LinuxTips/LinuxChapterThree_AuthorityConfiguration.md)
+  * [Hadoop](LinuxTips/Hadoop/README.md)
+    * [初始化配置](LinuxTips/Hadoop/初始化配置.md)
 * [QuestionBank](QuestionBank/README.md)
   * [20190807](QuestionBank/20190807.md)
 
