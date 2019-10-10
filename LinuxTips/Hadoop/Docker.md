@@ -14,6 +14,7 @@
 3. docker run -p 3306:3306 --name along_mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql  #启动mysql服务并映射端口号为3306,启动name为along_mysql,设置初始密码为123456
 4. docker ps -a  #查看启动的服务,如果上一步报错,有可能是关闭了docker容器但是还未退出,STATUS为Exited
 	如果发现有关闭了容器但是还未退出的容器,使用 docker rm <CONTAINER_ID> 删除
+	--批量删除 docker container prune
     --批量删除 docker ps -a | sed '/^CONTAINER/d' | grep "Exited" | gawk '{cmd="docker rm "$1; system(cmd)}'
 5. 不建议直接进入docker容器内部修改内容,如果需要修改密码/CURD数据,使用宿主机/外部访问宿主机ip:3306端口操作!!!
 
