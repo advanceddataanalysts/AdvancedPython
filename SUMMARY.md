@@ -26,6 +26,7 @@
   * [ChapterOne](LinuxTips/LinuxChapterOne_SearchCommand.md)
   * [ChapterTwo](LinuxTips/LinuxChapterTwo_FileFolder.md)
   * [ChapterThree](LinuxTips/LinuxChapterThree_AuthorityConfiguration.md)
+  * [matplotlib包中文编码问题](LinuxTips/matplotlib包中文编码问题.md)
   * [Hadoop](LinuxTips/Hadoop/README.md)
     * [初始化配置](LinuxTips/Hadoop/搭建Hadoop.md)
     * [Docker](LinuxTips/Hadoop/Docker.md)
