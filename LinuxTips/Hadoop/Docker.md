@@ -46,3 +46,24 @@
 6. 使用Navicat 连接  192.168.112.131  root  123456
 ```
 
+## Docker部署mindoc(wiki)
+
+```python
+1. docker pull registry.cn-hangzhou.aliyuncs.com/mindoc/mindoc:v0.12  #使用阿里云拉取mindoc docker镜像
+2. mysql -h192.168.112.131 -uroot -p123456   #创建wiki所需数据库
+	(mysql)>CREATE DATABASE mindoc_db  
+3. docker run -p 8181:8181 -e MYSQL_PORT_3306_TCP_ADDR=192.168.112.131 -e MYSQL_PORT_3306_TCP_PORT=3306 -e MYSQL_INSTANCE_NAME=mindoc_db -e MYSQL_USERNAME=root -e MYSQL_PASSWORD=123456 -e httpport=8181 -d registry.cn-hangzhou.aliyuncs.com/mindoc/mindoc:v0.12
+    #启动mindoc
+DB_ADAPTER                  制定 DB
+MYSQL_PORT_3306_TCP_ADDR    MySQL地址
+MYSQL_PORT_3306_TCP_PORT    MySQL端口号
+MYSQL_INSTANCE_NAME         MySQL数据库名称
+MYSQL_USERNAME              MySQL账号
+MYSQL_PASSWORD              MySQL密码
+HTTP_PORT                   程序监听的端口号
+    
+4. 访问 192.168.112.131:8181
+```
+
+
+
