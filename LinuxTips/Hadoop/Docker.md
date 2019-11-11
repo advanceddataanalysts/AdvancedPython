@@ -25,7 +25,7 @@
 	service mysqld status  #查看状态
 	#如果centos上安装mariadbs数据库 删除yum remove mariadb*
 2. 停止docker上的mysql服务  docker stop mysql  / docker rm <CONTAINER_ID>
-	#因为宿主机上启动mysql服务也是用3306端口,如果不终端docker的mysql服务,宿主机上无法启动mysql并报错
+	#因为宿主机上启动mysql服务也是用3306端口,如果不中断docker的mysql服务,宿主机上无法启动mysql并报错
 3. 宿主机上登陆mysql
 	cat /var/log/mysqld.log | grep password  --获取安装时的用户密码,假设为-dz%-KLw0fe
 	mysql -uroot -p   --> -dz%-KLw0fe
