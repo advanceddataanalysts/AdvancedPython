@@ -1,3 +1,22 @@
+## Linux中生成的图片中文编码问题
+
+```shell
+# 全局安装中文字体
+yum -y groupinstall chinese-support
+yum -y groupinstall mkfontscale
+
+# 手动刷新缓存
+mkfontscale
+mkfontdir
+fc-cache
+```
+
+
+
+
+
+## Matplotlib中文编码问题
+
 #### 在Linux上运行matplotlib时会因中文编码问题造成乱码 ,解决方案为下载一个字体包并将其导入到Linux上的matplotlib中
 
 1. 下载*arial unicode ms.ttf* 的字体
