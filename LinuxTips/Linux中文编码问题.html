@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>matplotlib包中文编码问题 · PythonShare</title>
+        <title>Linux中文编码问题 · PythonShare</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -513,12 +513,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.7" data-path="matplotlib包中文编码问题.html">
+        <li class="chapter active" data-level="1.6.7" data-path="Linux中文编码问题.html">
             
-                <a href="matplotlib包中文编码问题.html">
+                <a href="Linux中文编码问题.html">
             
                     
-                    matplotlib包中文编码问题
+                    Linux中文编码问题
             
                 </a>
             
@@ -638,7 +638,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >matplotlib包中文编码问题</a>
+        <a href=".." >Linux中文编码问题</a>
     </h1>
 </div>
 
@@ -653,7 +653,18 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h4 id="&#x5728;linux&#x4E0A;&#x8FD0;&#x884C;matplotlib&#x65F6;&#x4F1A;&#x56E0;&#x4E2D;&#x6587;&#x7F16;&#x7801;&#x95EE;&#x9898;&#x9020;&#x6210;&#x4E71;&#x7801;-&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E3A;&#x4E0B;&#x8F7D;&#x4E00;&#x4E2A;&#x5B57;&#x4F53;&#x5305;&#x5E76;&#x5C06;&#x5176;&#x5BFC;&#x5165;&#x5230;linux&#x4E0A;&#x7684;matplotlib&#x4E2D;">&#x5728;Linux&#x4E0A;&#x8FD0;&#x884C;matplotlib&#x65F6;&#x4F1A;&#x56E0;&#x4E2D;&#x6587;&#x7F16;&#x7801;&#x95EE;&#x9898;&#x9020;&#x6210;&#x4E71;&#x7801; ,&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E3A;&#x4E0B;&#x8F7D;&#x4E00;&#x4E2A;&#x5B57;&#x4F53;&#x5305;&#x5E76;&#x5C06;&#x5176;&#x5BFC;&#x5165;&#x5230;Linux&#x4E0A;&#x7684;matplotlib&#x4E2D;</h4>
+                                <h2 id="linux&#x4E2D;&#x751F;&#x6210;&#x7684;&#x56FE;&#x7247;&#x4E2D;&#x6587;&#x7F16;&#x7801;&#x95EE;&#x9898;">Linux&#x4E2D;&#x751F;&#x6210;&#x7684;&#x56FE;&#x7247;&#x4E2D;&#x6587;&#x7F16;&#x7801;&#x95EE;&#x9898;</h2>
+<pre><code class="lang-shell"># &#x5168;&#x5C40;&#x5B89;&#x88C5;&#x4E2D;&#x6587;&#x5B57;&#x4F53;
+yum -y groupinstall chinese-support
+yum -y groupinstall mkfontscale
+
+# &#x624B;&#x52A8;&#x5237;&#x65B0;&#x7F13;&#x5B58;
+mkfontscale
+mkfontdir
+fc-cache
+</code></pre>
+<h2 id="matplotlib&#x4E2D;&#x6587;&#x7F16;&#x7801;&#x95EE;&#x9898;">Matplotlib&#x4E2D;&#x6587;&#x7F16;&#x7801;&#x95EE;&#x9898;</h2>
+<h4 id="&#x5728;linux&#x4E0A;&#x8FD0;&#x884C;matplotlib&#x65F6;&#x4F1A;&#x56E0;&#x4E2D;&#x6587;&#x7F16;&#x7801;&#x95EE;&#x9898;&#x9020;&#x6210;&#x4E71;&#x7801;-&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E3A;&#x4E0B;&#x8F7D;&#x4E00;&#x4E2A;&#x5B57;&#x4F53;&#x5305;&#x5E76;&#x5C06;&#x5176;&#x5BFC;&#x5165;&#x5230;linux&#x4E0A;&#x7684;matplotlib&#x4E2D;">&#x5728;Linux&#x4E0A;&#x8FD0;&#x884C;matplotlib&#x65F6;&#x4F1A;&#x56E0;&#x4E2D;&#x6587;&#x7F16;&#x7801;&#x95EE;&#x9898;&#x9020;&#x6210;&#x4E71;&#x7801; ,&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E3A;&#x4E0B;&#x8F7D;&#x4E00;&#x4E2A;&#x5B57;&#x4F53;&#x5305;&#x5E76;&#x5C06;&#x5176;&#x5BFC;&#x5165;&#x5230;Linux&#x4E0A;&#x7684;matplotlib&#x4E2D;</h4>
 <ol>
 <li><p>&#x4E0B;&#x8F7D;<em>arial unicode ms.ttf</em> &#x7684;&#x5B57;&#x4F53;</p>
 </li>
@@ -720,7 +731,7 @@ plt.rcParams[&apos;font.family&apos;] = [&apos;Arial Unicode MS&apos;, &apos;san
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"matplotlib包中文编码问题","level":"1.6.7","depth":2,"next":{"title":"Hadoop","level":"1.6.8","depth":2,"path":"LinuxTips/Hadoop/README.md","ref":"LinuxTips/Hadoop/README.md","articles":[{"title":"初始化配置","level":"1.6.8.1","depth":3,"path":"LinuxTips/Hadoop/搭建Hadoop.md","ref":"LinuxTips/Hadoop/搭建Hadoop.md","articles":[]},{"title":"Docker","level":"1.6.8.2","depth":3,"path":"LinuxTips/Hadoop/Docker.md","ref":"LinuxTips/Hadoop/Docker.md","articles":[]}]},"previous":{"title":"ssh免密登陆","level":"1.6.6","depth":2,"path":"LinuxTips/ssh免密登陆.md","ref":"LinuxTips/ssh免密登陆.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"livereload":{},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"LinuxTips/matplotlib包中文编码问题.md","mtime":"2019-11-09T08:32:31.758Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-11T07:55:50.075Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Linux中文编码问题","level":"1.6.7","depth":2,"next":{"title":"Hadoop","level":"1.6.8","depth":2,"path":"LinuxTips/Hadoop/README.md","ref":"LinuxTips/Hadoop/README.md","articles":[{"title":"初始化配置","level":"1.6.8.1","depth":3,"path":"LinuxTips/Hadoop/搭建Hadoop.md","ref":"LinuxTips/Hadoop/搭建Hadoop.md","articles":[]},{"title":"Docker","level":"1.6.8.2","depth":3,"path":"LinuxTips/Hadoop/Docker.md","ref":"LinuxTips/Hadoop/Docker.md","articles":[]}]},"previous":{"title":"ssh免密登陆","level":"1.6.6","depth":2,"path":"LinuxTips/ssh免密登陆.md","ref":"LinuxTips/ssh免密登陆.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"livereload":{},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"LinuxTips/Linux中文编码问题.md","mtime":"2019-12-17T15:56:18.762Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-21T17:29:43.533Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
