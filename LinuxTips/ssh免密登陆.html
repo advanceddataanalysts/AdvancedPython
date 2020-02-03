@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>LinuxTips · PythonShare</title>
+        <title>ssh免密登陆 · PythonShare</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -77,10 +77,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="LinuxAliases.html" />
+    <link rel="next" href="Linux中文编码问题.html" />
     
     
-    <link rel="prev" href="../GitTips/GitObject.html" />
+    <link rel="prev" href="install_soft.html" />
     
 
     </head>
@@ -421,7 +421,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6" data-path="./">
+        <li class="chapter " data-level="1.6" data-path="./">
             
                 <a href="./">
             
@@ -500,7 +500,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.6" data-path="ssh免密登陆.html">
+        <li class="chapter active" data-level="1.6.6" data-path="ssh免密登陆.html">
             
                 <a href="ssh免密登陆.html">
             
@@ -683,7 +683,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >LinuxTips</a>
+        <a href=".." >ssh免密登陆</a>
     </h1>
 </div>
 
@@ -698,7 +698,26 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="linuxtips">LinuxTips</h1>
+                                <h1 id="ssh&#x914D;&#x7F6E;&#x514D;&#x5BC6;&#x767B;&#x9646;">ssh&#x914D;&#x7F6E;&#x514D;&#x5BC6;&#x767B;&#x9646;</h1>
+<pre><code class="lang-shell">&#x5047;&#x8BBE;&#x4E24;&#x53F0;&#x673A;&#x5668;, master(root@192.168.11.110)  slave1(root@192.168.11.111)
+
+&#x5728;&#x4E24;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x5206;&#x522B;&#x914D;&#x7F6E;host&#x6620;&#x5C04;:
+vim /etc/hosts
+    192.168.11.110    master
+    192.168.11.111    slave1
+
+[root@master ~]ssh-keygen  #&#x751F;&#x6210;&#x516C;&#x94A5;&#x548C;&#x79C1;&#x94A5;
+[root@master ~]scp  /root/.ssh/id_rsa.pub  root@192.168.11.111:/home #&#x516C;&#x94A5;&#x4F20;&#x5230;slave1&#x673A;&#x5668;&#x4E0A;
+              &#x8F93;&#x5165;slave1&#x673A;&#x5668;&#x4E0A;root&#x7528;&#x6237;&#x7684;&#x5BC6;&#x7801;:
+
+[root@slave1 ~]cat  /home/id_rsa.pub  &gt;&gt; /root/.ssh/authorized_keys #slave1&#x4FDD;&#x5B58;master&#x516C;&#x94A5;
+[root@slave1 ~]ssh  master  # &#x9A8C;&#x8BC1;&#x514D;&#x5BC6;&#x767B;&#x9646;
+
+&#x540C;&#x6837;&#x7684;&#x64CD;&#x4F5C;&#x914D;&#x7F6E;master&#x514D;&#x5BC6;&#x767B;&#x9646;slave1
+1. A&#x673A;&#x5668;&#x4E0A;&#x751F;&#x6210;&#x516C;&#x94A5;&#x548C;&#x79C1;&#x94A5;
+2. &#x5C06;&#x516C;&#x94A5;&#x4ECE;A&#x4F20;&#x5230;B
+3. B&#x4FDD;&#x5B58;A&#x7684;&#x516C;&#x94A5;&#x4FE1;&#x606F;&#x5230; /root/.ssh/authorized_keys &#x6587;&#x4EF6;&#x4E2D;
+</code></pre>
 
                                 
                                 </section>
@@ -726,12 +745,12 @@
 
             
                 
-                <a href="../GitTips/GitObject.html" class="navigation navigation-prev " aria-label="Previous page: GitObject">
+                <a href="install_soft.html" class="navigation navigation-prev " aria-label="Previous page: install_soft">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="LinuxAliases.html" class="navigation navigation-next " aria-label="Next page: Alias">
+                <a href="Linux中文编码问题.html" class="navigation navigation-next " aria-label="Next page: Linux中文编码问题">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -742,7 +761,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LinuxTips","level":"1.6","depth":1,"next":{"title":"Alias","level":"1.6.1","depth":2,"path":"LinuxTips/LinuxAliases.md","ref":"LinuxTips/LinuxAliases.md","articles":[]},"previous":{"title":"GitObject","level":"1.5.3","depth":2,"path":"GitTips/GitObject.md","ref":"GitTips/GitObject.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"livereload":{},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"LinuxTips/README.md","mtime":"2020-02-03T10:28:22.258Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-03T10:51:06.253Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ssh免密登陆","level":"1.6.6","depth":2,"next":{"title":"Linux中文编码问题","level":"1.6.7","depth":2,"path":"LinuxTips/Linux中文编码问题.md","ref":"LinuxTips/Linux中文编码问题.md","articles":[]},"previous":{"title":"install_soft","level":"1.6.5","depth":2,"path":"LinuxTips/install_soft.md","ref":"LinuxTips/install_soft.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"livereload":{},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"LinuxTips/ssh免密登陆.md","mtime":"2019-12-03T13:42:03.476Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-03T10:51:06.253Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
