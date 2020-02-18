@@ -1,6 +1,18 @@
 # Linux--ChapterOne
 
+## 查看当前服务器的配置
+
+```shell
+# 查看cpu物理核数
+cat /proc/cpuinfo| grep "cpu cores"| uniq
+# 查看cpu逻辑核数
+cat /proc/cpuinfo| grep "processor"| wc -l
+# 查看内存
+free -h
+```
+
 ## 环境变量
+
 ```shell
 echo $PATH
 ```

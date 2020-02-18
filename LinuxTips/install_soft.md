@@ -6,7 +6,8 @@
 # 安装编译相关工具
 yum -y groupinstall "Development tools"
 yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel
-
+# 安装sasl报错时先安装以下依赖
+yum -y install gcc-c++ python-devel.x86_64 cyrus-sasl-devel.x86_64
 # 下载安装包并解压
 cd /home/service
 wget https://www.python.org/ftp/python/3.7.5/Python-3.7.5.tar.xz
@@ -25,9 +26,25 @@ ln -s /usr/local/python3/bin/pip3 /usr/local/bin/pip3
 # 验证是否成功
 python3 -V
 pip3 -V
+
+# 指定pip源
+vim ~/.pip/pip.conf
+
+[global]
+index-url=http://mirrors.aliyun.com/pypi/simple/
+
+[install]
+trusted-host=mirrors.aliyun.com
 ```
 
+## 卸载python3
 
+```shell
+# 卸载python3
+rpm -qa|grep python3|xargs rpm -ev --allmatches --nodeps
+# 卸载所有残余文件
+whereis python3 |xargs rm -frv
+```
 
 ## python3.x import ssl 报错
 
@@ -55,7 +72,7 @@ ldconfig -v | grep ssl
 
 # 重新编译python
 cd /home/service/Python-3.7.5
-./configure --prefix=/usr/local/python3  --with-openssl=/usr/local/openssl-1.1.1c
+./configure --prefix=/usr/local/python3  --with-openssl=/usr/local/openssl-1.1.1a
 make && make install
 ln -s /usr/local/python3/bin/python3 /usr/local/bin/python3
 ln -s /usr/local/python3/bin/pip3 /usr/local/bin/pip3

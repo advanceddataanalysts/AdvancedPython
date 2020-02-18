@@ -75,6 +75,8 @@ $ vim .gitignore(编辑需要忽略的文件,支持正则)
 14. 删除git全局配置项
 $ git config --global --unset remote.origin.url
 
+15. 设置git不需要输入密码
+$ git config --global credential.helper store
 ```
 ## git命令
 
