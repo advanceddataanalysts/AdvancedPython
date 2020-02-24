@@ -40,18 +40,15 @@ index-url=http://mirrors.aliyun.com/pypi/simple/
 
 [install]
 trusted-host=mirrors.aliyun.com
-```
 
-## 卸载python3
 
-```shell
 # 卸载python3
 rpm -qa|grep python3|xargs rpm -ev --allmatches --nodeps
 # 卸载所有残余文件
 whereis python3 |xargs rm -frv
 ```
 
-## python3.x import ssl 报错
+### python3.x import ssl 报错
 
 ```shell
 -- 报错原因为: centos使用的openssl最高级为1.1.0, 但是python3.x使用的openssl为1.1.x之上的版本
@@ -86,6 +83,28 @@ ln -s /usr/local/python3/bin/pip3 /usr/local/bin/pip3
 python
 >>>import ssl
 不报错就成功了
+```
+
+###  python3手动安装插件 wkhtmltopdf,wkhtmltoimage
+
+```shell
+官网下载 https://wkhtmltopdf.org/downloads.html
+# 查看当前服务器的发行版本
+1. lsb_release -a   2. cat /etc/centos-release  3. cat /etc/issue
+
+# 下载包文件, 位置 /home/service
+wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+
+cd /home/service
+tar -xvf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+
+
+cp  /home/service/wkhtmltox/bin/wkhtmltopdf  /usr/local/bin
+cp  /home/service/wkhtmltox/bin/wkhtmltoimage  /usr/local/bin
+
+# 测试是否成功
+wkhtmltopdf --version
+# wkhtmltopdf 0.12.4 (with patched qt)  即成功
 ```
 
 
