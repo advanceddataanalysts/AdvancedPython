@@ -1,6 +1,6 @@
 # 搭建Hadoop
 
-## 搭建前准备(只针对Windows用户)
+## 搭建前准备(Windows需要安装虚拟机)
 
 ```python
 1. VMware Workstation Pro(最新版)

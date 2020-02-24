@@ -26,7 +26,7 @@
     * [ChapterOne](LinuxTips/LinuxChapterOne_SearchCommand.md)
     * [ChapterTwo](LinuxTips/LinuxChapterTwo_FileFolder.md)
     * [ChapterThree](LinuxTips/LinuxChapterThree_AuthorityConfiguration.md)
-    * [install_soft](LinuxTips/install_soft.md)
+    * [Soft_Install](LinuxTips/Soft_Install.md)
     * [ssh免密登陆](LinuxTips/ssh免密登陆.md)
     * [Linux中文编码问题](LinuxTips/Linux中文编码问题.md)
     * [PySpark](LinuxTips/PySpark/README.md)
