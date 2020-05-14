@@ -39,7 +39,7 @@ $ git reflog
 
 3.回退版本(soft, mixed, hard, keep)
 $ git reset --hard <指定回退到版本对象数的id标识>
-$ git reset --hard <Head~(n)往前推回退几个版本>
+$ git reset --hard <HEAD~(n)往前推回退几个版本>
 
 5.创建dev分支(刚创建时dev分支和master分支的东西是一样的)
 $ git branch dev

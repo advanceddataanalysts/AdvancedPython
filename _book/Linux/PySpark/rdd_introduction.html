@@ -1,0 +1,921 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>RDD介绍 · PythonShare</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="https://github.com/advanceddataanalysts/AdvancedPython">
+        <meta name="identifier" content="null" scheme="ISBN">
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Hadoop/" />
+    
+    
+    <link rel="prev" href="pyspark_introduction.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/advanceddataanalysts/AdvancedPython" target="_blank" class="custom-link">Project GitHub</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../Databases/">
+            
+                <a href="../../Databases/">
+            
+                    
+                    Databases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../Databases/Presto/">
+            
+                <a href="../../Databases/Presto/">
+            
+                    
+                    Presto
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../Databases/Presto/Presto简介&时间函数.html">
+            
+                <a href="../../Databases/Presto/Presto简介&时间函数.html">
+            
+                    
+                    Presto简介&时间函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../../Databases/Presto/Presto常用函数.html">
+            
+                <a href="../../Databases/Presto/Presto常用函数.html">
+            
+                    
+                    Presto常用函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../../Databases/Presto/Presto数组&字符串函数.html">
+            
+                <a href="../../Databases/Presto/Presto数组&字符串函数.html">
+            
+                    
+                    Presto数组&字符串函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../DataAnalystHelper/">
+            
+                <a href="../../DataAnalystHelper/">
+            
+                    
+                    DataAnalystHelper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../PythonShare/">
+            
+                <a href="../../PythonShare/">
+            
+                    
+                    PythonShare
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../PythonShare/PythonTips/">
+            
+                <a href="../../PythonShare/PythonTips/">
+            
+                    
+                    PythonTips
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../../PythonShare/PythonTips/动态执行代码.html">
+            
+                <a href="../../PythonShare/PythonTips/动态执行代码.html">
+            
+                    
+                    动态执行代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../../PythonShare/PythonTips/正则替换非法字符.html">
+            
+                <a href="../../PythonShare/PythonTips/正则替换非法字符.html">
+            
+                    
+                    正则替换非法字符
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../PythonShare/Dictionary.html">
+            
+                <a href="../../PythonShare/Dictionary.html">
+            
+                    
+                    Dictionary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../PythonShare/DataStructure.html">
+            
+                <a href="../../PythonShare/DataStructure.html">
+            
+                    
+                    DataStructure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../PythonShare/Regex.html">
+            
+                <a href="../../PythonShare/Regex.html">
+            
+                    
+                    Regex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../PythonShare/Numbers&Datatime.html">
+            
+                <a href="../../PythonShare/Numbers&Datatime.html">
+            
+                    
+                    Numbers&Datatime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../PythonShare/IO&File.html">
+            
+                <a href="../../PythonShare/IO&File.html">
+            
+                    
+                    IO&File
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../PythonShare/Function.html">
+            
+                <a href="../../PythonShare/Function.html">
+            
+                    
+                    Function
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../GitTips/">
+            
+                <a href="../../GitTips/">
+            
+                    
+                    GitTips
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../GitTips/GitCommon.html">
+            
+                <a href="../../GitTips/GitCommon.html">
+            
+                    
+                    GitCommon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../GitTips/QuicklyBuildGitBook.html">
+            
+                <a href="../../GitTips/QuicklyBuildGitBook.html">
+            
+                    
+                    QuicklyBuildGitBook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../GitTips/GitObject.html">
+            
+                <a href="../../GitTips/GitObject.html">
+            
+                    
+                    GitObject
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../SoftInstall/">
+            
+                <a href="../SoftInstall/">
+            
+                    
+                    SoftInstall
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../SoftInstall/python3.html">
+            
+                <a href="../SoftInstall/python3.html">
+            
+                    
+                    python3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../SoftInstall/xxl-job.html">
+            
+                <a href="../SoftInstall/xxl-job.html">
+            
+                    
+                    xxl-job
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../SoftInstall/git.html">
+            
+                <a href="../SoftInstall/git.html">
+            
+                    
+                    git
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../LinuxAliases.html">
+            
+                <a href="../LinuxAliases.html">
+            
+                    
+                    Alias
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../LinuxChapterOne_SearchCommand.html">
+            
+                <a href="../LinuxChapterOne_SearchCommand.html">
+            
+                    
+                    ChapterOne
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../LinuxChapterTwo_FileFolder.html">
+            
+                <a href="../LinuxChapterTwo_FileFolder.html">
+            
+                    
+                    ChapterTwo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../LinuxChapterThree_AuthorityConfiguration.html">
+            
+                <a href="../LinuxChapterThree_AuthorityConfiguration.html">
+            
+                    
+                    ChapterThree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../LinuxChapterFour_JobSwith.html">
+            
+                <a href="../LinuxChapterFour_JobSwith.html">
+            
+                    
+                    ChapterFour
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../ssh免密登陆.html">
+            
+                <a href="../ssh免密登陆.html">
+            
+                    
+                    ssh免密登陆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../Linux中文编码问题.html">
+            
+                <a href="../Linux中文编码问题.html">
+            
+                    
+                    Linux中文编码问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    PySpark
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.9.1" data-path="pyspark_introduction.html">
+            
+                <a href="pyspark_introduction.html">
+            
+                    
+                    PySpark简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.9.2" data-path="rdd_introduction.html">
+            
+                <a href="rdd_introduction.html">
+            
+                    
+                    RDD介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../Hadoop/">
+            
+                <a href="../Hadoop/">
+            
+                    
+                    Hadoop
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.10.1" data-path="../Hadoop/搭建Hadoop.html">
+            
+                <a href="../Hadoop/搭建Hadoop.html">
+            
+                    
+                    初始化配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10.2" data-path="../Hadoop/Docker.html">
+            
+                <a href="../Hadoop/Docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../QuestionBank/">
+            
+                <a href="../../QuestionBank/">
+            
+                    
+                    QuestionBank
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../QuestionBank/20190807.html">
+            
+                <a href="../../QuestionBank/20190807.html">
+            
+                    
+                    20190807
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >RDD介绍</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="rdd">RDD</h1>
+<p>Resilient Distributed DataSet, &#x5F39;&#x6027;&#x5F0F;&#x5206;&#x5E03;&#x6570;&#x636E;&#x96C6;.</p>
+<p>spark&#x4E2D;&#x6700;&#x57FA;&#x672C;&#x7684;&#x6570;&#x636E;&#x62BD;&#x8C61;</p>
+<h3 id="rdd&#x4E09;&#x5927;&#x7279;&#x6027;---&#x5206;&#x533A;-&#x4E0D;&#x53EF;&#x53D8;-&#x5E76;&#x884C;&#x64CD;&#x4F5C;">RDD&#x4E09;&#x5927;&#x7279;&#x6027; :  &#x5206;&#x533A;, &#x4E0D;&#x53EF;&#x53D8;, &#x5E76;&#x884C;&#x64CD;&#x4F5C;</h3>
+<h4 id="&#x5206;&#x533A;">&#x5206;&#x533A;</h4>
+<p>&#x6BCF;&#x4E00;&#x4E2A;RDD&#x5305;&#x542B;&#x7684;&#x6570;&#x636E;&#x88AB;&#x5B58;&#x50A8;&#x5728;&#x7CFB;&#x7EDF;&#x7684;&#x4E0D;&#x540C;&#x8282;&#x70B9;&#x4E0A;, RDD&#x53EA;&#x662F;&#x62BD;&#x8C61;&#x610F;&#x4E49;&#x7684;&#x6570;&#x636E;&#x96C6;&#x5408;, &#x5206;&#x533A;&#x5185;&#x90E8;&#x4E0D;&#x5B58;&#x50A8;&#x5B9E;&#x9645;&#x7684;&#x6570;&#x636E;, &#x53EA;&#x5B58;&#x50A8;&#x5B83;&#x5728;&#x6539;RDD&#x4E2D;&#x7684;index, &#x901A;&#x8FC7;RDD&#x7684;id&#x548C;&#x5206;&#x533A;&#x7684;index&#x53EF;&#x4EE5;&#x552F;&#x4E00;&#x786E;&#x5B9A;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x5757;, &#x7136;&#x540E;&#x901A;&#x8FC7;&#x5E95;&#x5C42;&#x63A5;&#x53E3;&#x63D0;&#x53D6;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5904;&#x7406;.</p>
+<p>&#x5728;&#x96C6;&#x7FA4;&#x4E2D;, &#x5404;&#x4E2A;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x6570;&#x636E;&#x5757;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x5B58;&#x50A8;&#x5728;&#x5185;&#x5B58;&#x4E2D;, &#x53EA;&#x6709;&#x5185;&#x5B58;&#x6CA1;&#x6709;&#x7A7A;&#x95F4;&#x65F6;&#x624D;&#x4F1A;&#x653E;&#x5230;&#x786C;&#x76D8;&#x5B58;&#x50A8;, &#x8FD9;&#x79CD;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#x6700;&#x5927;&#x5316;&#x7684;&#x51CF;&#x5C11;&#x4E86;&#x78C1;&#x76D8;IO&#x7684;&#x5F00;&#x9500;</p>
+<blockquote>
+<p>&#x903B;&#x8F91;&#x4E0A;&#x53EF;&#x4EE5;&#x5C06;RDD&#x7406;&#x89E3;&#x6210;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;, &#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x5C31;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x5206;&#x533A;(partition)</p>
+<p>&#x7269;&#x7406;&#x5B58;&#x50A8;&#x4E2D;,&#x6BCF;&#x4E2A;&#x5206;&#x533A;&#x6307;&#x5411;&#x4E00;&#x4E2A;&#x5B58;&#x50A8;&#x5728;&#x5185;&#x5B58;&#x6216;&#x786C;&#x76D8;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5757;(block)</p>
+</blockquote>
+<h4 id="&#x4E0D;&#x53EF;&#x53D8;">&#x4E0D;&#x53EF;&#x53D8;</h4>
+<p>&#x6BCF;&#x4E2A;RDD <strong>&#x4EC5;&#x53EF;&#x8BFB;</strong>, &#x5176;&#x6240;&#x5305;&#x542B;&#x7684;&#x5206;&#x533A;&#x4FE1;&#x606F; <strong>&#x4E0D;&#x53EF;&#x53D8;</strong></p>
+<p>&#x53EA;&#x6709;&#x5BF9;&#x73B0;&#x6709;&#x7684;RDD&#x8FDB;&#x884C; Transformation(&#x8F6C;&#x5316;)&#x64CD;&#x4F5C;, &#x624D;&#x80FD;&#x5F97;&#x5230;&#x65B0;&#x7684;RDD, &#x7136;&#x540E;&#x7ECF;&#x8FC7;&#x591A;&#x6B21;&#x8BA1;&#x7B97;&#x8FED;&#x4EE3;&#x5F97;&#x5230;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#x7ED3;&#x679C;</p>
+<blockquote>
+<p>&#x4E0D;&#x53EF;&#x53D8;&#x7279;&#x6027;&#x7684;&#x597D;&#x5904;: </p>
+<ol>
+<li>&#x8282;&#x7701;&#x5185;&#x5B58;&#x7A7A;&#x95F4;,&#x63D0;&#x9AD8;&#x8BA1;&#x7B97;&#x6548;&#x7387;, &#x5728;RDD&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x4E2D;, &#x4E0D;&#x9700;&#x8981;&#x7ACB;&#x5373;&#x53BB;&#x5B58;&#x50A8;&#x8BA1;&#x7B97;&#x51FA;&#x7684;&#x6570;&#x636E;, &#x53EA;&#x8981;&#x8BB0;&#x5F55;&#x6BCF;&#x4E2A;RDD&#x662F;&#x7ECF;&#x8FC7;&#x54EA;&#x4E9B;&#x8F6C;&#x5316;&#x64CD;&#x4F5C;&#x5F97;&#x5230;&#x7684;, &#x53EA;&#x8BB0;&#x5F55;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x5373;&#x53EF;</li>
+<li>&#x9519;&#x8BEF;&#x6062;&#x590D;&#x66F4;&#x5BB9;&#x6613;, &#x5982;&#x679C;&#x5728;&#x8BA1;&#x7B97;&#x4E2D;&#x8282;&#x70B9;&#x53D1;&#x751F;&#x6545;&#x969C;, &#x6570;&#x636E;&#x4E22;&#x5931;, &#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F9D;&#x636E;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x4ECE;&#x4E0A;&#x4E00;&#x6B65;&#x53BB;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;RDD, &#x5B9E;&#x73B0; <em>&#x5F39;&#x6027;</em></li>
+</ol>
+</blockquote>
+<h4 id="&#x5E76;&#x884C;&#x64CD;&#x4F5C;">&#x5E76;&#x884C;&#x64CD;&#x4F5C;</h4>
+<p>&#x4E0D;&#x540C;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x5206;&#x522B;&#x88AB;&#x5904;&#x7406;, &#x5929;&#x7136;&#x652F;&#x6301;&#x5E76;&#x884C;&#x5904;&#x7406;</p>
+<h3 id="rdd&#x7684;&#x7ED3;&#x6784;">RDD&#x7684;&#x7ED3;&#x6784;</h3>
+<p><img src="../../image/RDD&#x7ED3;&#x6784;&#x56FE;.png" alt="RDD&#x7ED3;&#x6784;&#x56FE;"></p>
+<h4 id="partitions">Partitions</h4>
+<p>Partitions&#x4EE3;&#x8868;RDD&#x4E2D;&#x6570;&#x636E;&#x7684;&#x903B;&#x8F91;&#x7ED3;&#x679C;, &#x6BCF;&#x4E2A;Partition&#x4F1A;&#x6620;&#x5C04;&#x5230;&#x5BF9;&#x5E94;&#x8282;&#x70B9;&#x5185;&#x5B58;&#x6216;&#x786C;&#x76D8;&#x4E0A;&#x7684;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5757;</p>
+<h4 id="sparkcontext">SparkContext</h4>
+<p>SparkContext&#x662F;&#x6240;&#x6709;Spark&#x529F;&#x80FD;&#x7684;&#x5165;&#x53E3;, &#x4EE3;&#x8868;&#x4E0E;Spark&#x8282;&#x70B9;&#x7684;&#x8FDE;&#x63A5;, &#x53EF;&#x4EE5;&#x7528;&#x6765;&#x521B;&#x5EFA;RDD&#x5BF9;&#x8C61;&#x4EE5;&#x53CA;&#x5728;&#x8282;&#x70B9;&#x4E2D;&#x7684;&#x5E7F;&#x64AD;&#x53D8;&#x91CF;&#x7B49;&#x7B49;. &#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x53EA;&#x6709;&#x4E00;&#x4E2A;SparkContext</p>
+<h4 id="sparkconf">SparkConf</h4>
+<p>SparkConf&#x662F;&#x4E00;&#x4E9B;&#x914D;&#x7F6E;&#x4FE1;&#x606F;</p>
+<h4 id="partitioner">Partitioner</h4>
+<p>Partitioner &#x51B3;&#x5B9A;&#x4E86; RDD &#x7684;&#x5206;&#x533A;&#x65B9;&#x5F0F;, &#x76EE;&#x524D;&#x4E24;&#x79CD;&#x4E3B;&#x6D41;&#x7684;&#x5206;&#x533A;&#x65B9;&#x5F0F;: Hash partioner &#x548C; Range partitioner.</p>
+<p>Hash &#x5C31;&#x662F;&#x5BF9;&#x6570;&#x636E;&#x7684; Key &#x8FDB;&#x884C;&#x6563;&#x5217;&#x5206;&#x5E03;, Rang &#x662F;&#x6309;&#x7167; Key &#x7684;&#x6392;&#x5E8F;&#x8FDB;&#x884C;&#x7684;&#x5206;&#x533A;. &#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49; Partitioner</p>
+<h4 id="dependencies">Dependencies</h4>
+<p>Dependencies &#x5373;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;, &#x8BB0;&#x5F55;&#x4E86;&#x8BE5; RDD &#x7684;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;, &#x5373;&#x8FD9;&#x4E2A; RDD &#x662F;&#x901A;&#x8FC7;&#x54EA;&#x4E2A; RDD &#x7ECF;&#x8FC7;&#x600E;&#x4E48;&#x6837;&#x7684;&#x8F6C;&#x5316;&#x64CD;&#x4F5C;&#x5F97;&#x5230;&#x7684;, &#x6839;&#x636E;RDD&#x5206;&#x533A;&#x7684;&#x8BA1;&#x7B97;&#x65B9;&#x5F0F;, &#x5206;&#x4E3A;&#x7A84;&#x4F9D;&#x8D56;&#x548C;&#x5BBD;&#x4F9D;&#x8D56;</p>
+<p>&#x7A84;&#x4F9D;&#x8D56;: &#x7236;RDD&#x7684;&#x5206;&#x533A;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#x5230;&#x5B50;RDD&#x7684;&#x5206;&#x533A;, <strong>&#x72EC;&#x751F;</strong></p>
+<p><img src="../../image/RDD&#x7A84;&#x4F9D;&#x8D56;.jpg" alt="RDD&#x7A84;&#x4F9D;&#x8D56;"></p>
+<p>&#x5BBD;&#x4F9D;&#x8D56;: &#x7236;RDD&#x7684;&#x5206;&#x533A;&#x88AB;&#x591A;&#x4E2A;&#x5B50;RDD&#x5206;&#x533A;&#x4F7F;&#x7528;, <strong>&#x8D85;&#x751F;</strong></p>
+<p><img src="../../image/RDD&#x5BBD;&#x4F9D;&#x8D56;.jpg" alt="RDD&#x5BBD;&#x4F9D;&#x8D56;"></p>
+<blockquote>
+<p>&#x5BBD;&#x7A84;&#x4F9D;&#x8D56;&#x7684;&#x4E0D;&#x540C;&#x70B9;:</p>
+<ol>
+<li>&#x7A84;&#x4F9D;&#x8D56;&#x652F;&#x6301;&#x7EDF;&#x4E00;&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x94FE;&#x5F0F;&#x64CD;&#x4F5C;&#x6267;&#x884C;&#x591A;&#x6761;&#x6307;&#x4EE4;, &#x65E0;&#x9700;&#x7B49;&#x5F85;&#x5176;&#x4ED6;&#x7236;RDD&#x7684;&#x5206;&#x533A;&#x64CD;&#x4F5C;; &#x5BBD;&#x4F9D;&#x8D56;&#x9700;&#x8981;&#x6240;&#x6709;&#x7236;&#x5206;&#x533A;&#x90FD;&#x662F;&#x53EF;&#x7528;&#x7684;</li>
+<li>&#x7A84;&#x4F9D;&#x8D56;&#x5931;&#x8D25;&#x6062;&#x590D;&#x66F4;&#x6709;&#x6548;, &#x53EA;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x4E22;&#x5931;&#x7684;&#x7236;&#x5206;&#x533A;; &#x5BBD;&#x4F9D;&#x8D56;&#x6D89;&#x53CA;RDD&#x5404;&#x7EA7;&#x591A;&#x4E2A;&#x7236;&#x5206;&#x533A;</li>
+</ol>
+</blockquote>
+<h4 id="checkpoint">Checkpoint</h4>
+<p>Checkpoint : &#x68C0;&#x67E5;&#x70B9;, &#x5728;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x4E2D;&#x6709;&#x4E00;&#x4E9B;&#x6BD4;&#x8F83;&#x8017;&#x65F6;&#x7684;RDD, &#x5148;&#x5C06;&#x5176;&#x7F13;&#x5B58;&#x5230;&#x786C;&#x76D8;&#x6216;HDFS&#x4E2D;, &#x6807;&#x8BB0;&#x8FD9;&#x4E2A;RDD&#x6709;&#x88AB;&#x68C0;&#x67E5;&#x70B9;&#x5904;&#x7406;&#x8FC7;, &#x5E76;&#x6E05;&#x7A7A;&#x5B83;&#x6240;&#x6709;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;, &#x540C;&#x65F6;&#x7ED9;&#x5B83;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x4F9D;&#x8D56;&#x4E8E; CheckpointRDD&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;, CheckpointRDD&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4ECE;&#x786C;&#x76D8;&#x4E2D;&#x8BFB;&#x53D6;RDD&#x548C;&#x751F;&#x6210;&#x65B0;&#x7684;&#x5206;&#x533A;&#x4FE1;&#x606F;.</p>
+<p>&#x5F53;&#x67D0;&#x4E2A;RDD&#x9700;&#x8981;&#x9519;&#x8BEF;&#x6062;&#x590D;&#x65F6;, &#x8FFD;&#x6EAF;&#x5230;&#x8017;&#x65F6;&#x7684;RDD&#x65F6;, &#x53D1;&#x73B0;&#x88AB;&#x68C0;&#x67E5;&#x70B9;&#x8BB0;&#x5F55;&#x8FC7;, &#x5C31;&#x76F4;&#x63A5;&#x4ECE;&#x786C;&#x76D8;&#x4E2D;&#x8BFB;&#x53D6;&#x8BE5;RDD, &#x65E0;&#x9700;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;</p>
+<h4 id="preferred-location">Preferred Location</h4>
+<p>&#x9488;&#x5BF9;&#x6BCF;&#x4E00;&#x4E2A;&#x5206;&#x7247;, &#x90FD;&#x4F1A;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x6700;&#x4F18;&#x7684;&#x4F4D;&#x7F6E;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;, &#x5B9E;&#x73B0;&#x8BA1;&#x7B97;&#x5411;&#x6570;&#x636E;&#x9760;&#x62E2;</p>
+<h4 id="storage-level">Storage Level</h4>
+<p>&#x7528;&#x6765;&#x8BB0;&#x5F55;RDD&#x6301;&#x4E45;&#x5316;&#x65F6;&#x5B58;&#x50A8;&#x7684;&#x7EA7;&#x522B;</p>
+<ol>
+<li>MEMORY_ONLY: &#x53EA;&#x5B58;&#x5728;&#x7F13;&#x5B58;&#x4E2D;, &#x5982;&#x679C;&#x5185;&#x5B58;&#x4E0D;&#x591F;&#x5219;&#x4E0D;&#x7F13;&#x5B58;&#x5269;&#x4F59;&#x7684;&#x90E8;&#x5206;  &#x9ED8;&#x8BA4;&#x5B58;&#x50A8;&#x7EA7;&#x522B;</li>
+<li>MEMORY_AND_DISK: &#x7F13;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x4E2D;,  &#x5982;&#x679C;&#x5185;&#x5B58;&#x4E0D;&#x591F;&#x5219;&#x5B58;&#x81F3;&#x786C;&#x76D8;</li>
+<li>DISK_ONLY: &#x53EA;&#x5B58;&#x786C;&#x76D8;</li>
+<li>MEMORY_ONLY_2 &#x548C; MEMORY_AND_DISK_2&#x7B49;: &#x4E0E;&#x4E0A;&#x9762;&#x7684;&#x7EA7;&#x522B;&#x548C;&#x529F;&#x80FD;&#x76F8;&#x540C;, &#x53EA;&#x4E0D;&#x8FC7;&#x6BCF;&#x4E2A;&#x5206;&#x533A;&#x5728;&#x96C6;&#x7FA4;&#x4E24;&#x4E2A;&#x8282;&#x70B9;&#x4E0A;&#x5EFA;&#x7ACB;&#x526F;&#x672C;</li>
+</ol>
+<h4 id="iterator">Iterator</h4>
+<p>&#x8FED;&#x4EE3;&#x51FD;&#x6570;&#x548C;&#x8BA1;&#x7B97;&#x51FD;&#x6570;, &#x7528;&#x6765;&#x8868;&#x793A;&#x5982;&#x4F55;&#x901A;&#x8FC7;&#x7236;RDD&#x8BA1;&#x7B97;&#x5F97;&#x6765;&#x7684;</p>
+<p>&#x8FED;&#x4EE3;&#x51FD;&#x6570;&#x9996;&#x5148;&#x4F1A;&#x5224;&#x65AD;&#x7F13;&#x5B58;&#x4E2D;&#x662F;&#x5426;&#x6709;&#x60F3;&#x8981;&#x8BA1;&#x7B97;&#x7684; RDD, &#x5982;&#x679C;&#x6709;&#x5C31;&#x76F4;&#x63A5;&#x8BFB;&#x53D6;, &#x5982;&#x679C;&#x6CA1;&#x6709;&#x5C31;&#x67E5;&#x627E;&#x60F3;&#x8981;&#x8BA1;&#x7B97;&#x7684; RDD &#x662F;&#x5426;&#x88AB;&#x68C0;&#x67E5;&#x70B9;&#x5904;&#x7406;&#x8FC7;. &#x5982;&#x679C;&#x6709;, &#x5C31;&#x76F4;&#x63A5;&#x8BFB;&#x53D6;, &#x5982;&#x679C;&#x6CA1;&#x6709;, &#x5C31;&#x8C03;&#x7528;&#x8BA1;&#x7B97;&#x51FD;&#x6570;&#x5411;&#x4E0A;&#x9012;&#x5F52;, &#x67E5;&#x627E;&#x7236; RDD &#x8FDB;&#x884C;&#x8BA1;&#x7B97;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="pyspark_introduction.html" class="navigation navigation-prev " aria-label="Previous page: PySpark简介">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../Hadoop/" class="navigation navigation-next " aria-label="Next page: Hadoop">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"typora-root-url":"..","title":"RDD介绍","level":"1.6.9.2","depth":3,"next":{"title":"Hadoop","level":"1.6.10","depth":2,"path":"Linux/Hadoop/README.md","ref":"Linux/Hadoop/README.md","articles":[{"title":"初始化配置","level":"1.6.10.1","depth":3,"path":"Linux/Hadoop/搭建Hadoop.md","ref":"Linux/Hadoop/搭建Hadoop.md","articles":[]},{"title":"Docker","level":"1.6.10.2","depth":3,"path":"Linux/Hadoop/Docker.md","ref":"Linux/Hadoop/Docker.md","articles":[]}]},"previous":{"title":"PySpark简介","level":"1.6.9.1","depth":3,"path":"Linux/PySpark/pyspark_introduction.md","ref":"Linux/PySpark/pyspark_introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Linux/PySpark/rdd_introduction.md","mtime":"2020-02-03T13:12:26.644Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-14T09:44:58.317Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

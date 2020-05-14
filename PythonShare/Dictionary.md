@@ -163,7 +163,7 @@ sorted(rows, key=itemgetter('uid'), reverse=True)
 sorted(rows, key=itemgetter('fname','lname'),reverse=False)
 
 ## 方法三:
-## 抓成df,排序结束再用df.to_dict()/df.to_json()转
+## 转成df,排序结束再用df.to_dict()/df.to_json()转
 import pandas as pd
 data = pd.DataFrame(rows)
 data.sort_values(by=['uid'],inplace=True)
