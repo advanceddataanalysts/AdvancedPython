@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>SoftInstall · PythonShare</title>
+        <title>Hive简介 · PythonShare</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -77,10 +77,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="python3.html" />
+    <link rel="next" href="Hive使用.html" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -435,9 +435,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.6.1" data-path="./">
+        <li class="chapter " data-level="1.6.1" data-path="../SoftInstall/">
             
-                <a href="./">
+                <a href="../SoftInstall/">
             
                     
                     SoftInstall
@@ -449,9 +449,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1.1" data-path="python3.html">
+        <li class="chapter " data-level="1.6.1.1" data-path="../SoftInstall/python3.html">
             
-                <a href="python3.html">
+                <a href="../SoftInstall/python3.html">
             
                     
                     python3
@@ -462,9 +462,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.2" data-path="xxl-job.html">
+        <li class="chapter " data-level="1.6.1.2" data-path="../SoftInstall/xxl-job.html">
             
-                <a href="xxl-job.html">
+                <a href="../SoftInstall/xxl-job.html">
             
                     
                     xxl-job
@@ -475,9 +475,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.3" data-path="git.html">
+        <li class="chapter " data-level="1.6.1.3" data-path="../SoftInstall/git.html">
             
-                <a href="git.html">
+                <a href="../SoftInstall/git.html">
             
                     
                     git
@@ -687,9 +687,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.12" data-path="../Hive/">
+        <li class="chapter " data-level="1.6.12" data-path="./">
             
-                <a href="../Hive/">
+                <a href="./">
             
                     
                     Hive
@@ -701,9 +701,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.12.1" data-path="../Hive/Hive简介.html">
+        <li class="chapter active" data-level="1.6.12.1" data-path="Hive简介.html">
             
-                <a href="../Hive/Hive简介.html">
+                <a href="Hive简介.html">
             
                     
                     Hive简介
@@ -714,9 +714,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.12.2" data-path="../Hive/Hive使用.html">
+        <li class="chapter " data-level="1.6.12.2" data-path="Hive使用.html">
             
-                <a href="../Hive/Hive使用.html">
+                <a href="Hive使用.html">
             
                     
                     Hive使用
@@ -727,9 +727,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.12.3" data-path="../Hive/Hive参数.html">
+        <li class="chapter " data-level="1.6.12.3" data-path="Hive参数.html">
             
-                <a href="../Hive/Hive参数.html">
+                <a href="Hive参数.html">
             
                     
                     Hive参数
@@ -844,7 +844,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >SoftInstall</a>
+        <a href="../.." >Hive简介</a>
     </h1>
 </div>
 
@@ -859,7 +859,63 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="softinstall">SoftInstall</h1>
+                                <h1 id="hive&#x7B80;&#x4ECB;">Hive&#x7B80;&#x4ECB;</h1>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;-hive">&#x4EC0;&#x4E48;&#x662F; Hive</h2>
+<p>1: Hive &#x7531; Facebook &#x5B9E;&#x73B0;&#x5E76;&#x5F00;&#x6E90;, &#x57FA;&#x4E8E;Hadoop &#x7684;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x4ED3;&#x5E93;&#x5DE5;&#x5177;</p>
+<p><strong>2: &#x5C06;&#x7ED3;&#x6784;&#x5316;&#x7684;&#x6570;&#x636E;&#x6620;&#x5C04;&#x4E3A;&#x4E00;&#x5F20;&#x6570;&#x636E;&#x5E93;&#x8868;&#x5E76;&#x63D0;&#x4F9B;HQL(Hive SQL) &#x67E5;&#x8BE2;&#x529F;&#x80FD;</strong></p>
+<p><strong>3: &#x5E95;&#x5C42;&#x7684;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5728; HDFS &#x4E0A;, &#x672C;&#x8D28;&#x662F;&#x5C06; HQL &#x8BED;&#x53E5;&#x8F6C;&#x6362;&#x4E3A; MapReduce &#x4EFB;&#x52A1;&#x8FD0;&#x884C;</strong></p>
+<blockquote>
+<p>Hive &#x4F9D;&#x8D56;&#x4E8E; HDFS &#x5B58;&#x50A8;&#x6570;&#x636E;, Hive &#x5C06; HQL &#x8F6C;&#x6362;&#x6210; MapReduce &#x6267;&#x884C;, &#x6240;&#x4EE5;&#x8BF4; Hive &#x662F;&#x57FA;&#x4E8E; Hadoop &#x7684;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x4ED3;&#x5E93;&#x5DE5;&#x5177;, &#x5B9E;&#x8D28;&#x5C31;&#x662F;&#x4E00;&#x6B3E;&#x57FA;&#x4E8E; HDFS &#x7684; MapReduce &#x8BA1;&#x7B97;&#x6846;&#x67B6;, &#x5BF9;&#x5B58;&#x50A8;&#x5728; HDFS &#x4E2D;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x548C;&#x7BA1;&#x7406;</p>
+</blockquote>
+<h2 id="&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;-hive">&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528; Hive</h2>
+<p>&#x76F4;&#x63A5;&#x4F7F;&#x7528; MapReduce &#x6240;&#x9762;&#x4E34;&#x7684;&#x95EE;&#x9898;:
+&#x4EBA;&#x5458;&#x5B66;&#x4E60;&#x6210;&#x672C;&#x592A;&#x9AD8;; &#x9879;&#x76EE;&#x5468;&#x671F;&#x8981;&#x6C42;&#x592A;&#x77ED;; MapReduce &#x5B9E;&#x73B0;&#x590D;&#x6742;&#x67E5;&#x8BE2;&#x903B;&#x8F91;&#x5F00;&#x53D1;&#x96BE;&#x5EA6;&#x592A;&#x5927;</p>
+<p>Hive&#x7684;&#x4F18;&#x52BF;:
+1: &#x66F4;&#x53CB;&#x597D;&#x7684;&#x63A5;&#x53E3;: &#x64CD;&#x4F5C;&#x63A5;&#x53E3;&#x91C7;&#x7528;&#x7C7B; SQL &#x7684;&#x8BED;&#x6CD5;, &#x63D0;&#x4F9B;&#x5FEB;&#x901F;&#x5F00;&#x53D1;&#x7684;&#x80FD;&#x529B;</p>
+<p>2: &#x66F4;&#x4F4E;&#x7684;&#x5B66;&#x4E60;&#x6210;&#x672C;: &#x907F;&#x514D;&#x4E86;&#x5199; MapReduce, &#x51CF;&#x5C11;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x7684;&#x5B66;&#x4E60;&#x6210;&#x672C;</p>
+<p>3: &#x66F4;&#x597D;&#x7684;&#x6269;&#x5C55;&#x6027;: &#x53EF;&#x81EA;&#x7531;&#x6269;&#x5C55;&#x96C6;&#x7FA4;&#x89C4;&#x6A21;&#x800C;&#x65E0;&#x9700;&#x91CD;&#x542F;&#x670D;&#x52A1;; &#x652F;&#x6301;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;</p>
+<p>Hive&#x7684;&#x7F3A;&#x70B9;:
+1: &#x4E0D;&#x652F;&#x6301;&#x6570;&#x636E;&#x8BB0;&#x5F55;&#x7EA7;&#x522B;&#x7684;&#x589E;&#x5220;&#x6539;&#x67E5; (&#x6709;&#x6570;&#x636E;&#x53D8;&#x66F4;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;insert overwrite &#x91CD;&#x65B0;&#x63D2;&#x5165;&#x6570;&#x636E;)</p>
+<p>2: &#x56E0;&#x4E3A;MapReduce Job&#x542F;&#x52A8;&#x8FC7;&#x7A0B;&#x67E5;&#x8BE2;&#x5EF6;&#x65F6;&#x4E25;&#x91CD;, &#x67E5;&#x8BE2;&#x5EF6;&#x65F6;&#x4E25;&#x91CD;</p>
+<h2 id="hive&#x67B6;&#x6784;">Hive&#x67B6;&#x6784;</h2>
+<p><img src="../../image/hive-framework.png" alt="PNG"></p>
+<h4 id="1-&#x7528;&#x6237;&#x63A5;&#x53E3;-shellcli-jdbcodbc-webui">1 &#x7528;&#x6237;&#x63A5;&#x53E3;: Shell/CLI; JDBC/ODBC; WebUI</h4>
+<p>1: CLI(Command Line Interface)&#x4E0E;Shell &#x7EC8;&#x7AEF;&#x547D;&#x4EE4;&#x884C;, &#x91C7;&#x7528;&#x4EA4;&#x4E92;&#x5F62;&#x5F0F;&#x4F7F;&#x7528; Hive&#x547D;&#x4EE4;&#x884C;&#x4E0E; Hive&#x8FDB;&#x884C;&#x4EA4;&#x4E92;</p>
+<p>2: JDBC/ODBC &#x662F;Hive&#x57FA;&#x4E8E;JDBC&#x64CD;&#x4F5C;&#x63D0;&#x4F9B;&#x7684;&#x5BA2;&#x6237;&#x7AEF;, &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6237;&#x901A;&#x8FC7;&#x8FDE;&#x63A5;&#x5230;Hive Server&#x670D;&#x52A1;</p>
+<p>3: WebUI &#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x8BBF;&#x95EE;Hive</p>
+<h4 id="2-&#x8DE8;&#x8BED;&#x8A00;&#x670D;&#x52A1;-thrift-server">2 &#x8DE8;&#x8BED;&#x8A00;&#x670D;&#x52A1;: thrift server</h4>
+<p>Thrift&#x662F;Facebook&#x5F00;&#x53D1;&#x7684;&#x8F6F;&#x4EF6;&#x6846;&#x67B6;, &#x7528;&#x6765;&#x8FDB;&#x884C;&#x53EF;&#x6269;&#x5C55;&#x4E14;&#x8DE8;&#x8BED;&#x8A00;&#x7684;&#x670D;&#x52A1;&#x7684;&#x5F00;&#x53D1;, Hive &#x96C6;&#x6210;&#x4E86;&#x8BE5;&#x670D;&#x52A1;,&#x80FD;&#x8BA9;&#x4E0D;&#x540C;&#x7684;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x8C03;&#x7528; Hive &#x7684;&#x63A5;&#x53E3;</p>
+<h4 id="3-&#x5E95;&#x5C42;&#x7684;driver-driver&#x9A71;&#x52A8;&#x5668;-compiler&#x7F16;&#x8BD1;&#x5668;-optimizer&#x4F18;&#x5316;&#x5668;-executor&#x6267;&#x884C;&#x5668;">3 &#x5E95;&#x5C42;&#x7684;Driver: Driver(&#x9A71;&#x52A8;&#x5668;); Compiler(&#x7F16;&#x8BD1;&#x5668;); Optimizer(&#x4F18;&#x5316;&#x5668;); Executor(&#x6267;&#x884C;&#x5668;)</h4>
+<p>Driver &#x7EC4;&#x4EF6;&#x5B8C;&#x6210; HQL &#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x4ECE;&#x8BCD;&#x6CD5;&#x5206;&#x6790;, &#x8BED;&#x6CD5;&#x5206;&#x6790;, &#x7F16;&#x8BD1;, &#x4F18;&#x5316;, &#x4EE5;&#x53CA;&#x751F;&#x6210;&#x903B;&#x8F91;&#x6267;&#x884C; &#x8BA1;&#x5212;&#x7684;&#x751F;&#x6210;; &#x751F;&#x6210;&#x7684;&#x903B;&#x8F91;&#x6267;&#x884C;&#x8BA1;&#x5212;&#x5B58;&#x50A8;&#x5728; HDFS &#x4E2D;, &#x5E76;&#x968F;&#x540E;&#x7531; MapReduce &#x8C03;&#x7528;&#x6267;&#x884C;</p>
+<p>Hive &#x7684;&#x6838;&#x5FC3;&#x662F;&#x9A71;&#x52A8;&#x5F15;&#x64CE;,  &#x9A71;&#x52A8;&#x5F15;&#x64CE;&#x7531;&#x56DB;&#x90E8;&#x5206;&#x7EC4;&#x6210;&#xFF1A;</p>
+<p>Driver(&#x9A71;&#x52A8;&#x5668;): &#x89E3;&#x91CA;&#x5668;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x5C06; HiveSQL &#x8BED;&#x53E5;&#x8F6C;&#x6362;&#x4E3A;&#x62BD;&#x8C61;&#x8BED;&#x6CD5;&#x6811;(AST)</p>
+<p>Compiler(&#x7F16;&#x8BD1;&#x5668;): &#x7F16;&#x8BD1;&#x5668;&#x662F;&#x5C06;&#x8BED;&#x6CD5;&#x6811;&#x7F16;&#x8BD1;&#x4E3A;&#x903B;&#x8F91;&#x6267;&#x884C;&#x8BA1;&#x5212;</p>
+<p>Optimizer(&#x4F18;&#x5316;&#x5668;): &#x4F18;&#x5316;&#x5668;&#x662F;&#x5BF9;&#x903B;&#x8F91;&#x6267;&#x884C;&#x8BA1;&#x5212;&#x8FDB;&#x884C;&#x4F18;&#x5316;</p>
+<p>Executor(&#x6267;&#x884C;&#x5668;): &#x6267;&#x884C;&#x5668;&#x662F;&#x8C03;&#x7528;&#x5E95;&#x5C42;&#x7684;&#x8FD0;&#x884C;&#x6846;&#x67B6;&#x6267;&#x884C;&#x903B;&#x8F91;&#x6267;&#x884C;&#x8BA1;&#x5212;</p>
+<h4 id="4-&#x5143;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;">4 &#x5143;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;</h4>
+<p>&#x5143;&#x6570;&#x636E;&#x5C31;&#x662F;&#x5B58;&#x50A8;&#x5728;Hive&#x4E2D;&#x7684;&#x6570;&#x636E;&#x7684;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;, &#x5305;&#x62EC;&#x8868;&#x7684;&#x540D;&#x5B57;/&#x5217;/&#x5206;&#x533A;/&#x5C5E;&#x6027;(&#x5185;&#x5916;&#x90E8;&#x8868;)/&#x6570;&#x636E;&#x6240;&#x5728;&#x8DEF;&#x5F84;&#x7B49;</p>
+<p>Metastore &#x9ED8;&#x8BA4;&#x5B58;&#x5728;&#x81EA;&#x5E26;&#x7684; Derby &#x6570;&#x636E;&#x5E93;&#x4E2D;</p>
+<p>&#x7F3A;&#x70B9;&#x662F;&#x4E0D;&#x9002;&#x5408;&#x591A;&#x7528;&#x6237;&#x64CD;&#x4F5C;, &#x5E76;&#x4E14;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x76EE;&#x5F55;&#x4E0D;&#x56FA;&#x5B9A;, &#x6570;&#x636E;&#x5E93;&#x8DDF;&#x7740; Hive &#x8D70;,&#x6781;&#x5EA6;&#x4E0D;&#x65B9;&#x4FBF;&#x7BA1;&#x7406;, &#x6240;&#x4EE5;&#x66F4;&#x591A;&#x7684;&#x662F;&#x5C06;&#x5143;&#x6570;&#x636E;&#x4FDD;&#x5B58;&#x5728;&#x81EA;&#x5EFA;&#x7684;MySQL&#x6570;&#x636E;&#x5E93;&#x4E2D;, Hive&#x548C;MySQL&#x4E4B;&#x95F4;&#x901A;&#x8FC7;Matastore&#x670D;&#x52A1;&#x4EA4;&#x4E92;</p>
+<h4 id="&#x6267;&#x884C;&#x6D41;&#x7A0B;">&#x6267;&#x884C;&#x6D41;&#x7A0B;</h4>
+<p>HiveQL &#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x6216;&#x8005;&#x5BA2;&#x6237;&#x7AEF;&#x63D0;&#x4EA4;, &#x7ECF;&#x8FC7; Compiler &#x7F16;&#x8BD1;&#x5668;, &#x8FD0;&#x7528; MetaStore &#x4E2D;&#x7684;&#x5143;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x7C7B;&#x578B;&#x68C0;&#x6D4B;&#x548C;&#x8BED;&#x6CD5;&#x5206;&#x6790;, &#x751F;&#x6210;&#x4E00;&#x4E2A;&#x903B;&#x8F91;&#x65B9;&#x6848; (Logical Plan), &#x7136;&#x540E;&#x901A;&#x8FC7;&#x7684;&#x4F18;&#x5316;&#x5904;&#x7406;, &#x4EA7;&#x751F;&#x4E00;&#x4E2A; MapReduce &#x4EFB;&#x52A1;</p>
+<h2 id="hive&#x6570;&#x636E;&#x7EC4;&#x7EC7;">Hive&#x6570;&#x636E;&#x7EC4;&#x7EC7;</h2>
+<p>Hive &#x7684;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#x5305;&#x62EC;<strong>&#x6570;&#x636E;&#x5E93;,&#x8868;,&#x89C6;&#x56FE;,&#x5206;&#x533A;&#x548C;&#x8868;&#x6570;&#x636E;</strong>&#x7B49;
+1 &#x6570;&#x636E;&#x5E93;,&#x8868;,&#x5206;&#x533A;&#x7B49;&#x90FD;&#x5BF9;&#x5E94; HDFS &#x4E0A;&#x7684;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;, &#x8868;&#x6570;&#x636E;&#x5BF9;&#x5E94; HDFS &#x5BF9;&#x5E94;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6587;&#x4EF6;</p>
+<p>2 Hive&#x4E2D;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#x90FD;&#x5B58;&#x50A8;&#x5728; HDFS &#x4E2D;, &#x6CA1;&#x6709;&#x4E13;&#x95E8;&#x7684;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x683C;&#x5F0F;, &#x652F;&#x6301; TextFile,SequenceFile,RCFiled&#x7B49;&#x81EA;&#x5B9A;&#x4E49;&#x683C;&#x5F0F;&#x7B49;, &#x53EA;&#x8981;&#x5728;&#x5EFA;&#x8868;&#x7684;&#x65F6;&#x5019;&#x544A;&#x8BC9;Hive&#x6570;&#x636E;&#x4E2D;&#x7684;&#x5217;&#x5206;&#x9694;&#x7B26;&#x548C;&#x884C;&#x5206;&#x9694;&#x7B26;, Hive&#x5C31;&#x53EF;&#x4EE5;&#x89E3;&#x6790;&#x6570;&#x636E;</p>
+<p>3 &#x6570;&#x636E;&#x6A21;&#x578B;</p>
+<pre><code class="lang-shell">database: &#x5728; HDFS &#x4E2D;&#x8868;&#x73B0;&#x4E3A; ${hive.metastore.warehouse.dir} &#x76EE;&#x5F55;&#x4E0B;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;(&#x901A;&#x8FC7;set hive.metastore.warehouse.dir; &#x67E5;&#x770B;&#x9ED8;&#x8BA4;&#x8DEF;&#x5F84;)
+table: &#x5728; HDFS &#x4E2D;&#x8868;&#x73B0;&#x6240;&#x5C5E; database &#x76EE;&#x5F55;&#x4E0B;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;
+external table: &#x4E0E; table &#x7C7B;&#x4F3C;,&#x4E0D;&#x8FC7;&#x5176;&#x6570;&#x636E;&#x5B58;&#x653E;&#x4F4D;&#x7F6E;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4EFB;&#x610F; HDFS &#x76EE;&#x5F55;&#x8DEF;&#x5F84;
+partition: &#x5728; HDFS &#x4E2D;&#x8868;&#x73B0;&#x4E3A; table &#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x5B50;&#x76EE;&#x5F55;
+bucket: &#x5728; HDFS &#x4E2D;&#x8868;&#x73B0;&#x4E3A;&#x540C;&#x4E00;&#x4E2A;&#x8868;&#x76EE;&#x5F55;&#x6216;&#x8005;&#x5206;&#x533A;&#x76EE;&#x5F55;&#x4E0B;&#x6839;&#x636E;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x8FDB;&#x884C; hash &#x6563;&#x5217;&#x4E4B;&#x540E;&#x7684;&#x591A;&#x4E2A;&#x6587;&#x4EF6;
+view: &#x4E0E;&#x4F20;&#x7EDF;&#x6570;&#x636E;&#x5E93;&#x7C7B;&#x4F3C;, &#x53EA;&#x8BFB;, &#x57FA;&#x4E8E;&#x57FA;&#x672C;&#x8868;&#x521B;&#x5EFA;
+</code></pre>
+<h4 id="&#x5185;&#x90E8;&#x8868;managedtable&#x548C;&#x5916;&#x90E8;&#x8868;externaltable&#x7684;&#x533A;&#x522B;">&#x5185;&#x90E8;&#x8868;(MANAGED_TABLE)&#x548C;&#x5916;&#x90E8;&#x8868;(EXTERNAL_TABLE)&#x7684;&#x533A;&#x522B;</h4>
+<p>(drop table&#x8BED;&#x53E5;)&#x5220;&#x9664;&#x5185;&#x90E8;&#x8868;&#x7684;&#x65F6;&#x5019;, &#x5220;&#x9664;&#x8868;&#x5143;&#x6570;&#x636E;&#x548C;&#x6570;&#x636E;
+(drop table&#x8BED;&#x53E5;)&#x5220;&#x9664;&#x5916;&#x90E8;&#x8868;&#x7684;&#x65F6;&#x5019;, &#x5220;&#x9664;&#x8868;&#x5143;&#x6570;&#x636E;, &#x4E0D;&#x5220;&#x9664;&#x6570;&#x636E;</p>
+<p>&#x5982;&#x679C;&#x6570;&#x636E;&#x7684;&#x6240;&#x6709;&#x5904;&#x7406;&#x90FD;&#x5728;Hive&#x4E2D;&#x8FDB;&#x884C;, &#x503E;&#x5411;&#x4E8E;&#x9009;&#x62E9;&#x5185;&#x90E8;&#x8868;; &#x5982;&#x679C;Hive&#x548C;&#x5176;&#x4ED6;&#x5DE5;&#x5177;&#x9488;&#x5BF9;&#x76F8;&#x540C;&#x7684;&#x6570;&#x636E;&#x96C6;&#x8FDB;&#x884C;&#x5904;&#x7406;, &#x5916;&#x90E8;&#x8868;&#x66F4;&#x5408;&#x9002;(&#x81EA;&#x5DF1;&#x4F7F;&#x7528;&#x7684;&#x8868;&#x5EFA;&#x5185;&#x90E8;&#x8868;&#x65B9;&#x4FBF;&#x64CD;&#x4F5C;, &#x591A;&#x4EBA;&#x4F7F;&#x7528;&#x7684;&#x5EFA;&#x5916;&#x90E8;&#x8868;&#x9632;&#x6B62;&#x8BEF;&#x5220;)</p>
+<h4 id="&#x5206;&#x533A;&#x8868;&#x548C;&#x5206;&#x6876;&#x8868;&#x7684;&#x533A;&#x522B;">&#x5206;&#x533A;&#x8868;&#x548C;&#x5206;&#x6876;&#x8868;&#x7684;&#x533A;&#x522B;</h4>
+<p>&#x5206;&#x533A;&#x8868;&#x662F;&#x624B;&#x52A8;&#x6DFB;&#x52A0;&#x5206;&#x533A;, &#x5206;&#x6876;&#x8868;&#x7684;&#x6570;&#x636E;&#x662F;&#x6309;&#x7167;&#x67D0;&#x4E9B;&#x5206;&#x6876;&#x5B57;&#x6BB5;&#x8FDB;&#x884C; hash &#x6563;&#x5217;&#x5F62;&#x6210;&#x7684;&#x591A;&#x4E2A;&#x6587;&#x4EF6;, &#x6570;&#x636E;&#x51C6;&#x786E;&#x6027;&#x66F4;&#x9AD8;</p>
 
                                 
                                 </section>
@@ -887,12 +943,12 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Linux">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Hive">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="python3.html" class="navigation navigation-next " aria-label="Next page: python3">
+                <a href="Hive使用.html" class="navigation navigation-next " aria-label="Next page: Hive使用">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -903,7 +959,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SoftInstall","level":"1.6.1","depth":2,"next":{"title":"python3","level":"1.6.1.1","depth":3,"path":"Linux/SoftInstall/python3.md","ref":"Linux/SoftInstall/python3.md","articles":[]},"previous":{"title":"Linux","level":"1.6","depth":1,"path":"Linux/README.md","ref":"Linux/README.md","articles":[{"title":"SoftInstall","level":"1.6.1","depth":2,"path":"Linux/SoftInstall/README.md","ref":"Linux/SoftInstall/README.md","articles":[{"title":"python3","level":"1.6.1.1","depth":3,"path":"Linux/SoftInstall/python3.md","ref":"Linux/SoftInstall/python3.md","articles":[]},{"title":"xxl-job","level":"1.6.1.2","depth":3,"path":"Linux/SoftInstall/xxl-job.md","ref":"Linux/SoftInstall/xxl-job.md","articles":[]},{"title":"git","level":"1.6.1.3","depth":3,"path":"Linux/SoftInstall/git.md","ref":"Linux/SoftInstall/git.md","articles":[]}]},{"title":"LinuxTips","level":"1.6.2","depth":2,"path":"Linux/LinuxTips.md","ref":"Linux/LinuxTips.md","articles":[]},{"title":"Alias","level":"1.6.3","depth":2,"path":"Linux/LinuxAliases.md","ref":"Linux/LinuxAliases.md","articles":[]},{"title":"ChapterOne","level":"1.6.4","depth":2,"path":"Linux/LinuxChapterOne_SearchCommand.md","ref":"Linux/LinuxChapterOne_SearchCommand.md","articles":[]},{"title":"ChapterTwo","level":"1.6.5","depth":2,"path":"Linux/LinuxChapterTwo_FileFolder.md","ref":"Linux/LinuxChapterTwo_FileFolder.md","articles":[]},{"title":"ChapterThree","level":"1.6.6","depth":2,"path":"Linux/LinuxChapterThree_AuthorityConfiguration.md","ref":"Linux/LinuxChapterThree_AuthorityConfiguration.md","articles":[]},{"title":"ChapterFour","level":"1.6.7","depth":2,"path":"Linux/LinuxChapterFour_JobSwith.md","ref":"Linux/LinuxChapterFour_JobSwith.md","articles":[]},{"title":"ssh免密登陆","level":"1.6.8","depth":2,"path":"Linux/ssh免密登陆.md","ref":"Linux/ssh免密登陆.md","articles":[]},{"title":"Linux中文编码问题","level":"1.6.9","depth":2,"path":"Linux/Linux中文编码问题.md","ref":"Linux/Linux中文编码问题.md","articles":[]},{"title":"PySpark","level":"1.6.10","depth":2,"path":"Linux/PySpark/README.md","ref":"Linux/PySpark/README.md","articles":[{"title":"PySpark简介","level":"1.6.10.1","depth":3,"path":"Linux/PySpark/pyspark_introduction.md","ref":"Linux/PySpark/pyspark_introduction.md","articles":[]},{"title":"RDD介绍","level":"1.6.10.2","depth":3,"path":"Linux/PySpark/rdd_introduction.md","ref":"Linux/PySpark/rdd_introduction.md","articles":[]}]},{"title":"Hadoop","level":"1.6.11","depth":2,"path":"Linux/Hadoop/README.md","ref":"Linux/Hadoop/README.md","articles":[{"title":"搭建Hadoop","level":"1.6.11.1","depth":3,"path":"Linux/Hadoop/搭建Hadoop.md","ref":"Linux/Hadoop/搭建Hadoop.md","articles":[]},{"title":"Hadoop使用","level":"1.6.11.2","depth":3,"path":"Linux/Hadoop/Hadoop使用.md","ref":"Linux/Hadoop/Hadoop使用.md","articles":[]}]},{"title":"Hive","level":"1.6.12","depth":2,"path":"Linux/Hive/README.md","ref":"Linux/Hive/README.md","articles":[{"title":"Hive简介","level":"1.6.12.1","depth":3,"path":"Linux/Hive/Hive简介.md","ref":"Linux/Hive/Hive简介.md","articles":[]},{"title":"Hive使用","level":"1.6.12.2","depth":3,"path":"Linux/Hive/Hive使用.md","ref":"Linux/Hive/Hive使用.md","articles":[]},{"title":"Hive参数","level":"1.6.12.3","depth":3,"path":"Linux/Hive/Hive参数.md","ref":"Linux/Hive/Hive参数.md","articles":[]}]},{"title":"Docker","level":"1.6.13","depth":2,"path":"Linux/Docker/README.md","ref":"Linux/Docker/README.md","articles":[{"title":"Docker","level":"1.6.13.1","depth":3,"path":"Linux/Docker/Docker.md","ref":"Linux/Docker/Docker.md","articles":[]}]}]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Linux/SoftInstall/README.md","mtime":"2020-04-22T10:31:29.282Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-25T10:53:37.377Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Hive简介","level":"1.6.12.1","depth":3,"next":{"title":"Hive使用","level":"1.6.12.2","depth":3,"path":"Linux/Hive/Hive使用.md","ref":"Linux/Hive/Hive使用.md","articles":[]},"previous":{"title":"Hive","level":"1.6.12","depth":2,"path":"Linux/Hive/README.md","ref":"Linux/Hive/README.md","articles":[{"title":"Hive简介","level":"1.6.12.1","depth":3,"path":"Linux/Hive/Hive简介.md","ref":"Linux/Hive/Hive简介.md","articles":[]},{"title":"Hive使用","level":"1.6.12.2","depth":3,"path":"Linux/Hive/Hive使用.md","ref":"Linux/Hive/Hive使用.md","articles":[]},{"title":"Hive参数","level":"1.6.12.3","depth":3,"path":"Linux/Hive/Hive参数.md","ref":"Linux/Hive/Hive参数.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Linux/Hive/Hive简介.md","mtime":"2020-05-25T10:26:10.989Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-25T10:53:37.377Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
