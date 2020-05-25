@@ -42,6 +42,16 @@
 
   rm   -rf    文件夹名
 
+```shell
+#删除目录下和子目录下所有文件,保留目录结构
+find /home/work/ -type f -exec rm {} \;
+
+#删除目录和子目录下所有temp文件, 但是保留文件夹
+find ./ -name "*.temp" | xargs rm
+```
+
+
+
 ### 压缩/解压缩
 - 文件
 

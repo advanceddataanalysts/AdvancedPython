@@ -124,6 +124,27 @@ spark-submit /Users/ysx_along/spark/spark_test.py
 #在输出内容中找得到结果 62 31
 ```
 
+```shell
+#spark提交py脚本指定参数
+	# 指定python路径
+--conf spark.pyspark.python=/usr/bin/python3  
+--conf spark.pyspark.driver.python=/usr/bin/python3 
+
+	# 指定数据内存大小
+--conf spark.rpc.message.maxSize=512
+
+	# 指定使用的资源
+	--driver-memory 2G
+	--num-executors 4
+	--executor-memory 4G 
+	--executor-cores 4 
+
+/usr/bin/spark2-submit --conf spark.pyspark.python=/usr/bin/python3 --conf spark.pyspark.driver.python=/usr/bin/python3 --conf spark.rpc.message.maxSize=512  --driver-memory 2G  --num-executors 4 --executor-memory 4G --executor-cores 4    /home/timers/DataMachine_for_wh/src/whTask/along_test_warehouse.py
+
+```
+
+
+
 #### RDD
 
 RDD(Resilient Distributed Dataset)弹性式分布数据集, 是可以在多个节点上运行和操作的数据,从而实现高效并行计算. 一旦创建了RDD, 就无法对其进行修改

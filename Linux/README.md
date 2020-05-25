@@ -1,2 +1,2 @@
-# LinuxTips
+# Linux
 
