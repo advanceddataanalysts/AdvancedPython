@@ -488,6 +488,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6.1.4" data-path="SoftInstall/elk.html">
+            
+                <a href="SoftInstall/elk.html">
+            
+                    
+                    elk
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -878,8 +891,8 @@
 <p>mkdir  &#x6587;&#x4EF6;&#x5939;&#x540D;</p>
 <p>mv  &#x6587;&#x4EF6;&#x5939;--old   &#x6587;&#x4EF6;&#x5939;--new</p>
 </li>
-<li><p>&#x8F6F;&#x94FE;&#x63A5;</p>
-<p>ln  -s  &#x6E90;&#x6587;&#x4EF6; &#x76EE;&#x6807;&#x6587;&#x4EF6;</p>
+<li><p>&#x8F6F;&#x94FE;&#x63A5;&#x6587;&#x4EF6;</p>
+<p>ln  -s [-i &lt;&#x66FF;&#x6362;&#x76EE;&#x6807;&#x6587;&#x4EF6;&gt;]  &#x6E90;&#x6587;&#x4EF6; &#x76EE;&#x6807;&#x6587;&#x4EF6;</p>
 </li>
 </ul>
 <h3 id="&#x5220;&#x9664;">&#x5220;&#x9664;</h3>
@@ -897,6 +910,24 @@ find /home/work/ -type f -exec rm {} \;
 
 #&#x5220;&#x9664;&#x76EE;&#x5F55;&#x548C;&#x5B50;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;temp&#x6587;&#x4EF6;, &#x4F46;&#x662F;&#x4FDD;&#x7559;&#x6587;&#x4EF6;&#x5939;
 find ./ -name &quot;*.temp&quot; | xargs rm
+</code></pre>
+<h3 id="&#x7EDF;&#x8BA1;">&#x7EDF;&#x8BA1;</h3>
+<pre><code class="lang-shell">#&#x7EDF;&#x8BA1;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x6570;&#x91CF;(&#x4E0D;&#x5305;&#x542B;&#x5B50;&#x76EE;&#x5F55;)
+ls -al | grep &quot;^-&quot; | wc -l
+#&#x7EDF;&#x8BA1;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x6570;&#x91CF;(&#x5305;&#x542B;&#x5B50;&#x76EE;&#x5F55; -R&#x9012;&#x5F52;)
+ls -alR | grep &quot;^-&quot; | wc -l
+
+#&#x7EDF;&#x8BA1;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x76EE;&#x5F55;&#x6570;&#x91CF;(&#x4E0D;&#x5305;&#x542B;&#x5B50;&#x76EE;&#x5F55;)
+ls -al | grep &quot;^d&quot; | wc -l
+#&#x7EDF;&#x8BA1;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x76EE;&#x5F55;&#x6570;&#x91CF;(&#x5305;&#x542B;&#x5B50;&#x76EE;&#x5F55; -R&#x9012;&#x5F52;)
+ls -alR | grep &quot;^d&quot; | wc -l
+
+#&#x7EDF;&#x8BA1;&#x76EE;&#x5F55;&#x5927;&#x5C0F;
+du -sh 
+#&#x7EDF;&#x8BA1;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x5927;&#x5C0F;,&#x5E76;&#x6309;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x6392;&#x5E8F;
+du -sh * | sort -n 
+#&#x67E5;&#x770B;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x5927;&#x5C0F;
+du -shk [filename]
 </code></pre>
 <h3 id="&#x538B;&#x7F29;&#x89E3;&#x538B;&#x7F29;">&#x538B;&#x7F29;/&#x89E3;&#x538B;&#x7F29;</h3>
 <ul>
@@ -1016,7 +1047,7 @@ find ./ -name &quot;*.temp&quot; | xargs rm
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ChapterTwo","level":"1.6.5","depth":2,"next":{"title":"ChapterThree","level":"1.6.6","depth":2,"path":"Linux/LinuxChapterThree_AuthorityConfiguration.md","ref":"Linux/LinuxChapterThree_AuthorityConfiguration.md","articles":[]},"previous":{"title":"ChapterOne","level":"1.6.4","depth":2,"path":"Linux/LinuxChapterOne_SearchCommand.md","ref":"Linux/LinuxChapterOne_SearchCommand.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Linux/LinuxChapterTwo_FileFolder.md","mtime":"2020-05-16T21:36:16.075Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-25T10:53:37.377Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ChapterTwo","level":"1.6.5","depth":2,"next":{"title":"ChapterThree","level":"1.6.6","depth":2,"path":"Linux/LinuxChapterThree_AuthorityConfiguration.md","ref":"Linux/LinuxChapterThree_AuthorityConfiguration.md","articles":[]},"previous":{"title":"ChapterOne","level":"1.6.4","depth":2,"path":"Linux/LinuxChapterOne_SearchCommand.md","ref":"Linux/LinuxChapterOne_SearchCommand.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"livereload":{},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Linux/LinuxChapterTwo_FileFolder.md","mtime":"2020-07-09T03:02:23.857Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-15T09:41:08.109Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1055,6 +1086,10 @@ find ./ -name &quot;*.temp&quot; | xargs rm
     
         
         <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
