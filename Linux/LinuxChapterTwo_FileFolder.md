@@ -26,9 +26,9 @@
 
   mv  文件夹--old   文件夹--new
   
-- 软链接
+- 软链接文件
 
-  ln  -s  源文件 目标文件
+  ln  -s [-i <替换目标文件>]  源文件 目标文件
 
 ### 删除
 
@@ -50,9 +50,31 @@ find /home/work/ -type f -exec rm {} \;
 find ./ -name "*.temp" | xargs rm
 ```
 
+### 统计
+
+```shell
+#统计目录下所有文件数量(不包含子目录)
+ls -al | grep "^-" | wc -l
+#统计目录下所有文件数量(包含子目录 -R递归)
+ls -alR | grep "^-" | wc -l
+
+#统计目录下所有目录数量(不包含子目录)
+ls -al | grep "^d" | wc -l
+#统计目录下所有目录数量(包含子目录 -R递归)
+ls -alR | grep "^d" | wc -l
+
+#统计目录大小
+du -sh 
+#统计当前目录大小,并按文件大小排序
+du -sh * | sort -n 
+#查看指定文件大小
+du -shk [filename]
+```
+
 
 
 ### 压缩/解压缩
+
 - 文件
 
   zip    压缩文件名     源文件  --压缩为.zip格式压缩文件,保留源文件
