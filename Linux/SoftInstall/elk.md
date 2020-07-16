@@ -31,8 +31,6 @@
 4 本地打开浏览器 http://localhost:5601
 ```
 
-
-
 ## logstash
 
 ```shell
@@ -130,6 +128,71 @@ output {
     codec => rubydebug
     }
 }
+```
+
+## filebeat
+
+```shell
+1 官网下载, https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.8.0-darwin-x86_64.tar.gz 例:下载位置 /Users/ysx_along/Downloads
+2 解压 tar -zxvf /Users/ysx_along/Download/filebeat-7.8.0-darwin-x86_64.tar.gz -C /Users/ysx_along/elk
+3 配置yml文件 例:nginx.yml
+4 运行 
+/Users/ysx_along/elk/filebeat-7.8.0-darwin-x86_64/filebeat -e -c /Users/ysx_along/elk/filebeat-7.8.0-darwin-x86_64/nginx.yml
+5 如将filebeat推到logstash中,需在logstash.conf中配置
+  input {
+      ##filebate端口接收
+      beats {
+        port => 5044
+        # codec => "json"
+      }
+  }
+  output {
+      # 打印样式
+      stdout {
+      codec => rubydebug
+      }
+	}
+  
+  
+  启动logstash  
+  /Users/ysx_along/elk/logstash-7.8.0/bin/logstash -f /Users/ysx_along/elk/logstash-7.8.0/bin/logstash.conf
+```
+
+```shell
+#nginx.yml
+#=========================== Filebeat inputs =============================
+filebeat.inputs:
+- input_type: log
+  paths:
+    - /Users/ysx_along/data/logs/nginx_logs/ana_web.*.log
+    #exclude_lines: ["^DBG"]                   #以什么开头的不收集
+    #include_lines: ["^ERR", "^WARN"]         #只收集以什么开头的
+    #exclude_files: [".gz$"]                   #.gz结尾不收集
+    #document_type: "nginx_filebeat"  #增加一个type
+#================================ Outputs =====================================
+
+# Configure what outputs to use when sending the data collected by the beat.
+# Multiple outputs may be used.
+
+##日志控制台打印
+output.console:
+  enabled: true
+  pretty: true
+
+##日志收集写入到logstash
+#output.logstash:
+#  hosts: ["192.168.12.192:5044"]     #logstash 服务器地址可写入多个
+#  enabled: true                     #是否开启输出到logstash 默认开启
+#  worker: 1                         #进程数
+#  compression_level: 3              #压缩级别
+#  #loadbalance: true                #多个输出的时候开启负载
+
+#output.kafka:
+#  enabled: true
+#  codec.format:
+#    string: '%{[message]}'
+#  hosts: ["192.168.12.192:9092"]
+#  topic: "along_test_topic"
 ```
 
 
