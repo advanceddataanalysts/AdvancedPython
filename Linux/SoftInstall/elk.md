@@ -14,7 +14,7 @@
 	-Xms1G
 	-Xmx1G
 /Users/ysx_along/elk/elasticsearch-7.6.2/bin/elasticsearch	
-4 本地打开浏览器 localhost:9200 / curl localhost:9200
+4 本地打开浏览器 host:9200 / curl host:9200
 ```
 
 ## kibana
@@ -26,7 +26,7 @@
 -- kibana运行时会去找本地运行的elasticsearch, localhost运行可以不指定elasticsearch的url地址
 	配置对应的es地址
 	vim /Users/ysx_along/elk/kibana-7.6.2-darwin-x86_64/config/kibana.yml
-	elasticsearch.hosts: ["http://192.168.12.118:9200"]
+	elasticsearch.hosts: ["http://host:9200"]
 /Users/ysx_along/elk/kibana-7.6.2-darwin-x86_64/bin/kibana
 4 本地打开浏览器 http://localhost:5601
 ```
@@ -58,26 +58,35 @@
 
 ```shell
 input {
-    #从日志文件中读取
-    file { 
-        path => ["/var/log/system.log"]
-        type => "system_log"
-        tags => ["系统日志文件"]
-        start_position => "beginning"
-    }
+	##从控制台输入
+	stdin{}
+    ##从日志文件中读取
+    # file { 
+    #     path => ["/Users/ysx_along/Desktop/analysis_project/DataMachine_for_web/ana_web_logs/ana_web_log_20200720.log"]
+    #     type => "along_test"
+    #     tags => ["ana_web日志"]
+    #     start_position => "beginning"
+    # }
     ## 如果有其他数据源, 直接在下面追加
     #从kafka消费
     # kafka { 
-    #     bootstrap_servers => "172.17.2.135:9092"
+    #     bootstrap_servers => "host:9092"
     #     topics => ["along_test_topic"]
     #     codec => json {
     #         charset => "UTF-8"
     #     }
     #     tags => ["along_test_topic"]
     # }
-    # tcp { #从本地端口号5000的服务中读取
+    ##从本地端口号5000的服务中读取
+    # tcp { 
     #     port => 5000 
-    #     codec => json
+    #     # codec => json
+    #     tags => ["ana_back_end"]
+    # }
+    ##filebate端口接收
+    # beats {
+    #   port => 5044
+      # codec => "json"
     # }
 }
 ## 条件过滤
@@ -98,34 +107,48 @@ input {
 # }
 # }
 # filter {
-#     messge => "%{message}"
+#     # messge => "%{message}"
 #     # 将message转为json格式
 #     json {
 #         source => "message"
-#         target => "message"
-    # }
+#         # target => "message"
+#     }
 # }
 output {
     # 处理后的日志落到本地文件
-    file {
-        path => "/tmp/logstash_test.log"
-        flush_interval => 0
-    }
-    # 处理后的日志入es
+    # file {
+    #     path => "/tmp/logstash_test.log"
+    #     flush_interval => 0
+    # }
+    # # 处理后的日志入es
     # elasticsearch {
-    #     hosts => "192.168.12.118:9200"
+    #     hosts => "host:9200"
     #     index => "along_test_logstash"
     # }
-    # 处理后的日志入hive
+    # # 处理后的日志入hive
     # webhdfs {
-    #     host => "172.17.1.140"
+    #     host => "host"
     #     port => 50070
     #     path => "/user/hive/warehouse/ods.db/along_test_logstash/dt=%{+YYYYMMdd}"
     #     user => "admin"
     # }
+    # # 处理后的日志入kafka
+    # kafka {
+    #   bootstrap_servers => "host:9092"
+    #   topic_id => "along_test_topic"
+    #   codec => "json"
+    # }
+    # # 处理后的日志落到mysql 需要安装插件  /Users/ysx_along/elk/logstash-7.8.0/bin/logstash-plugin install  logstash-output-jdbc
+    # jdbc {
+	  #   driver_jar_path => "/Users/ysx_along/Downloads/mysql-connector-java-5.1.48/mysql-connector-java-5.1.48-bin.jar"
+	  #   driver_class => "com.mysql.jdbc.Driver"
+	  #   connection_string => "jdbc:mysql://host:3306/database?user=user&password=xxxxxxxxxxxxxx"
+	  #   statement => ["insert into along_test(request_time,ip,host,host_url,method,path,full_path,request_body,request_args,headers,referrer) values (?,?,?,?,?,?,?,?,?,?,?)","request_time","ip","host","host_url","method","path","full_path","request_body","request_args","headers","referrer"]
+  	# }
+
     # 打印样式
     stdout {
-    codec => rubydebug
+    	codec => rubydebug
     }
 }
 ```
@@ -147,10 +170,10 @@ output {
       }
   }
   output {
-      # 打印样式
-      stdout {
-      codec => rubydebug
-      }
+    # 打印样式
+    stdout {
+    codec => rubydebug
+    }
 	}
   
   
@@ -181,7 +204,7 @@ output.console:
 
 ##日志收集写入到logstash
 #output.logstash:
-#  hosts: ["192.168.12.192:5044"]     #logstash 服务器地址可写入多个
+#  hosts: ["host:5044"]     #logstash 服务器地址可写入多个
 #  enabled: true                     #是否开启输出到logstash 默认开启
 #  worker: 1                         #进程数
 #  compression_level: 3              #压缩级别
@@ -191,7 +214,7 @@ output.console:
 #  enabled: true
 #  codec.format:
 #    string: '%{[message]}'
-#  hosts: ["192.168.12.192:9092"]
+#  hosts: ["host:9092"]
 #  topic: "along_test_topic"
 ```
 
