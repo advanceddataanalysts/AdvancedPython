@@ -795,7 +795,52 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="../../QuestionBank/">
+        <li class="chapter " data-level="1.7" data-path="../../Vue/">
+            
+                <a href="../../Vue/">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../Vue/vue模版语法.html">
+            
+                <a href="../../Vue/vue模版语法.html">
+            
+                    
+                    vue模板语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../Vue/vue响应式原理.html">
+            
+                <a href="../../Vue/vue响应式原理.html">
+            
+                    
+                    vue响应式原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../QuestionBank/">
             
                 <a href="../../QuestionBank/">
             
@@ -809,7 +854,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.7.1" data-path="../../QuestionBank/20190807.html">
+        <li class="chapter " data-level="1.8.1" data-path="../../QuestionBank/20190807.html">
             
                 <a href="../../QuestionBank/20190807.html">
             
@@ -969,14 +1014,14 @@
 #     }
 # }
 # }
-# filter {
-#     # messge =&gt; &quot;%{message}&quot;
-#     # &#x5C06;message&#x8F6C;&#x4E3A;json&#x683C;&#x5F0F;
-#     json {
-#         source =&gt; &quot;message&quot;
-#         # target =&gt; &quot;message&quot;
-#     }
-# }
+filter {
+    # messge =&gt; &quot;%{message}&quot;
+    # &#x5C06;message&#x8F6C;&#x4E3A;json&#x683C;&#x5F0F;
+    json {
+        source =&gt; &quot;message&quot;
+        # target =&gt; &quot;message&quot;
+    }
+}
 output {
     # &#x5904;&#x7406;&#x540E;&#x7684;&#x65E5;&#x5FD7;&#x843D;&#x5230;&#x672C;&#x5730;&#x6587;&#x4EF6;
     # file {
@@ -1001,13 +1046,21 @@ output {
     #   topic_id =&gt; &quot;along_test_topic&quot;
     #   codec =&gt; &quot;json&quot;
     # }
-    # # &#x5904;&#x7406;&#x540E;&#x7684;&#x65E5;&#x5FD7;&#x843D;&#x5230;mysql &#x9700;&#x8981;&#x5B89;&#x88C5;&#x63D2;&#x4EF6;  /Users/ysx_along/elk/logstash-7.8.0/bin/logstash-plugin install  logstash-output-jdbc
+    # # &#x5904;&#x7406;&#x540E;&#x7684;&#x65E5;&#x5FD7;&#x843D;&#x5230;mysql &#x9700;&#x8981;&#x5B89;&#x88C5;&#x63D2;&#x4EF6; /Users/ysx_along/elk/logstash-7.8.0/bin/logstash-plugin install  logstash-output-jdbc
     # jdbc {
       #   driver_jar_path =&gt; &quot;/Users/ysx_along/Downloads/mysql-connector-java-5.1.48/mysql-connector-java-5.1.48-bin.jar&quot;
       #   driver_class =&gt; &quot;com.mysql.jdbc.Driver&quot;
       #   connection_string =&gt; &quot;jdbc:mysql://host:3306/database?user=user&amp;password=xxxxxxxxxxxxxx&quot;
       #   statement =&gt; [&quot;insert into along_test(request_time,ip,host,host_url,method,path,full_path,request_body,request_args,headers,referrer) values (?,?,?,?,?,?,?,?,?,?,?)&quot;,&quot;request_time&quot;,&quot;ip&quot;,&quot;host&quot;,&quot;host_url&quot;,&quot;method&quot;,&quot;path&quot;,&quot;full_path&quot;,&quot;request_body&quot;,&quot;request_args&quot;,&quot;headers&quot;,&quot;referrer&quot;]
       # }
+      #  &#x5904;&#x7406;&#x540E;&#x7684;&#x65E5;&#x5FD7;&#x843D;&#x5230;analyticdb &#x5B89;&#x88C5;&#x63D2;&#x4EF6;&#x4F7F;&#x63D2;&#x5165;&#x901F;&#x5EA6;&#x63D0;&#x5347; /Users/ysx_along/elk/logstash-7.8.0/bin/logstash-plugin install  logstash-output-analyticdb
+        # analyticdb {
+        #     driver_jar_path =&gt; &quot;/Users/ysx_along/Downloads/mysql-connector-java-5.1.48/mysql-connector-java-5.1.48-bin.jar&quot;
+        #   driver_class =&gt; &quot;com.mysql.jdbc.Driver&quot;
+        #   connection_string =&gt; &quot;jdbc:host:3306/dmart?user=user&amp;password=password&quot;
+        #   statement =&gt; [&quot;insert into along_test(request_time,ip,host,host_url,method,path,full_path,request_body,request_args,headers,referrer) values (?,?,?,?,?,?,?,?,?,?,?)&quot;,&quot;request_time&quot;,&quot;ip&quot;,&quot;host&quot;,&quot;host_url&quot;,&quot;method&quot;,&quot;path&quot;,&quot;full_path&quot;,&quot;request_body&quot;,&quot;request_args&quot;,&quot;headers&quot;,&quot;referrer&quot;]
+        #   commit_size =&gt; 4194304
+        # }
 
     # &#x6253;&#x5370;&#x6837;&#x5F0F;
     stdout {
@@ -1159,7 +1212,7 @@ config/server-2.properties:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"elk","level":"1.6.1.4","depth":3,"next":{"title":"LinuxTips","level":"1.6.2","depth":2,"path":"Linux/LinuxTips.md","ref":"Linux/LinuxTips.md","articles":[]},"previous":{"title":"git","level":"1.6.1.3","depth":3,"path":"Linux/SoftInstall/git.md","ref":"Linux/SoftInstall/git.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Linux/SoftInstall/elk.md","mtime":"2020-07-20T10:44:02.022Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-20T10:47:46.444Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"elk","level":"1.6.1.4","depth":3,"next":{"title":"LinuxTips","level":"1.6.2","depth":2,"path":"Linux/LinuxTips.md","ref":"Linux/LinuxTips.md","articles":[]},"previous":{"title":"git","level":"1.6.1.3","depth":3,"path":"Linux/SoftInstall/git.md","ref":"Linux/SoftInstall/git.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"livereload":{},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Linux/SoftInstall/elk.md","mtime":"2020-07-21T03:50:43.765Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-27T10:26:22.190Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1198,6 +1251,10 @@ config/server-2.properties:
     
         
         <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

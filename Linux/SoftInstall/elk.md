@@ -106,14 +106,14 @@ input {
 #     }
 # }
 # }
-# filter {
-#     # messge => "%{message}"
-#     # 将message转为json格式
-#     json {
-#         source => "message"
-#         # target => "message"
-#     }
-# }
+filter {
+    # messge => "%{message}"
+    # 将message转为json格式
+    json {
+        source => "message"
+        # target => "message"
+    }
+}
 output {
     # 处理后的日志落到本地文件
     # file {
@@ -138,13 +138,21 @@ output {
     #   topic_id => "along_test_topic"
     #   codec => "json"
     # }
-    # # 处理后的日志落到mysql 需要安装插件  /Users/ysx_along/elk/logstash-7.8.0/bin/logstash-plugin install  logstash-output-jdbc
+    # # 处理后的日志落到mysql 需要安装插件 /Users/ysx_along/elk/logstash-7.8.0/bin/logstash-plugin install  logstash-output-jdbc
     # jdbc {
 	  #   driver_jar_path => "/Users/ysx_along/Downloads/mysql-connector-java-5.1.48/mysql-connector-java-5.1.48-bin.jar"
 	  #   driver_class => "com.mysql.jdbc.Driver"
 	  #   connection_string => "jdbc:mysql://host:3306/database?user=user&password=xxxxxxxxxxxxxx"
 	  #   statement => ["insert into along_test(request_time,ip,host,host_url,method,path,full_path,request_body,request_args,headers,referrer) values (?,?,?,?,?,?,?,?,?,?,?)","request_time","ip","host","host_url","method","path","full_path","request_body","request_args","headers","referrer"]
   	# }
+  	#  处理后的日志落到analyticdb 安装插件使插入速度提升 /Users/ysx_along/elk/logstash-7.8.0/bin/logstash-plugin install  logstash-output-analyticdb
+		# analyticdb {
+		# 	driver_jar_path => "/Users/ysx_along/Downloads/mysql-connector-java-5.1.48/mysql-connector-java-5.1.48-bin.jar"
+		#   driver_class => "com.mysql.jdbc.Driver"
+		#   connection_string => "jdbc:host:3306/dmart?user=user&password=password"
+		#   statement => ["insert into along_test(request_time,ip,host,host_url,method,path,full_path,request_body,request_args,headers,referrer) values (?,?,?,?,?,?,?,?,?,?,?)","request_time","ip","host","host_url","method","path","full_path","request_body","request_args","headers","referrer"]
+		#   commit_size => 4194304
+		# }
 
     # 打印样式
     stdout {
