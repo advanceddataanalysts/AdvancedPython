@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>elk · PythonShare</title>
+        <title>Hive数据倾斜问题 · PythonShare</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -77,10 +77,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../LinuxTips.html" />
+    <link rel="next" href="../Docker/" />
     
     
-    <link rel="prev" href="git.html" />
+    <link rel="prev" href="Hive参数.html" />
     
 
     </head>
@@ -435,9 +435,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="./">
+        <li class="chapter " data-level="1.6.1" data-path="../SoftInstall/">
             
-                <a href="./">
+                <a href="../SoftInstall/">
             
                     
                     SoftInstall
@@ -449,9 +449,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1.1" data-path="python3.html">
+        <li class="chapter " data-level="1.6.1.1" data-path="../SoftInstall/python3.html">
             
-                <a href="python3.html">
+                <a href="../SoftInstall/python3.html">
             
                     
                     python3
@@ -462,9 +462,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.2" data-path="xxl-job.html">
+        <li class="chapter " data-level="1.6.1.2" data-path="../SoftInstall/xxl-job.html">
             
-                <a href="xxl-job.html">
+                <a href="../SoftInstall/xxl-job.html">
             
                     
                     xxl-job
@@ -475,9 +475,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.3" data-path="git.html">
+        <li class="chapter " data-level="1.6.1.3" data-path="../SoftInstall/git.html">
             
-                <a href="git.html">
+                <a href="../SoftInstall/git.html">
             
                     
                     git
@@ -488,9 +488,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.1.4" data-path="elk.html">
+        <li class="chapter " data-level="1.6.1.4" data-path="../SoftInstall/elk.html">
             
-                <a href="elk.html">
+                <a href="../SoftInstall/elk.html">
             
                     
                     elk
@@ -700,9 +700,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.12" data-path="../Hive/">
+        <li class="chapter " data-level="1.6.12" data-path="./">
             
-                <a href="../Hive/">
+                <a href="./">
             
                     
                     Hive
@@ -714,9 +714,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.12.1" data-path="../Hive/Hive简介.html">
+        <li class="chapter " data-level="1.6.12.1" data-path="Hive简介.html">
             
-                <a href="../Hive/Hive简介.html">
+                <a href="Hive简介.html">
             
                     
                     Hive简介
@@ -727,9 +727,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.12.2" data-path="../Hive/Hive使用.html">
+        <li class="chapter " data-level="1.6.12.2" data-path="Hive使用.html">
             
-                <a href="../Hive/Hive使用.html">
+                <a href="Hive使用.html">
             
                     
                     Hive使用
@@ -740,9 +740,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.12.3" data-path="../Hive/Hive参数.html">
+        <li class="chapter " data-level="1.6.12.3" data-path="Hive参数.html">
             
-                <a href="../Hive/Hive参数.html">
+                <a href="Hive参数.html">
             
                     
                     Hive参数
@@ -753,9 +753,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.12.4" data-path="../Hive/Hive数据倾斜问题.html">
+        <li class="chapter active" data-level="1.6.12.4" data-path="Hive数据倾斜问题.html">
             
-                <a href="../Hive/Hive数据倾斜问题.html">
+                <a href="Hive数据倾斜问题.html">
             
                     
                     Hive数据倾斜问题
@@ -915,7 +915,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >elk</a>
+        <a href="../.." >Hive数据倾斜问题</a>
     </h1>
 </div>
 
@@ -930,258 +930,28 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="elk">ELK</h1>
-<h2 id="elasticsearch">elasticsearch</h2>
-<pre><code class="lang-shell">1 &#x5B98;&#x7F51;&#x4E0B;&#x8F7D;: https://www.elastic.co/downloads/elasticsearch  &#x4F8B;:&#x4E0B;&#x8F7D;&#x4F4D;&#x7F6E; /Users/ysx_along/Downloads
-2 &#x89E3;&#x538B; tar -xvf /Users/ysx_along/Download/elasticsearch-7.6.2-darwin-x86_64.tar.gz -C /Users/ysx_along/elk
-3 &#x8FD0;&#x884C; 
--- &#x8FD0;&#x884C;&#x4F1A;&#x6709;&#x4E2A;&#x62A5;&#x9519;, &#x56E0;&#x4E3A;bash3.0&#x4E4B;&#x540E;&#x52A0;&#x5165;&#x65B0;&#x7B26;&#x53F7; &apos;&lt;&lt;&lt;&apos;
-    &#x6309;&#x7167;&#x62A5;&#x9519;&#x627E;&#x5230; 114 &#x884C;, &#x66F4;&#x6539;&#x4E3A;
-    done &lt;&lt;&lt; &quot;(env)&quot;
--- &#x8BBE;&#x7F6E;jvm&#x8FD0;&#x884C;&#x5185;&#x5B58;(Xms), &#x6700;&#x5927;&#x5185;&#x5B58;&#x8BBE;&#x7F6E;(Xmx)
-    vim /Users/ysx_along/elk/elasticsearch-7.6.2/config/jvm.options
-    -Xms1G
-    -Xmx1G
-/Users/ysx_along/elk/elasticsearch-7.6.2/bin/elasticsearch    
-4 &#x672C;&#x5730;&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668; host:9200 / curl host:9200
-</code></pre>
-<h2 id="kibana">kibana</h2>
-<pre><code class="lang-shell">1 &#x5B98;&#x7F51;&#x4E0B;&#x8F7D;, &#x7248;&#x672C;&#x8981;&#x4E0E;elasticsearch&#x4FDD;&#x6301;&#x4E00;&#x81F4; https://www.elastic.co/start &#x4F8B;:&#x4E0B;&#x8F7D;&#x4F4D;&#x7F6E; /Users/ysx_along/Downloads
-2 &#x89E3;&#x538B; tar -zxvf /Users/ysx_along/Download/kibana-7.6.2-darwin-x86_64.tar.gz -C /Users/ysx_along/elk
-3 &#x8FD0;&#x884C; 
--- kibana&#x8FD0;&#x884C;&#x65F6;&#x4F1A;&#x53BB;&#x627E;&#x672C;&#x5730;&#x8FD0;&#x884C;&#x7684;elasticsearch, localhost&#x8FD0;&#x884C;&#x53EF;&#x4EE5;&#x4E0D;&#x6307;&#x5B9A;elasticsearch&#x7684;url&#x5730;&#x5740;
-    &#x914D;&#x7F6E;&#x5BF9;&#x5E94;&#x7684;es&#x5730;&#x5740;
-    vim /Users/ysx_along/elk/kibana-7.6.2-darwin-x86_64/config/kibana.yml
-    elasticsearch.hosts: [&quot;http://host:9200&quot;]
-/Users/ysx_along/elk/kibana-7.6.2-darwin-x86_64/bin/kibana
-4 &#x672C;&#x5730;&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668; http://localhost:5601
-</code></pre>
-<h2 id="logstash">logstash</h2>
-<pre><code class="lang-shell">1 &#x5B98;&#x7F51;&#x4E0B;&#x8F7D;: https://artifacts.elastic.co/downloads/logstash/ &#x4F8B;:&#x4E0B;&#x8F7D;&#x4F4D;&#x7F6E; /Users/ysx_along/Downloads
-2 &#x89E3;&#x538B; tar -zxvf /Users/ysx_along/Download/logstash-7.8.0.tar.gz -C /Users/ysx_along/logstash
-3 &#x521B;&#x5EFA;logstash.conf&#x6587;&#x4EF6;&#x586B;&#x5165;&#x8F93;&#x5165;/&#x5904;&#x7406;/&#x8F93;&#x51FA;&#x914D;&#x7F6E;
-    vim /Users/ysx_along/elk/logstash-7.8.0/bin/logstash.conf
-    input {} --&#x8F93;&#x5165;&#x6E90;
-  filter {} --&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;
-  output {} --&#x8F93;&#x51FA;&#x6E90;
-4 &#x8FD0;&#x884C;  
-#&#x63A7;&#x5236;&#x53F0;&#x6D4B;&#x8BD5;
-/Users/ysx_along/elk/logstash-7.8.0/bin/logstash -e &apos;input { stdin { } } output { stdout {} }&apos;
--- &#x63A7;&#x5236;&#x53F0;&#x8F93;&#x5165;hello, &#x770B;&#x5230;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;
-    {
-      &quot;@version&quot; =&gt; &quot;1&quot;,
-          &quot;host&quot; =&gt; &quot;172-10-30-128.lightspeed.rlghnc.sbcglobal.net&quot;,
-       &quot;message&quot; =&gt; &quot;hello &quot;,
-    &quot;@timestamp&quot; =&gt; 2020-07-14T05:48:56.250Z
-    }
-
-#conf&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#x542F;&#x52A8;
-/Users/ysx_along/elk/logstash-7.8.0/bin/logstash -f /Users/ysx_along/elk/logstash-7.8.0/bin/logstash.conf
-</code></pre>
-<pre><code class="lang-shell">input {
-    ##&#x4ECE;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x5165;
-    stdin{}
-    ##&#x4ECE;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x4E2D;&#x8BFB;&#x53D6;
-    # file { 
-    #     path =&gt; [&quot;/Users/ysx_along/Desktop/analysis_project/DataMachine_for_web/ana_web_logs/ana_web_log_20200720.log&quot;]
-    #     type =&gt; &quot;along_test&quot;
-    #     tags =&gt; [&quot;ana_web&#x65E5;&#x5FD7;&quot;]
-    #     start_position =&gt; &quot;beginning&quot;
-    # }
-    ## &#x5982;&#x679C;&#x6709;&#x5176;&#x4ED6;&#x6570;&#x636E;&#x6E90;, &#x76F4;&#x63A5;&#x5728;&#x4E0B;&#x9762;&#x8FFD;&#x52A0;
-    #&#x4ECE;kafka&#x6D88;&#x8D39;
-    # kafka { 
-    #     bootstrap_servers =&gt; &quot;host:9092&quot;
-    #     topics =&gt; [&quot;along_test_topic&quot;]
-    #     codec =&gt; json {
-    #         charset =&gt; &quot;UTF-8&quot;
-    #     }
-    #     tags =&gt; [&quot;along_test_topic&quot;]
-    # }
-    ##&#x4ECE;&#x672C;&#x5730;&#x7AEF;&#x53E3;&#x53F7;5000&#x7684;&#x670D;&#x52A1;&#x4E2D;&#x8BFB;&#x53D6;
-    # tcp { 
-    #     port =&gt; 5000 
-    #     # codec =&gt; json
-    #     tags =&gt; [&quot;ana_back_end&quot;]
-    # }
-    ##filebate&#x7AEF;&#x53E3;&#x63A5;&#x6536;
-    # beats {
-    #   port =&gt; 5044
-      # codec =&gt; &quot;json&quot;
-    # }
-}
-## &#x6761;&#x4EF6;&#x8FC7;&#x6EE4;
-# filter {
-#     # mutate {
-#     #         remove_tag =&gt; [&quot;_jsonparsefailure&quot;]
-#     #         remove_tag =&gt; [&quot;_grokparsefailure&quot;]
-#     #     }
-#     grok {
-#         match =&gt; {
-#             &quot;message&quot; =&gt; &quot;%{DATA}&quot;
-#         }
-#         # &quot;message&quot; =&gt; &quot;%{message}&quot;
-#         # &quot;version&quot; =&gt; &quot;%@version&quot;
-#         # &quot;timestamp&quot; =&gt; &quot;%@timestamp&quot;
-#         # &quot;tags&quot; =&gt; &quot;ana_kafka&quot;
-#     }
-# }
-# }
-filter {
-    # messge =&gt; &quot;%{message}&quot;
-    # &#x5C06;message&#x8F6C;&#x4E3A;json&#x683C;&#x5F0F;
-    json {
-        source =&gt; &quot;message&quot;
-        # target =&gt; &quot;message&quot;
-    }
-}
-output {
-    # &#x5904;&#x7406;&#x540E;&#x7684;&#x65E5;&#x5FD7;&#x843D;&#x5230;&#x672C;&#x5730;&#x6587;&#x4EF6;
-    # file {
-    #     path =&gt; &quot;/tmp/logstash_test.log&quot;
-    #     flush_interval =&gt; 0
-    # }
-    # # &#x5904;&#x7406;&#x540E;&#x7684;&#x65E5;&#x5FD7;&#x5165;es
-    # elasticsearch {
-    #     hosts =&gt; &quot;host:9200&quot;
-    #     index =&gt; &quot;along_test_logstash&quot;
-    # }
-    # # &#x5904;&#x7406;&#x540E;&#x7684;&#x65E5;&#x5FD7;&#x5165;hive
-    # webhdfs {
-    #     host =&gt; &quot;host&quot;
-    #     port =&gt; 50070
-    #     path =&gt; &quot;/user/hive/warehouse/ods.db/along_test_logstash/dt=%{+YYYYMMdd}&quot;
-    #     user =&gt; &quot;admin&quot;
-    # }
-    # # &#x5904;&#x7406;&#x540E;&#x7684;&#x65E5;&#x5FD7;&#x5165;kafka
-    # kafka {
-    #   bootstrap_servers =&gt; &quot;host:9092&quot;
-    #   topic_id =&gt; &quot;along_test_topic&quot;
-    #   codec =&gt; &quot;json&quot;
-    # }
-    # # &#x5904;&#x7406;&#x540E;&#x7684;&#x65E5;&#x5FD7;&#x843D;&#x5230;mysql &#x9700;&#x8981;&#x5B89;&#x88C5;&#x63D2;&#x4EF6; /Users/ysx_along/elk/logstash-7.8.0/bin/logstash-plugin install  logstash-output-jdbc
-    # jdbc {
-      #   driver_jar_path =&gt; &quot;/Users/ysx_along/Downloads/mysql-connector-java-5.1.48/mysql-connector-java-5.1.48-bin.jar&quot;
-      #   driver_class =&gt; &quot;com.mysql.jdbc.Driver&quot;
-      #   connection_string =&gt; &quot;jdbc:mysql://host:3306/database?user=user&amp;password=xxxxxxxxxxxxxx&quot;
-      #   statement =&gt; [&quot;insert into along_test(request_time,ip,host,host_url,method,path,full_path,request_body,request_args,headers,referrer) values (?,?,?,?,?,?,?,?,?,?,?)&quot;,&quot;request_time&quot;,&quot;ip&quot;,&quot;host&quot;,&quot;host_url&quot;,&quot;method&quot;,&quot;path&quot;,&quot;full_path&quot;,&quot;request_body&quot;,&quot;request_args&quot;,&quot;headers&quot;,&quot;referrer&quot;]
-      # }
-      #  &#x5904;&#x7406;&#x540E;&#x7684;&#x65E5;&#x5FD7;&#x843D;&#x5230;analyticdb &#x5B89;&#x88C5;&#x63D2;&#x4EF6;&#x4F7F;&#x63D2;&#x5165;&#x901F;&#x5EA6;&#x63D0;&#x5347; /Users/ysx_along/elk/logstash-7.8.0/bin/logstash-plugin install  logstash-output-analyticdb
-        # analyticdb {
-        #     driver_jar_path =&gt; &quot;/Users/ysx_along/Downloads/mysql-connector-java-5.1.48/mysql-connector-java-5.1.48-bin.jar&quot;
-        #   driver_class =&gt; &quot;com.mysql.jdbc.Driver&quot;
-        #   connection_string =&gt; &quot;jdbc:host:3306/dmart?user=user&amp;password=password&quot;
-        #   statement =&gt; [&quot;insert into along_test(request_time,ip,host,host_url,method,path,full_path,request_body,request_args,headers,referrer) values (?,?,?,?,?,?,?,?,?,?,?)&quot;,&quot;request_time&quot;,&quot;ip&quot;,&quot;host&quot;,&quot;host_url&quot;,&quot;method&quot;,&quot;path&quot;,&quot;full_path&quot;,&quot;request_body&quot;,&quot;request_args&quot;,&quot;headers&quot;,&quot;referrer&quot;]
-        #   commit_size =&gt; 4194304
-        # }
-
-    # &#x6253;&#x5370;&#x6837;&#x5F0F;
-    stdout {
-        codec =&gt; rubydebug
-    }
-}
-</code></pre>
-<h2 id="filebeat">filebeat</h2>
-<pre><code class="lang-shell">1 &#x5B98;&#x7F51;&#x4E0B;&#x8F7D;, https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.8.0-darwin-x86_64.tar.gz &#x4F8B;:&#x4E0B;&#x8F7D;&#x4F4D;&#x7F6E; /Users/ysx_along/Downloads
-2 &#x89E3;&#x538B; tar -zxvf /Users/ysx_along/Download/filebeat-7.8.0-darwin-x86_64.tar.gz -C /Users/ysx_along/elk
-3 &#x914D;&#x7F6E;yml&#x6587;&#x4EF6; &#x4F8B;:nginx.yml
-4 &#x8FD0;&#x884C; 
-/Users/ysx_along/elk/filebeat-7.8.0-darwin-x86_64/filebeat -e -c /Users/ysx_along/elk/filebeat-7.8.0-darwin-x86_64/nginx.yml
-5 &#x5982;&#x5C06;filebeat&#x63A8;&#x5230;logstash&#x4E2D;,&#x9700;&#x5728;logstash.conf&#x4E2D;&#x914D;&#x7F6E;
-  input {
-      ##filebate&#x7AEF;&#x53E3;&#x63A5;&#x6536;
-      beats {
-        port =&gt; 5044
-        # codec =&gt; &quot;json&quot;
-      }
-  }
-  output {
-    # &#x6253;&#x5370;&#x6837;&#x5F0F;
-    stdout {
-    codec =&gt; rubydebug
-    }
-    }
-
-
-  &#x542F;&#x52A8;logstash  
-  /Users/ysx_along/elk/logstash-7.8.0/bin/logstash -f /Users/ysx_along/elk/logstash-7.8.0/bin/logstash.conf
-</code></pre>
-<pre><code class="lang-shell">#nginx.yml
-#=========================== Filebeat inputs =============================
-filebeat.inputs:
-- input_type: log
-  paths:
-    - /Users/ysx_along/data/logs/nginx_logs/ana_web.*.log
-    #exclude_lines: [&quot;^DBG&quot;]                   #&#x4EE5;&#x4EC0;&#x4E48;&#x5F00;&#x5934;&#x7684;&#x4E0D;&#x6536;&#x96C6;
-    #include_lines: [&quot;^ERR&quot;, &quot;^WARN&quot;]         #&#x53EA;&#x6536;&#x96C6;&#x4EE5;&#x4EC0;&#x4E48;&#x5F00;&#x5934;&#x7684;
-    #exclude_files: [&quot;.gz$&quot;]                   #.gz&#x7ED3;&#x5C3E;&#x4E0D;&#x6536;&#x96C6;
-    #document_type: &quot;nginx_filebeat&quot;  #&#x589E;&#x52A0;&#x4E00;&#x4E2A;type
-#================================ Outputs =====================================
-
-# Configure what outputs to use when sending the data collected by the beat.
-# Multiple outputs may be used.
-
-##&#x65E5;&#x5FD7;&#x63A7;&#x5236;&#x53F0;&#x6253;&#x5370;
-output.console:
-  enabled: true
-  pretty: true
-
-##&#x65E5;&#x5FD7;&#x6536;&#x96C6;&#x5199;&#x5165;&#x5230;logstash
-#output.logstash:
-#  hosts: [&quot;host:5044&quot;]     #logstash &#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;&#x53EF;&#x5199;&#x5165;&#x591A;&#x4E2A;
-#  enabled: true                     #&#x662F;&#x5426;&#x5F00;&#x542F;&#x8F93;&#x51FA;&#x5230;logstash &#x9ED8;&#x8BA4;&#x5F00;&#x542F;
-#  worker: 1                         #&#x8FDB;&#x7A0B;&#x6570;
-#  compression_level: 3              #&#x538B;&#x7F29;&#x7EA7;&#x522B;
-#  #loadbalance: true                #&#x591A;&#x4E2A;&#x8F93;&#x51FA;&#x7684;&#x65F6;&#x5019;&#x5F00;&#x542F;&#x8D1F;&#x8F7D;
-
-#output.kafka:
-#  enabled: true
-#  codec.format:
-#    string: &apos;%{[message]}&apos;
-#  hosts: [&quot;host:9092&quot;]
-#  topic: &quot;along_test_topic&quot;
-</code></pre>
-<h2 id="kafka">kafka</h2>
-<pre><code class="lang-shell">1 &#x5B98;&#x7F51;&#x4E0B;&#x8F7D;: https://mirrors.bfsu.edu.cn/apache/kafka/2.5.0/kafka_2.12-2.5.0.tgz &#x4F8B;:&#x4E0B;&#x8F7D;&#x4F4D;&#x7F6E; /Users/ysx_along/Downloads
-2 &#x89E3;&#x538B; tar -zxvf /Users/ysx_along/Download/kafka_2.12-2.5.0.tgz -C /Users/ysx_along/kafka
-3 &#x8FD0;&#x884C;kafka&#x9700;&#x8981;&#x542F;&#x52A8;Zookeeper, &#x5982;&#x679C;&#x6CA1;&#x6709;Zookeeper&#x53EF;&#x4EE5;kafka&#x81EA;&#x5E26;&#x6253;&#x5305;&#x548C;&#x914D;&#x7F6E;&#x597D;&#x7684;Zookeeper
-/Users/ysx_along/kafka/kafka_2.12-2.5.0/bin/zookeeper-server-start.sh  /Users/ysx_along/kafka/kafka_2.12-2.5.0/config/zookeeper.properties
-4 &#x542F;&#x52A8;kafka
-/Users/ysx_along/kafka/kafka_2.12-2.5.0/bin/kafka-server-start.sh /Users/ysx_along/kafka/kafka_2.12-2.5.0/config/server.properties 
-
-#&#x521B;&#x5EFA;topic
-/Users/ysx_along/kafka/kafka_2.12-2.5.0/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic along_test_topic
-#&#x67E5;&#x770B;&#x5DF2;&#x521B;&#x5EFA;&#x7684;topic
-/Users/ysx_along/kafka/kafka_2.12-2.5.0/bin/kafka-topics.sh --list --zookeeper localhost:2181
-#&#x751F;&#x4EA7;&#x6D88;&#x606F;
-/Users/ysx_along/kafka/kafka_2.12-2.5.0/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic along_test_topic
-#&#x6D88;&#x8D39;&#x6D88;&#x606F;
-/Users/ysx_along/kafka/kafka_2.12-2.5.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic along_test_topic --from-beginning
-
-#&#x8BBE;&#x7F6E;&#x591A;&#x4E2A;broker&#x96C6;&#x7FA4;
-cp /Users/ysx_along/kafka/kafka_2.12-2.5.0/config/server.properties config/server-1.properties 
-cp /Users/ysx_along/kafka/kafka_2.12-2.5.0/config/server.properties config/server-2.properties 
-&#x4FEE;&#x6539;&#x4EE5;&#x4E0B;&#x4FE1;&#x606F;:
-config/server-1.properties: 
-    broker.id=1 
-    listeners=PLAINTEXT://:9093 
-    log.dir=/tmp/kafka-logs-1
-
-config/server-2.properties: 
-    broker.id=2 
-    listeners=PLAINTEXT://:9094 
-    log.dir=/tmp/kafka-logs-2
-&#x7136;&#x540E;&#x5206;&#x522B;&#x542F;&#x52A8;     
-/Users/ysx_along/kafka/kafka_2.12-2.5.0/bin/kafka-server-start.sh /Users/ysx_along/kafka/kafka_2.12-2.5.0/config/server1.properties 
-
-/Users/ysx_along/kafka/kafka_2.12-2.5.0/bin/kafka-server-start.sh /Users/ysx_along/kafka/kafka_2.12-2.5.0/config/server2.properties 
-
-#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;topic,&#x5907;&#x4EFD;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;3
-/Users/ysx_along/kafka/kafka_2.12-2.5.0/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 3 --partitions 1 --topic my-replicated-topic
-
-#&#x67E5;&#x770B;&#x96C6;&#x7FA4;&#x5728;&#x505A;&#x4EC0;&#x4E48;
-/Users/ysx_along/kafka/kafka_2.12-2.5.0/bin/kafka-topics.sh --describe --zookeeper localhost:2181 --topic my-replicated-topic
-</code></pre>
+                                <h1 id="hive&#x6570;&#x636E;&#x503E;&#x659C;&#x95EE;&#x9898;">Hive&#x6570;&#x636E;&#x503E;&#x659C;&#x95EE;&#x9898;</h1>
+<p>&#x6570;&#x636E;&#x503E;&#x659C;, &#x5373;&#x5355;&#x4E2A;&#x8282;&#x70B9;&#x4EFB;&#x52A1;&#x6240;&#x5904;&#x7406;&#x7684;&#x6570;&#x636E;&#x91CF;&#x8FDC;&#x5927;&#x4E8E;&#x540C;&#x7C7B;&#x578B;&#x4EFB;&#x52A1;&#x6240;&#x5904;&#x7406;&#x7684;&#x6570;&#x636E;&#x91CF;, &#x5BFC;&#x81F4;&#x8BE5;&#x8282;&#x70B9;&#x6210;&#x4E3A;&#x6574;&#x4E2A;&#x4F5C;&#x4E1A;&#x7684;&#x74F6;&#x9888;, &#x8FD9;&#x662F;&#x5206;&#x5E03;&#x5F0F;&#x7CFB;&#x7EDF;&#x4E0D;&#x53EF;&#x80FD;&#x907F;&#x514D;&#x7684;&#x95EE;&#x9898;.</p>
+<p>&#x4ECE;&#x672C;&#x8D28;&#x4E0A;&#x8BF4;, &#x5BFC;&#x81F4;&#x6570;&#x636E;&#x503E;&#x659C;&#x6709;&#x4E24;&#x79CD;&#x539F;&#x56E0;: 1 &#x4EFB;&#x52A1;&#x8BFB;&#x53D6;&#x5927;&#x6587;&#x4EF6;, 2 &#x4EFB;&#x52A1;&#x9700;&#x8981;&#x5904;&#x7406;&#x5927;&#x91CF;&#x76F8;&#x540C;&#x952E;&#x7684;&#x6570;&#x636E;</p>
+<h3 id="mapreduce&#x5B9E;&#x9645;&#x5904;&#x7406;&#x6D41;&#x7A0B;">mapreduce&#x5B9E;&#x9645;&#x5904;&#x7406;&#x6D41;&#x7A0B;</h3>
+<p><strong>input --&gt; map --&gt; partition --&gt; combine --&gt; sort --&gt; reduce --&gt; output</strong></p>
+<h2 id="&#x4EFB;&#x52A1;&#x8BFB;&#x53D6;&#x5927;&#x6587;&#x4EF6;">&#x4EFB;&#x52A1;&#x8BFB;&#x53D6;&#x5927;&#x6587;&#x4EF6;</h2>
+<p>&#x6700;&#x5E38;&#x89C1;&#x7684;&#x662F;&#x8BFB;&#x53D6;&#x538B;&#x7F29;&#x7684;&#x4E0D;&#x53EF;&#x5206;&#x5272;&#x7684;&#x5927;&#x6587;&#x4EF6;, &#x5F53;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5F52;&#x6863;&#x6216;&#x8F6C;&#x50A8;&#x65F6;&#x4F1A;&#x9700;&#x8981;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x538B;&#x7F29;, &#x5F53;&#x5BF9;&#x6587;&#x4EF6;&#x4F7F;&#x7528;gzip&#x538B;&#x7F29;&#x7B49;&#x4E0D;&#x652F;&#x6301;&#x6587;&#x4EF6;&#x5206;&#x5272;&#x7684;&#x538B;&#x7F29;&#x65B9;&#x5F0F;&#x65F6;, &#x8BFB;&#x53D6;&#x8BE5;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x53EA;&#x4F1A;&#x88AB;&#x4E00;&#x4E2A;map&#x4EFB;&#x52A1;&#x8BFB;&#x53D6;, &#x5982;&#x679C;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x5F88;&#x5927;, &#x5904;&#x7406;&#x8BE5;&#x6587;&#x4EF6;&#x7684;map&#x9700;&#x8981;&#x82B1;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#x4F1A;&#x8FDC;&#x5927;&#x4E8E;&#x8BFB;&#x53D6;&#x666E;&#x901A;&#x6587;&#x4EF6;&#x7684;map&#x65F6;&#x95F4;, &#x8BE5;map&#x4EFB;&#x52A1;&#x5C31;&#x4F1A;&#x6210;&#x4E3A;&#x4F5C;&#x4E1A;&#x8FD0;&#x884C;&#x7684;&#x74F6;&#x9888;</p>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6848;: 1) &#x6570;&#x636E;&#x538B;&#x7F29;&#x65F6;&#x91C7;&#x7528;bzip2/zip/snappy&#x7B49;&#x538B;&#x7F29;&#x7B97;&#x6CD5; 2) &#x5408;&#x7406;&#x5206;&#x533A;</p>
+<h2 id="&#x4EFB;&#x52A1;&#x9700;&#x8981;&#x5904;&#x7406;&#x5927;&#x91CF;&#x76F8;&#x540C;&#x952E;&#x7684;&#x6570;&#x636E;">&#x4EFB;&#x52A1;&#x9700;&#x8981;&#x5904;&#x7406;&#x5927;&#x91CF;&#x76F8;&#x540C;&#x952E;&#x7684;&#x6570;&#x636E;</h2>
+<p>1 &#x4E1A;&#x52A1;&#x65E0;&#x5173;&#x7684;&#x6570;&#x636E;/&#x5F02;&#x5E38;&#x503C;&#x5F15;&#x53D1;&#x7684;&#x6570;&#x636E;&#x503E;&#x659C;</p>
+<p>&#x5B9E;&#x9645;&#x4E1A;&#x52A1;&#x4E2D;&#x6709;&#x5927;&#x91CF;&#x7684;NULL&#x503C;&#x6216;&#x8005;&#x4E00;&#x4E9B;&#x65E0;&#x610F;&#x4E49;&#x7684;&#x6570;&#x636E;&#x53C2;&#x4E0E;&#x5230;&#x8BA1;&#x7B97;&#x4F5C;&#x4E1A;&#x4E2D;, &#x8FD9;&#x4E9B;&#x4F5C;&#x4E1A;&#x53EF;&#x80FD;&#x6765;&#x81EA;&#x4E1A;&#x52A1;&#x4E0A;&#x62A5;/&#x6570;&#x636E;&#x89C4;&#x8303;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5F52;&#x4E00;&#x5316;&#x53D8;&#x4E3A;NULL/&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x7B49;, &#x8FD9;&#x4E9B;&#x4E0E;&#x4E1A;&#x52A1;&#x65E0;&#x5173;&#x7684;&#x6570;&#x636E;&#x5F15;&#x5165;&#x5BFC;&#x81F4;&#x5728;&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#x805A;&#x5408;&#x6216;&#x8005;&#x8868;&#x8FDE;&#x63A5;&#x65F6;&#x53D1;&#x751F;&#x6570;&#x636E;&#x503E;&#x659C;</p>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6848;: 1) &#x6839;&#x636E;&#x4E1A;&#x52A1;&#x9700;&#x6C42;&#x6392;&#x9664;&#x5F02;&#x5E38;&#x6570;&#x636E;; 2) &#x5C06;&#x5F02;&#x5E38;&#x503C;&#x4E0E;&#x6B63;&#x5E38;&#x503C;&#x5206;&#x5F00;&#x5904;&#x7406;; 3) &#x8868;&#x5173;&#x8054;&#x65F6;&#x7C7B;&#x578B;&#x4FDD;&#x6301;&#x4E00;&#x81F4;</p>
+<p>2 &#x805A;&#x5408;&#x51FD;&#x6570;&#x5F15;&#x8D77;&#x7684;&#x6570;&#x636E;&#x503E;&#x659C;</p>
+<p>&#x5728;mapreduce&#x4EFB;&#x52A1;&#x4E2D;, reduce&#x63A5;&#x6536;&#x7684;&#x6570;&#x636E;&#x662F;&#x5206;&#x533A;&#x7684;&#x7ED3;&#x679C;, &#x5206;&#x533A;&#x662F;&#x5BF9;key&#x6C42;hash&#x503C;,&#x6839;&#x636E;hash&#x503C;&#x51B3;&#x5B9A;key&#x88AB;&#x5206;&#x5230;&#x54EA;&#x4E2A;&#x5206;&#x533A;,&#x8FDB;&#x800C;&#x88AB;&#x5206;&#x914D;&#x5230;&#x67D0;&#x4E2A;reduce. &#x5728;&#x805A;&#x5408;&#x51FD;&#x6570;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;, &#x5982;&#x679C;&#x805A;&#x5408;&#x7684;&#x7EF4;&#x5EA6;&#x503C;&#x5F88;&#x96C6;&#x4E2D;,&#x90A3;&#x5206;&#x914D;&#x5230;&#x67D0;&#x4E9B;reduce&#x4EFB;&#x52A1;&#x7684;&#x6570;&#x636E;&#x91CF;&#x5C31;&#x4F1A;&#x5F88;&#x5927;, &#x8BE5;reduce&#x4EFB;&#x52A1;&#x5904;&#x7406;&#x7684;&#x6570;&#x636E;&#x91CF;&#x5C06;&#x8FDC;&#x5927;&#x4E8E;&#x5176;&#x4ED6;reduce&#x4EFB;&#x52A1;, &#x8BE5;reduce&#x4EFB;&#x52A1;&#x5C31;&#x4F1A;&#x6210;&#x4E3A;&#x4F5C;&#x4E1A;&#x8FD0;&#x884C;&#x7684;&#x74F6;&#x9888;</p>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6848;: 1) &#x5728;map&#x9636;&#x6BB5;&#x7ED9;key&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x6570;, &#x51CF;&#x5C0F;&#x88AB;&#x5206;&#x914D;&#x5230;&#x540C;&#x4E00;&#x4E2A;reduce&#x7684;&#x6982;&#x7387; </p>
+<p>2) &#x8BBE;&#x7F6E;&#x8D1F;&#x8F7D;&#x5747;&#x8861; hive.groupby.skewindata=true, &#x5F00;&#x542F;&#x540E;&#x4F1A;&#x6709;&#x4E24;&#x4E2A;mapreduce&#x4EFB;&#x52A1;, &#x7B2C;&#x4E00;&#x4E2A;job&#x4E2D;, map&#x9636;&#x6BB5;&#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x4F1A;&#x968F;&#x673A;&#x5206;&#x5E03;&#x5230;reduce&#x4E2D;,&#x6BCF;&#x4E2A;reduce&#x505A;&#x90E8;&#x5206;&#x805A;&#x5408;&#x64CD;&#x4F5C;&#x7136;&#x540E;&#x8F93;&#x51FA;&#x7ED9;&#x7B2C;&#x4E8C;&#x4E2A;mapreduce&#x4EFB;&#x52A1;,&#x7B2C;&#x4E8C;&#x4E2A;job&#x4F1A;&#x6839;&#x636E;key&#x7684;hash&#x503C;&#x8FDB;&#x884C;&#x5206;&#x914D;,&#x5B8C;&#x6210;&#x6700;&#x7EC8;&#x7684;&#x805A;&#x5408;.  &#x6838;&#x5FC3;&#x539F;&#x7406;&#x5C31;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x968F;&#x673A;&#x5206;&#x914D;&#x5230;&#x4E0D;&#x540C;&#x7684;reduce&#x4E0A;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x505A;&#x90E8;&#x5206;&#x805A;&#x5408;, &#x51CF;&#x5C11;&#x6570;&#x636E;&#x91CF;, &#x7136;&#x540E;&#x7B2C;&#x4E8C;&#x4E2A;&#x4EFB;&#x52A1;&#x8FDB;&#x884C;&#x6700;&#x7EC8;&#x805A;&#x5408;</p>
+<p>3) map&#x7AEF;&#x5F00;&#x542F;&#x805A;&#x5408;, &#x51CF;&#x5C11;&#x8FDB;&#x5165;&#x5230;reduce&#x9636;&#x6BB5;&#x7684;&#x6570;&#x636E;&#x91CF; set hive.map.aggr=true; </p>
+<p>4) &#x8BBE;&#x7F6E;reduce&#x80FD;&#x5904;&#x7406;&#x7684;&#x6570;&#x636E;&#x5927;&#x5C0F;  set  hive.exec.reducers.bytes.per.reducer=1000000000  (&#x5355;&#x4F4D;&#x4E3A;&#x5B57;&#x8282;,&#x9ED8;&#x8BA4;1G)</p>
+<p>5) &#x8BBE;&#x7F6E;&#x6700;&#x5927;&#x5F00;&#x542F;&#x7684;reduce&#x4E2A;&#x6570;  set hive.exec.reducers.max=999 (&#x9ED8;&#x8BA4;999)  &#x4E0E;4&#x540C;&#x65F6;&#x914D;&#x7F6E;&#x90FD;&#x4E0D;&#x4F1A;&#x751F;&#x6548;</p>
+<p>6) &#x589E;&#x52A0;&#x8D44;&#x6E90;, &#x589E;&#x52A0;jvm&#x5185;&#x5B58;</p>
+<p>7) &#x5C06;count(distinct) &#x6539;&#x6210; sum...group by&#x7684;&#x5F62;&#x5F0F;</p>
+<p> select a,count(distinct b) from t group by a  --&gt;  select a,sum(1) from (select a, b from t group by a,b) group by a</p>
 
                                 
                                 </section>
@@ -1209,12 +979,12 @@ config/server-2.properties:
 
             
                 
-                <a href="git.html" class="navigation navigation-prev " aria-label="Previous page: git">
+                <a href="Hive参数.html" class="navigation navigation-prev " aria-label="Previous page: Hive参数">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../LinuxTips.html" class="navigation navigation-next " aria-label="Next page: LinuxTips">
+                <a href="../Docker/" class="navigation navigation-next " aria-label="Next page: Docker">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1225,7 +995,7 @@ config/server-2.properties:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"elk","level":"1.6.1.4","depth":3,"next":{"title":"LinuxTips","level":"1.6.2","depth":2,"path":"Linux/LinuxTips.md","ref":"Linux/LinuxTips.md","articles":[]},"previous":{"title":"git","level":"1.6.1.3","depth":3,"path":"Linux/SoftInstall/git.md","ref":"Linux/SoftInstall/git.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Linux/SoftInstall/elk.md","mtime":"2020-07-21T03:50:43.765Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-29T05:04:00.083Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Hive数据倾斜问题","level":"1.6.12.4","depth":3,"next":{"title":"Docker","level":"1.6.13","depth":2,"path":"Linux/Docker/README.md","ref":"Linux/Docker/README.md","articles":[{"title":"Docker","level":"1.6.13.1","depth":3,"path":"Linux/Docker/Docker.md","ref":"Linux/Docker/Docker.md","articles":[]}]},"previous":{"title":"Hive参数","level":"1.6.12.3","depth":3,"path":"Linux/Hive/Hive参数.md","ref":"Linux/Hive/Hive参数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Linux/Hive/Hive数据倾斜问题.md","mtime":"2020-07-28T12:30:31.484Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-29T05:04:00.083Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
