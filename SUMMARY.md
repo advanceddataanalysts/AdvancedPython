@@ -45,6 +45,7 @@
         * [Hive简介](Linux/Hive/Hive简介.md)
 	    * [Hive使用](Linux/Hive/Hive使用.md)
         * [Hive参数](Linux/Hive/Hive参数.md)
+        * [Hive数据倾斜问题](Linux/Hive/Hive数据倾斜问题.md)
     * [Docker](Linux/Docker/README.md)
         * [Docker](Linux/Docker/Docker.md)
 * [Vue](Vue/README.md)
