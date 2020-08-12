@@ -19,7 +19,7 @@ numpy==1.16.4
 openpyxl==2.6.3
 pandas==0.25.0
 prettytable==0.7.2
-psutil==5.6.3
+psutil==5.6.6
 pycryptodome==3.8.2
 PyHive==0.6.1
 PyMySQL==0.9.3
