@@ -1,4 +1,4 @@
-## 安装python3(3.7.5)
+# 安装python3(3.7.5)
 
 ```shell
 # 安装编译相关工具
@@ -6,7 +6,7 @@ yum -y groupinstall "Development tools"
 yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel
 # 安装sasl报错时先安装以下依赖
 yum -y install gcc-c++ python-devel.x86_64 cyrus-sasl-devel.x86_64
-# hive链接报错先安装
+# hive连接报错先安装
 yum -y install cyrus-sasl-plain  cyrus-sasl-devel  cyrus-sasl-gssapi
 # 下载安装包并解压
 cd /home/service

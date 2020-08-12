@@ -80,7 +80,7 @@
     <link rel="next" href="LinuxAliases.html" />
     
     
-    <link rel="prev" href="SoftInstall/elk.html" />
+    <link rel="prev" href="SoftInstall/ELK.html" />
     
 
     </head>
@@ -462,7 +462,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.2" data-path="SoftInstall/xxl-job.html">
+        <li class="chapter " data-level="1.6.1.2" data-path="SoftInstall/MySQL.html">
+            
+                <a href="SoftInstall/MySQL.html">
+            
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="SoftInstall/xxl-job.html">
             
                 <a href="SoftInstall/xxl-job.html">
             
@@ -475,12 +488,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.3" data-path="SoftInstall/git.html">
+        <li class="chapter " data-level="1.6.1.4" data-path="SoftInstall/Git.html">
             
-                <a href="SoftInstall/git.html">
+                <a href="SoftInstall/Git.html">
             
                     
-                    git
+                    Git
             
                 </a>
             
@@ -488,12 +501,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.4" data-path="SoftInstall/elk.html">
+        <li class="chapter " data-level="1.6.1.5" data-path="SoftInstall/ELK.html">
             
-                <a href="SoftInstall/elk.html">
+                <a href="SoftInstall/ELK.html">
             
                     
-                    elk
+                    ELK
             
                 </a>
             
@@ -931,11 +944,110 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="linuxtips">LinuxTips</h1>
-<h4 id="&#x6839;&#x636E;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6740;&#x6B7B;&#x8FDB;&#x7A0B;">&#x6839;&#x636E;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6740;&#x6B7B;&#x8FDB;&#x7A0B;</h4>
-<pre><code class="lang-shell">ps aux | grep python3
-kill &lt;pid&gt;
+<h2 id="&#x67E5;&#x770B;&#x5F53;&#x524D;&#x670D;&#x52A1;&#x5668;&#x7684;&#x914D;&#x7F6E;">&#x67E5;&#x770B;&#x5F53;&#x524D;&#x670D;&#x52A1;&#x5668;&#x7684;&#x914D;&#x7F6E;</h2>
+<pre><code class="lang-shell"># &#x67E5;&#x770B;&#x5F53;&#x524D;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7248;&#x672C;&#x4FE1;&#x606F;  
+cat /proc/version
+# &#x67E5;&#x770B;&#x5F53;&#x524D;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5185;&#x6838;&#x4FE1;&#x606F;
+uname -a
+# &#x67E5;&#x770B;&#x5F53;&#x524D;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x53D1;&#x884C;&#x4FE1;&#x606F;
+cat /etc/centos-release  or  cat /etc/issue
+
+# &#x67E5;&#x770B;cpu&#x76F8;&#x5173;&#x4FE1;&#x606F;
+cat /proc/cpuinfo
+# &#x67E5;&#x770B;cpu&#x7269;&#x7406;&#x6838;&#x6570;
+cat /proc/cpuinfo| grep &quot;cpu cores&quot;| uniq
+# &#x67E5;&#x770B;cpu&#x903B;&#x8F91;&#x6838;&#x6570;
+cat /proc/cpuinfo| grep &quot;processor&quot;| wc -l
+# &#x67E5;&#x770B;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x60C5;&#x51B5;
+free -h
+# &#x67E5;&#x770B;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x5206;&#x533A;&#x60C5;&#x51B5;
+fdisk -l
+# &#x67E5;&#x770B;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x53CA;&#x6302;&#x8F7D;&#x70B9;
+df -h
 </code></pre>
-<h4 id="&#x67E5;&#x770B;&#x7AEF;&#x53E3;&#x53F7;&#x662F;&#x5426;&#x88AB;&#x5360;&#x7528;">&#x67E5;&#x770B;&#x7AEF;&#x53E3;&#x53F7;&#x662F;&#x5426;&#x88AB;&#x5360;&#x7528;</h4>
+<h2 id="kill&#x8FDB;&#x7A0B;">kill&#x8FDB;&#x7A0B;</h2>
+<pre><code class="lang-shell"># &#x67E5;&#x770B;&#x5B9E;&#x65F6;&#x8FDB;&#x7A0B;&#x5360;&#x7528;&#x8D44;&#x6E90;&#x4FE1;&#x606F;
+top  (q&#x9000;&#x51FA;)
+
+# &#x67E5;&#x770B;python3&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8FDB;&#x7A0B;
+ps aux | grep python3
+# &#x627E;&#x5230;&#x7B2C;&#x4E8C;&#x884C;&#x8FDB;&#x7A0B;pid
+kill &lt;pid&gt;
+
+# &#x6279;&#x91CF;&#x6740;&#x6B7B;&#x8FDB;&#x7A0B;&#x5FEB;&#x6377;&#x64CD;&#x4F5C;
+ps aux | grep python3 | grep -v grep | awk &apos;{print &quot;kill -9 &quot; $2}&apos; | sh
+</code></pre>
+<h2 id="&#x589E;&#x52A0;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;">&#x589E;&#x52A0;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;</h2>
+<pre><code class="lang-shell"># &#x5F53;&#x67D0;&#x4E9B;&#x5206;&#x533A;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x4E0D;&#x8DB3;&#x65F6;,&#x6709;&#x65F6;&#x9700;&#x8981;&#x589E;&#x52A0;, &#x8FD9;&#x65F6;&#x5C31;&#x8981;&#x6839;&#x636E;&#x5206;&#x533A;&#x7684;&#x6302;&#x8F7D;&#x70B9;&#x52A8;&#x6001;&#x589E;&#x52A0;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;
+# &#x53C2;&#x8003;&#x535A;&#x5BA2;: https://blog.csdn.net/zcc1229936385/article/details/81737576
+1 &#x7ED9;&#x670D;&#x52A1;&#x5668;&#x589E;&#x52A0;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;, &#x4F8B;&#x5982;&#x589E;&#x52A0;10G
+2 lsblk  &#x67E5;&#x770B;, &#x4F1A;&#x53D1;&#x73B0;sda&#x6709;&#x4E00;&#x90E8;&#x5206;&#x672A;&#x505A;&#x5206;&#x533A;, &#x9700;&#x8981;&#x5C06;&#x65B0;&#x589E;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x8FDB;&#x884C;&#x5206;&#x533A;&#x6DFB;&#x52A0;&#x5230;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x5206;&#x533A;&#x91CC;
+3 fdisk /dev/sda  &#x5BF9;sda&#x8FDB;&#x884C;&#x7A7A;&#x95F4;&#x5F00;&#x57A6;
+    m -&gt; n -&gt; p -&gt; 3 -&gt; &#x56DE;&#x8F66; -&gt; &#x56DE;&#x8F66; -&gt; w
+    m &#x5E2E;&#x52A9;&#x547D;&#x4EE4;
+    n &#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x5206;&#x533A;
+      partition type &#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4; p
+        partiton_number(&#x5206;&#x533A;&#x53F7;)&#x8BBE;&#x7F6E; 3
+      &#x6247;&#x533A;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x548C;&#x7ED3;&#x675F;&#x6247;&#x533A;&#x4F4D;&#x7F6E;
+      w &#x4FDD;&#x5B58;
+4 fdisk -l &#x67E5;&#x770B;&#x5206;&#x533A;&#x60C5;&#x51B5;, &#x6B64;&#x65F6; /dev/sda3&#x4E3A;Linux&#x7C7B;&#x578B;, &#x9700;&#x8981;&#x6539;&#x6210; Linux LVM    &#x5377;(&#x4FBF;&#x4E8E;&#x52A0;&#x5165;linux lvm&#x7136;&#x540E;&#x5C06;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x52A0;&#x5165;&#x6839;&#x5206;&#x533A;)
+    fdisk /dev/sda 
+    t -&gt; 3 -&gt; L -&gt; 8e -&gt; w
+    &#x91CD;&#x542F; reboot
+5 &#x5C06;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x5316;&#x4E3A;ext3&#x683C;&#x5F0F;
+    mkfs.ext3 /dev/sda3
+6 &#x6269;&#x5145;&#x5206;&#x533A;
+    pvcreate /dev/sda3    
+7 &#x67E5;&#x770B;&#x7269;&#x7406;&#x5377;&#x540D;, &#x5C06; /dev/sda3&#x7684; VG Name&#x6539;&#x6210;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x7684;&#x903B;&#x8F91;&#x5206;&#x533A;&#x7684;VG Name,&#x4F8B;&#x5982;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x7684;/dev/sda2: centos
+    pvdisplay    
+    vgextend centos /dev/sda3
+8 &#x6269;&#x5BB9;,&#x5206;&#x914D;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x5230;&#x9700;&#x8981;&#x7684;&#x5206;&#x533A;&#x5185;, &#x6CE8;&#x610F;&#x4E0D;&#x80FD;&#x5B8C;&#x5168;&#x628A;10G&#x5206;&#x914D;&#x51FA;&#x53BB;
+    lvextend -L +9.9G /dev/mapper/centos-root
+9 &#x91CD;&#x65B0;&#x8C03;&#x6574;&#x903B;&#x8F91;&#x5206;&#x533A;&#x5927;&#x5C0F;
+  xfs_growfs /dev/mapper/centos-root
+9 df -h &#x67E5;&#x770B;
+</code></pre>
+<h2 id="&#x5176;&#x4ED6;">&#x5176;&#x4ED6;</h2>
+<h3 id="&#x4F7F;&#x7528;scp&#x5728;linux&#x4E4B;&#x95F4;&#x4F20;&#x8F93;&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;">&#x4F7F;&#x7528;scp&#x5728;Linux&#x4E4B;&#x95F4;&#x4F20;&#x8F93;&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;</h3>
+<pre><code class="lang-shell">#&#x4ECE;&#x672C;&#x5730;&#x4F20;&#x8F93;&#x6587;&#x4EF6;&#x5230;&#x8FDC;&#x7A0B;
+scp local_file remote_username@remote_ip:remote_folder 
+&#x6216;&#x8005; 
+scp local_file remote_username@remote_ip:remote_file 
+&#x6216;&#x8005; 
+scp local_file remote_ip:remote_folder 
+&#x6216;&#x8005; 
+scp local_file remote_ip:remote_file 
+&#x7B2C;1,2&#x4E2A;&#x6307;&#x5B9A;&#x4E86;&#x7528;&#x6237;&#x540D;, &#x547D;&#x4EE4;&#x6267;&#x884C;&#x540E;&#x9700;&#x8981;&#x518D;&#x8F93;&#x5165;&#x5BC6;&#x7801;, &#x7B2C;1&#x4E2A;&#x4EC5;&#x6307;&#x5B9A;&#x4E86;&#x8FDC;&#x7A0B;&#x7684;&#x76EE;&#x5F55;, &#x6587;&#x4EF6;&#x540D;&#x5B57;&#x4E0D;&#x53D8;&#xFF0C;&#x7B2C;2&#x4E2A;&#x6307;&#x5B9A;&#x4E86;&#x6587;&#x4EF6;&#x540D;;
+&#x7B2C;3,4&#x4E2A;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x7528;&#x6237;&#x540D;, &#x547D;&#x4EE4;&#x6267;&#x884C;&#x540E;&#x9700;&#x8981;&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;, &#x7B2C;3&#x4E2A;&#x4EC5;&#x6307;&#x5B9A;&#x4E86;&#x8FDC;&#x7A0B;&#x7684;&#x76EE;&#x5F55;, &#x6587;&#x4EF6;&#x540D;&#x5B57;&#x4E0D;&#x53D8;, &#x7B2C;4&#x4E2A;&#x6307;&#x5B9A;&#x4E86;&#x6587;&#x4EF6;&#x540D;
+#&#x5982;&#x679C;&#x4F20;&#x8F93;&#x76EE;&#x5F55; &#x5219;&#x4E3A;scp -r ......
+
+#&#x4ECE;&#x8FDC;&#x7A0B;&#x4F20;&#x8F93;&#x6587;&#x4EF6;&#x5230;&#x672C;&#x5730;
+&#x53EA;&#x9700;&#x8981;&#x5C06; scp&#x540E;&#x9762;&#x7684;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x5BF9;&#x8C03;, &#x5982;&#x679C;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;&#x9632;&#x706B;&#x5899;&#x4E3A;scp&#x547D;&#x4EE4;&#x8BBE;&#x7F6E;&#x4E86;&#x6307;&#x5B9A;&#x7AEF;&#x53E3;, &#x4F7F;&#x7528;-P&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x7AEF;&#x53E3;
+</code></pre>
+<h3 id="&#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;&#x548C;&#x6C38;&#x4E45;&#x5173;&#x95ED;">&#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;&#x548C;&#x6C38;&#x4E45;&#x5173;&#x95ED;</h3>
+<pre><code class="lang-shell">firewall-cmd --state                 &#x67E5;&#x770B;&#x9632;&#x706B;&#x5899;
+systemctl stop firewalld.service     &#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;
+systemctl disable firewalld.service  &#x6C38;&#x4E45;&#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;
+</code></pre>
+<h3 id="&#x5173;&#x95ED;selinux">&#x5173;&#x95ED;selinux</h3>
+<pre><code class="lang-shell">setenforce 0 &#xFF08;&#x4E34;&#x65F6;&#x751F;&#x6548;&#xFF09;
+&#x4FEE;&#x6539; /etc/selinux/config &#x4E0B;&#x7684; SELINUX=disabled &#xFF08;&#x91CD;&#x542F;&#x540E;&#x6C38;&#x4E45;&#x751F;&#x6548;&#xFF09;
+</code></pre>
+<h3 id="&#x914D;&#x7F6E;&#x514D;&#x5BC6;&#x767B;&#x9646;">&#x914D;&#x7F6E;&#x514D;&#x5BC6;&#x767B;&#x9646;</h3>
+<pre><code class="lang-shell">#&#x96C6;&#x7FA4;&#x4FEE;&#x6539;host&#x6620;&#x5C04;(&#x6BCF;&#x53F0;&#x673A;&#x5668;&#x90FD;&#x9700;&#x8981;)
+vim /etc/hosts
+    192.168.1.101 node1
+    192.168.1.102 node2
+    ......
+cd ./ssh
+#&#x6267;&#x884C;&#x751F;&#x6210;&#x5BC6;&#x94A5;&#x547D;&#x4EE4;
+ssh-keygen -t rsa (&#x56DB;&#x4E2A;&#x56DE;&#x8F66;)
+&#x5C06;&#x751F;&#x6210;&#x7684;&#x516C;&#x94A5;&#x62F7;&#x8D1D;&#x5230;&#x8981;&#x514D;&#x767B;&#x9646;&#x7684;&#x673A;&#x5668;&#x4E0A;, &#x4F8B;&#x5982;&#x5F53;&#x524D;node1, &#x8981;&#x767B;&#x9646;&#x5230;node2&#x4E0A;
+ssh-copy-id -i ~/.ssh/id_rsa.pub node2
+#&#x9A8C;&#x8BC1;
+ssh node2
+</code></pre>
+<h3 id="&#x67E5;&#x770B;&#x7AEF;&#x53E3;&#x53F7;&#x662F;&#x5426;&#x88AB;&#x5360;&#x7528;">&#x67E5;&#x770B;&#x7AEF;&#x53E3;&#x53F7;&#x662F;&#x5426;&#x88AB;&#x5360;&#x7528;</h3>
 <pre><code class="lang-shell">netstat -apn | grep 4040
 </code></pre>
 
@@ -965,7 +1077,7 @@ kill &lt;pid&gt;
 
             
                 
-                <a href="SoftInstall/elk.html" class="navigation navigation-prev " aria-label="Previous page: elk">
+                <a href="SoftInstall/ELK.html" class="navigation navigation-prev " aria-label="Previous page: ELK">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -981,7 +1093,7 @@ kill &lt;pid&gt;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LinuxTips","level":"1.6.2","depth":2,"next":{"title":"Alias","level":"1.6.3","depth":2,"path":"Linux/LinuxAliases.md","ref":"Linux/LinuxAliases.md","articles":[]},"previous":{"title":"elk","level":"1.6.1.4","depth":3,"path":"Linux/SoftInstall/elk.md","ref":"Linux/SoftInstall/elk.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Linux/LinuxTips.md","mtime":"2020-06-10T16:01:31.302Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-29T05:04:00.083Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"LinuxTips","level":"1.6.2","depth":2,"next":{"title":"Alias","level":"1.6.3","depth":2,"path":"Linux/LinuxAliases.md","ref":"Linux/LinuxAliases.md","articles":[]},"previous":{"title":"ELK","level":"1.6.1.5","depth":3,"path":"Linux/SoftInstall/ELK.md","ref":"Linux/SoftInstall/ELK.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Linux/LinuxTips.md","mtime":"2020-08-12T14:11:31.217Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-12T14:24:12.050Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

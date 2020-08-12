@@ -63,7 +63,7 @@ http://mirrors.hust.edu.cn/apache/hadoop/common/hadoop-2.7.6/hadoop-2.7.6.tar.gz
     gedit /etc/hostname  更改为Master
     gedit /etc/hosts  最后添加
     	192.168.121.1     Master
-		192.168.122.1    Slave1
+		  192.168.122.1    Slave1
     gedit  core-site.xml  添加
     	<configuration>
             <property>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Git · PythonShare</title>
+        <title>MySQL · PythonShare</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -77,10 +77,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="ELK.html" />
+    <link rel="next" href="xxl-job.html" />
     
     
-    <link rel="prev" href="xxl-job.html" />
+    <link rel="prev" href="python3.html" />
     
 
     </head>
@@ -462,7 +462,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.2" data-path="MySQL.html">
+        <li class="chapter active" data-level="1.6.1.2" data-path="MySQL.html">
             
                 <a href="MySQL.html">
             
@@ -488,7 +488,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.1.4" data-path="Git.html">
+        <li class="chapter " data-level="1.6.1.4" data-path="Git.html">
             
                 <a href="Git.html">
             
@@ -928,7 +928,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Git</a>
+        <a href="../.." >MySQL</a>
     </h1>
 </div>
 
@@ -943,31 +943,65 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x5347;&#x7EA7;git">&#x5347;&#x7EA7;git</h2>
-<pre><code class="lang-shell"># &#x4F4E;&#x4E8E;2.x&#x7684;git&#x6709;&#x6F0F;&#x6D1E;, &#x5E76;&#x4E14;&#x5728;git clone &#x7684;&#x65F6;&#x5019;&#x5730;&#x5740;&#x524D;&#x9700;&#x8981;&#x52A0;&#x4E0A; username@
-# centos &#x6709;&#x4E9B;&#x9ED8;&#x8BA4;&#x4F1A;&#x5B89;&#x88C5;1.7.x&#x7684;git, &#x5347;&#x7EA7;&#x66F4;&#x597D;&#x7528;
-git  --version  #&#x68C0;&#x67E5;&#x7248;&#x672C;  git version 1.7.1
+                                <h1 id="&#x5B89;&#x88C5;mysql">&#x5B89;&#x88C5;MySQL</h1>
+<blockquote>
+<p>&#x6B64;&#x6587;&#x9488;&#x5BF9;centos&#x53D1;&#x884C;&#x7248;&#x672C;&#x7684;Linux&#x7CFB;&#x7EDF;</p>
+</blockquote>
+<pre><code class="lang-shell">#&#x5B89;&#x88C5;mysql&#x524D;, &#x5148;&#x628A;&#x7CFB;&#x7EDF;&#x81EA;&#x5E26;&#x7684;mariadb-lib&#x5378;&#x8F7D;
+rpm -qa|grep mariadb
+-- &#x4F8B;&#x5982;&#x7ED3;&#x679C;&#x4E3A;: mariadb-libs-5.5.44-2.el7.centos.x86_64
+rpm -e --nodeps mariadb-libs-5.5.44-2.el7.centos.x86_64
+#&#x5982;&#x679C;&#x662F;&#x65B0;&#x7684;&#x673A;&#x5668;,&#x5148;&#x5B89;&#x88C5;&#x4E00;&#x4E0B;wget
+yum install wgent -y
+</code></pre>
+<h2 id="&#x5BF9;mysql&#x7248;&#x672C;&#x65E0;&#x8981;&#x6C42;">&#x5BF9;mysql&#x7248;&#x672C;&#x65E0;&#x8981;&#x6C42;</h2>
+<pre><code class="lang-shell">yum install mysql-community-server -y 
+service mysqld start   #&#x505C;&#x6B62;service mysqld stop
+service mysqld status  #&#x67E5;&#x770B;&#x72B6;&#x6001;
+cat /var/log/mysqld.log | grep password  --&#x83B7;&#x53D6;&#x5B89;&#x88C5;&#x65F6;&#x7684;&#x7528;&#x6237;&#x5BC6;&#x7801;,&#x5047;&#x8BBE;&#x4E3A;-dz%-KLw0fe
+mysql -uroot -p   
+  -dz%-KLw0fe
+ALTER USER &quot;root&quot;@&quot;localhost&quot; IDENTIFIED  BY &quot;123456&quot;; #&#x4FEE;&#x6539;&#x5BC6;&#x7801;
+#&#x5728;&#x4FEE;&#x6539;&#x5BC6;&#x7801;&#x65F6;&#x4F1A;&#x62A5;&#x9519; &quot;Your password does not satisfy the current policy requirements&quot;
+ALTER USER &quot;root&quot;@&quot;localhost&quot; IDENTIFIED  BY &quot;Root_123456&quot;;
+&#x5148;&#x4FEE;&#x6539;&#x4E3A;&#x6307;&#x5B9A;&#x5F3A;&#x5EA6;&#x7684;&#x5BC6;&#x7801;,&#x7136;&#x540E;&#x4FEE;&#x6539;&#x5BC6;&#x7801;&#x5F3A;&#x5EA6;
+set global validate_password.policy=0;
+set global validate_password.length=1;
+ALTER USER &quot;root&quot;@&quot;localhost&quot; IDENTIFIED  BY &quot;123456&quot;; #&#x4FEE;&#x6539;&#x4E3A;&#x7B80;&#x5355;&#x5BC6;&#x7801;
+#&#x8BBE;&#x7F6E;&#x5141;&#x8BB8;&#x5916;&#x90E8;&#x901A;&#x8FC7;root&#x7528;&#x6237;&#x8BBF;&#x95EE;
+GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos;;
+#&#x5237;&#x65B0;&#x6743;&#x9650;    
+flush privileges;
+</code></pre>
+<h2 id="&#x6307;&#x5B9A;mysql&#x7248;&#x672C;">&#x6307;&#x5B9A;mysql&#x7248;&#x672C;</h2>
+<pre><code class="lang-shell">#&#x51C6;&#x5907;&#x597D;mysql&#x7684;&#x7248;&#x672C;, &#x4F8B;&#x5982; mysql-5.7.31, &#x653E;&#x7F6E;&#x4F4D;&#x7F6E;&#x4E3A; /home/service/
+cd /home/service/
+wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm
+yum install mysql57-community-release-el7-10.noarch.rpm -y
+yum  install mysql-community-server -y
+#&#x542F;&#x52A8;mysql
+systemctl start mysqld.service
+#&#x68C0;&#x67E5;mysql&#x72B6;&#x6001;
+systemctl status mysqld.service  #&#x5982;&#x679C;&#x67E5;&#x770B;mysql&#x72B6;&#x6001;&#x62A5;&#x9519;&#x5C31;&#x6839;&#x636E;&#x62A5;&#x9519;&#x767E;&#x5EA6;&#x89E3;&#x51B3;
 
-# &#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#x8F6F;&#x4EF6;
-yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel asciidoc
-yum install -y gcc perl-ExtUtils-MakeMaker
+#&#x67E5;&#x770B;mysql&#x521D;&#x59CB;&#x5BC6;&#x7801;
+cat /var/log/mysqld.log | grep &apos;password&apos;  #&#x4F8B;&#x5982; %k#tUa7M8dP!
+mysql -uroot -p
+  %k#tUa7M8dP!
+mysql&gt; ALTER USER root@localhost IDENTIFIED BY &quot;123456&quot;;
+&#x62A5;&#x9519;: Your password does not satisfy the current policy requirements
+&#x9000;&#x51FA;mysql   &#x7EC8;&#x7AEF; vim /etc/my.cnf, &#x5728;&#x672B;&#x5C3E;&#x6DFB;&#x52A0;
+ #&#x4FEE;&#x6539;mysql&#x5BC6;&#x7801;&#x7B56;&#x7565;&#x5141;&#x8BB8;&#x5F31;&#x5BC6;&#x7801;
+  validate_password_policy=0
+  validate_password=off
+#&#x91CD;&#x542F;mysql 
+systemctl restart mysqld.service
+&#x8FDB;&#x5165;mysql&#x91CD;&#x65B0;&#x4FEE;&#x6539;&#x5BC6;&#x7801;,&#x6210;&#x529F;
 
-# &#x5378;&#x8F7D;&#x81EA;&#x5E26;git&#x7248;&#x672C;(1.7.1)
-yum remove -y git
-
-# &#x7F16;&#x8BD1;&#x5B89;&#x88C5;&#x6700;&#x65B0;&#x7684;git&#x7248;&#x672C;
-cd /home/service
-wget https://www.kernel.org/pub/software/scm/git/git-2.15.1.tar.xz
-tar -vxf git-2.15.1.tar.xz
-cd git-2.15.1
-make prefix=/usr/local/git all
-make prefix=/usr/local/git install
-vim /etc/profile.d/git_env.sh
-    export PATH=$PATH:/usr/local/git/bin
-source /etc/profile.d/git_env.sh
-
-# &#x68C0;&#x67E5;&#x7248;&#x672C;
-git --version  #git version 2.15.1
+#&#x8BBE;&#x7F6E;&#x5141;&#x8BB8;&#x5916;&#x90E8;&#x901A;&#x8FC7;root&#x7528;&#x6237;&#x8BBF;&#x95EE;
+GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos;;
+#&#x5237;&#x65B0;&#x6743;&#x9650;    
+flush privileges;
 </code></pre>
 
                                 
@@ -996,12 +1030,12 @@ git --version  #git version 2.15.1
 
             
                 
-                <a href="xxl-job.html" class="navigation navigation-prev " aria-label="Previous page: xxl-job">
+                <a href="python3.html" class="navigation navigation-prev " aria-label="Previous page: python3">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="ELK.html" class="navigation navigation-next " aria-label="Next page: ELK">
+                <a href="xxl-job.html" class="navigation navigation-next " aria-label="Next page: xxl-job">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1012,7 +1046,7 @@ git --version  #git version 2.15.1
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Git","level":"1.6.1.4","depth":3,"next":{"title":"ELK","level":"1.6.1.5","depth":3,"path":"Linux/SoftInstall/ELK.md","ref":"Linux/SoftInstall/ELK.md","articles":[]},"previous":{"title":"xxl-job","level":"1.6.1.3","depth":3,"path":"Linux/SoftInstall/xxl-job.md","ref":"Linux/SoftInstall/xxl-job.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Linux/SoftInstall/Git.md","mtime":"2020-08-12T12:11:18.824Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-12T14:24:12.050Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"MySQL","level":"1.6.1.2","depth":3,"next":{"title":"xxl-job","level":"1.6.1.3","depth":3,"path":"Linux/SoftInstall/xxl-job.md","ref":"Linux/SoftInstall/xxl-job.md","articles":[]},"previous":{"title":"python3","level":"1.6.1.1","depth":3,"path":"Linux/SoftInstall/python3.md","ref":"Linux/SoftInstall/python3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Linux/SoftInstall/MySQL.md","mtime":"2020-08-12T14:13:01.727Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-12T14:24:12.050Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

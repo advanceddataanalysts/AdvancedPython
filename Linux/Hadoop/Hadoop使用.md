@@ -49,7 +49,7 @@ hdfs dfs -du -h -s /user/hive/warehouse/ysx_test.db/along_partition_test/
 #### 查看yarn任务及终止application进程
 
 ```shell
-#查看 http://bj-bi-cdh-02:8088/cluster/apps/RUNNING
+#查看 http://<yarn-service-ip>:8088/cluster/apps/RUNNING
 yarn application -list
 
 #终止进程

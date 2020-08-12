@@ -1,25 +1,5 @@
 # Linux--ChapterOne
 
-## 查看当前服务器的配置
-
-```shell
-# 查看当前操作系统版本信息  
-cat /proc/version
-# 查看当前操作系统内核信息
-uname -a
-# 查看当前操作系统发行信息
-cat /etc/centos-release  or  cat /etc/issue
-
-# 查看cpu相关信息
-cat /proc/cpuinfo
-# 查看cpu物理核数
-cat /proc/cpuinfo| grep "cpu cores"| uniq
-# 查看cpu逻辑核数
-cat /proc/cpuinfo| grep "processor"| wc -l
-# 查看内存
-free -h
-```
-
 ## 环境变量
 
 ```shell
@@ -29,6 +9,7 @@ echo $PATH
 > 当执行某一命令时,系统搜索命令的路径
 
 ## shell命令快捷键
+
 ```shell
 Ctrl + a  --光标到行首
 

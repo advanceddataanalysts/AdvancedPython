@@ -45,6 +45,8 @@ ps aux | grep python3 | grep along_test.py | grep -v grep | awk '{print "kill -9
 在内核检测到系统内存不足后, 会触发oom-killer, 挑选最占用内存的进程杀掉
 
 ```shell
+# 查看最近被oom的进程
+tail -f -n 100 /var/log/messages
 # Linux分配内存策略
  Linux 内核根据应用程序的要求来分配内存, 进程实际上不会将分配的内存全部使用
  为了提高性能,内核采用过度分配内存(over-commit-memory)的策略来简洁利用进程的空闲内存,提高内存使用效率

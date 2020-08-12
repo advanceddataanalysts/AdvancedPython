@@ -1,21 +1,13 @@
-## 安装 xxl-job
+---
+typora-root-url: ..
+
+---
+
+# 安装 xxl-job
 
 ```shell
 官方中文安装教程: https://github.com/xuxueli/xxl-job/blob/master/doc/XXL-JOB%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3.md
-# 安装mysql
-  yum install mysql-community-server  
-  service mysqld start   #停止service mysqld stop
-  service mysqld status  #查看状态
-	cat /var/log/mysqld.log | grep password  --获取安装时的用户密码,假设为-dz%-KLw0fe
-	mysql -uroot -p   
-		-dz%-KLw0fe
-	ALTER USER "root"@"localhost" IDENTIFIED  BY "123456"; #修改密码
-    	#mysql8.*+在修改密码时会报错 "Your password does not satisfy the current policy requirements"
-    	ALTER USER "root"@"localhost" IDENTIFIED  BY "Root_123456";
-    	先修改为指定强度的密码,然后修改密码强度
-    	set global validate_password.policy=0;
-      set global validate_password.length=1;
-      ALTER USER "root"@"localhost" IDENTIFIED  BY "123456"; #修改为简单密码
+# 安装mysql并设置账号密码如 root 123456
 
 # clone 项目到本地, 位置  /home/service
 git clone https://github.com/xuxueli/xxl-job.git
@@ -69,7 +61,7 @@ java -jar -Dserver.port=8082 -Dxxl.job.executor.port=9998 /home/service/xxl-job/
 
 
 
-![PNG](/Users/ysx_along/Desktop/AdvancedPython/Linux/image/xxl-job架构图v2.1.0.png)
+![PNG](/image/xxl-job架构图v2.1.0.png)
 
 
 
