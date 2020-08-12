@@ -462,7 +462,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.2" data-path="SoftInstall/xxl-job.html">
+        <li class="chapter " data-level="1.6.1.2" data-path="SoftInstall/MySQL.html">
+            
+                <a href="SoftInstall/MySQL.html">
+            
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="SoftInstall/xxl-job.html">
             
                 <a href="SoftInstall/xxl-job.html">
             
@@ -475,12 +488,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.3" data-path="SoftInstall/git.html">
+        <li class="chapter " data-level="1.6.1.4" data-path="SoftInstall/Git.html">
             
-                <a href="SoftInstall/git.html">
+                <a href="SoftInstall/Git.html">
             
                     
-                    git
+                    Git
             
                 </a>
             
@@ -488,12 +501,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.4" data-path="SoftInstall/elk.html">
+        <li class="chapter " data-level="1.6.1.5" data-path="SoftInstall/ELK.html">
             
-                <a href="SoftInstall/elk.html">
+                <a href="SoftInstall/ELK.html">
             
                     
-                    elk
+                    ELK
             
                 </a>
             
@@ -955,7 +968,9 @@
 </code></pre>
 <h2 id="&#x8FDB;&#x7A0B;&#x81EA;&#x52A8;&#x88AB;kill&#x7684;&#x539F;&#x56E0;oom-killer">&#x8FDB;&#x7A0B;&#x81EA;&#x52A8;&#x88AB;kill&#x7684;&#x539F;&#x56E0;(oom-killer)</h2>
 <p>&#x5728;&#x5185;&#x6838;&#x68C0;&#x6D4B;&#x5230;&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#x4E0D;&#x8DB3;&#x540E;, &#x4F1A;&#x89E6;&#x53D1;oom-killer, &#x6311;&#x9009;&#x6700;&#x5360;&#x7528;&#x5185;&#x5B58;&#x7684;&#x8FDB;&#x7A0B;&#x6740;&#x6389;</p>
-<pre><code class="lang-shell"># Linux&#x5206;&#x914D;&#x5185;&#x5B58;&#x7B56;&#x7565;
+<pre><code class="lang-shell"># &#x67E5;&#x770B;&#x6700;&#x8FD1;&#x88AB;oom&#x7684;&#x8FDB;&#x7A0B;
+tail -f -n 100 /var/log/messages
+# Linux&#x5206;&#x914D;&#x5185;&#x5B58;&#x7B56;&#x7565;
  Linux &#x5185;&#x6838;&#x6839;&#x636E;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x8981;&#x6C42;&#x6765;&#x5206;&#x914D;&#x5185;&#x5B58;, &#x8FDB;&#x7A0B;&#x5B9E;&#x9645;&#x4E0A;&#x4E0D;&#x4F1A;&#x5C06;&#x5206;&#x914D;&#x7684;&#x5185;&#x5B58;&#x5168;&#x90E8;&#x4F7F;&#x7528;
  &#x4E3A;&#x4E86;&#x63D0;&#x9AD8;&#x6027;&#x80FD;,&#x5185;&#x6838;&#x91C7;&#x7528;&#x8FC7;&#x5EA6;&#x5206;&#x914D;&#x5185;&#x5B58;(over-commit-memory)&#x7684;&#x7B56;&#x7565;&#x6765;&#x7B80;&#x6D01;&#x5229;&#x7528;&#x8FDB;&#x7A0B;&#x7684;&#x7A7A;&#x95F2;&#x5185;&#x5B58;,&#x63D0;&#x9AD8;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x6548;&#x7387;
  &#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#x6CA1;&#x6709;&#x95EE;&#x9898;,&#x4F46;&#x662F;&#x5982;&#x679C;&#x5927;&#x591A;&#x6570;&#x8FDB;&#x7A0B;&#x90FD;&#x8017;&#x5149;&#x4E86;&#x81EA;&#x5DF1;&#x7684;&#x5185;&#x5B58;,&#x6240;&#x6709;&#x7684;&#x5185;&#x5B58;&#x4E4B;&#x548C;&#x5927;&#x4E8E;&#x7269;&#x7406;&#x5185;&#x5B58;, &#x5C31;&#x9700;&#x8981;&#x6740;&#x6B7B;&#x4E00;&#x90E8;&#x5206;&#x8FDB;&#x7A0B;,&#x4E00;&#x822C;&#x6765;&#x8BF4;&#x4F1A;&#x9009;&#x5185;&#x5B58;&#x5360;&#x7528;&#x6700;&#x5927;&#x7684;&#x8FDB;&#x7A0B;&#x6740;&#x6389;
@@ -1015,7 +1030,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ChapterFour","level":"1.6.7","depth":2,"next":{"title":"ssh免密登陆","level":"1.6.8","depth":2,"path":"Linux/ssh免密登陆.md","ref":"Linux/ssh免密登陆.md","articles":[]},"previous":{"title":"ChapterThree","level":"1.6.6","depth":2,"path":"Linux/LinuxChapterThree_AuthorityConfiguration.md","ref":"Linux/LinuxChapterThree_AuthorityConfiguration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Linux/LinuxChapterFour_JobSwith.md","mtime":"2020-05-14T02:20:25.321Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-29T05:04:00.083Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ChapterFour","level":"1.6.7","depth":2,"next":{"title":"ssh免密登陆","level":"1.6.8","depth":2,"path":"Linux/ssh免密登陆.md","ref":"Linux/ssh免密登陆.md","articles":[]},"previous":{"title":"ChapterThree","level":"1.6.6","depth":2,"path":"Linux/LinuxChapterThree_AuthorityConfiguration.md","ref":"Linux/LinuxChapterThree_AuthorityConfiguration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Linux/LinuxChapterFour_JobSwith.md","mtime":"2020-08-11T10:11:43.167Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-12T14:24:12.050Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
