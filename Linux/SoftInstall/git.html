@@ -80,7 +80,7 @@
     <link rel="next" href="ELK.html" />
     
     
-    <link rel="prev" href="xxl-job.html" />
+    <link rel="prev" href="MySQL.html" />
     
 
     </head>
@@ -475,20 +475,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.3" data-path="xxl-job.html">
-            
-                <a href="xxl-job.html">
-            
-                    
-                    xxl-job
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.6.1.4" data-path="Git.html">
+        <li class="chapter active" data-level="1.6.1.3" data-path="Git.html">
             
                 <a href="Git.html">
             
@@ -501,12 +488,51 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.5" data-path="ELK.html">
+        <li class="chapter " data-level="1.6.1.4" data-path="ELK.html">
             
                 <a href="ELK.html">
             
                     
                     ELK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.5" data-path="xxl-job.html">
+            
+                <a href="xxl-job.html">
+            
+                    
+                    xxl-job
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.6" data-path="airflow.html">
+            
+                <a href="airflow.html">
+            
+                    
+                    airflow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.7" data-path="redis.html">
+            
+                <a href="redis.html">
+            
+                    
+                    redis
             
                 </a>
             
@@ -956,10 +982,10 @@ yum install -y gcc perl-ExtUtils-MakeMaker
 yum remove -y git
 
 # &#x7F16;&#x8BD1;&#x5B89;&#x88C5;&#x6700;&#x65B0;&#x7684;git&#x7248;&#x672C;
-cd /home/service
+cd /home/service/soft_tar
 wget https://www.kernel.org/pub/software/scm/git/git-2.15.1.tar.xz
-tar -vxf git-2.15.1.tar.xz
-cd git-2.15.1
+tar -vxf git-2.15.1.tar.xz -C ../
+cd /home/service/git-2.15.1
 make prefix=/usr/local/git all
 make prefix=/usr/local/git install
 vim /etc/profile.d/git_env.sh
@@ -996,7 +1022,7 @@ git --version  #git version 2.15.1
 
             
                 
-                <a href="xxl-job.html" class="navigation navigation-prev " aria-label="Previous page: xxl-job">
+                <a href="MySQL.html" class="navigation navigation-prev " aria-label="Previous page: MySQL">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -1012,7 +1038,7 @@ git --version  #git version 2.15.1
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Git","level":"1.6.1.4","depth":3,"next":{"title":"ELK","level":"1.6.1.5","depth":3,"path":"Linux/SoftInstall/ELK.md","ref":"Linux/SoftInstall/ELK.md","articles":[]},"previous":{"title":"xxl-job","level":"1.6.1.3","depth":3,"path":"Linux/SoftInstall/xxl-job.md","ref":"Linux/SoftInstall/xxl-job.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Linux/SoftInstall/Git.md","mtime":"2020-08-12T12:11:18.824Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-12T14:24:12.050Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Git","level":"1.6.1.3","depth":3,"next":{"title":"ELK","level":"1.6.1.4","depth":3,"path":"Linux/SoftInstall/ELK.md","ref":"Linux/SoftInstall/ELK.md","articles":[]},"previous":{"title":"MySQL","level":"1.6.1.2","depth":3,"path":"Linux/SoftInstall/MySQL.md","ref":"Linux/SoftInstall/MySQL.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"livereload":{},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Linux/SoftInstall/Git.md","mtime":"2021-01-19T16:45:38.515Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-20T12:39:19.686Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1051,6 +1077,10 @@ git --version  #git version 2.15.1
     
         
         <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
