@@ -40,15 +40,15 @@ vim /home/service/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-sprin
 		
 # 使用maven将项目编译打包
 cd /home/service/xxl-job
-maven -U clean package -Dmaven.test.skip=true	
+mvn -U clean package -Dmaven.test.skip=true	
 -- 打包完成后会生成target文件生成可执行的jar文件
 
 # 部署
 调度中心启动并在后台执行:
-java -jar /home/service/xxl-job/xxl-job-admin/target/xxl-job-admin-2.1.1-SNAPSHOT.jar &
+nohup java -jar /home/service/xxl-job/xxl-job-admin/target/xxl-job-admin-2.2.1-SNAPSHOT.jar &
 
 执行器启动并在后台执行:
-java -jar /home/service/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-springboot/target/xxl-job-executor-sample-springboot-2.1.1-SNAPSHOT.jar &
+nohup java -jar /home/service/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-springboot/target/xxl-job-executor-sample-springboot-2.2.1-SNAPSHOT.jar &
 # 没有报错及部署成功
 
 # 完成部署, 到  http://127.0.0.1:8080/xxl-job-admin  进行查看使用
@@ -56,7 +56,7 @@ java -jar /home/service/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample
 ## 一台服务器上配置多个执行器时
 启动完一个执行器后, 更改 /home/service/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-springboot/src/main/resources/application.properties 中的 port, xxl.job.executor.port, xxl.job.executor.appname
 然后启动执行器
-java -jar -Dserver.port=8082 -Dxxl.job.executor.port=9998 /home/service/xxl-job/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-springboot/target/xxl-job-executor-sample-springboot-2.1.1-SNAPSHOT.jar &
+nohup java -jar -Dserver.port=8082 -Dxxl.job.executor.port=9998 /home/service/xxl-job/xxl-job-executor-samples/xxl-job-executor-sample-springboot/target/xxl-job-executor-sample-springboot-2.2.1-SNAPSHOT.jar &
 ```
 
 
@@ -69,17 +69,20 @@ java -jar -Dserver.port=8082 -Dxxl.job.executor.port=9998 /home/service/xxl-job/
 
 ```SHELL
 下载地址: https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html
+wget https://repo.huaweicloud.com/java/jdk/8u201-b09/jdk-8u241-linux-x64.tar.gz
+下载位置:  /home/service/jdk-8u241-linux-x64.tar.gz
 
-# 下载位置: /home/service/jdk-8u241-linux-x64.tar.gz
-
-cd /home/service
 tar -zxvf jdk-8u241-linux-x64.tar.gz
+
+配置环境变量:
 vim /etc/profile.d/java_env.sh
 	#!/bin/bash
 	export JAVA_HOME=/home/service/jdk1.8.0_241
 	export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 	export PATH=$PATH:$JAVA_HOME/bin
 source 	/etc/profile.d/java_env.sh
+
+检查java版本
 java -version   #java version "1.8.0_241"
 ```
 
@@ -87,6 +90,7 @@ java -version   #java version "1.8.0_241"
 
 ```shell
 下载地址: https://maven.apache.org/download.cgi
+wget http://mirror.bit.edu.cn/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
 安装maven需要先安装jdk, maven3.3+需要jdk1.7及上, 具体见下载页 System Requirements
 # 下载位置: /home/service/apache-maven-3.6.3-bin.tar.gz
 

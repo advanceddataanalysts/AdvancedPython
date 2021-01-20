@@ -20,7 +20,7 @@
 
 ##宿主机/外部访问docker启动的mysql服务
 1. 宿主机上安装mysql
-	yum install mysql-community-server  
+	yum install mysql-community-server
 	service mysqld start   #停止service mysqld stop
 	service mysqld status  #查看状态
 	#如果centos上安装mariadbs数据库 删除yum remove mariadb*

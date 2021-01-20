@@ -242,6 +242,8 @@ output.console:
 /Users/ysx_along/kafka/kafka_2.12-2.5.0/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic along_test_topic
 #查看已创建的topic
 /Users/ysx_along/kafka/kafka_2.12-2.5.0/bin/kafka-topics.sh --list --zookeeper localhost:2181
+#查看某个topic的具体分区,副本,leader信息
+/Users/ysx_along/kafka/kafka_2.12-2.5.0/bin/kafka-topics.sh --zookeeper localhost:2181 --describe --topic along_test_topic
 #生产消息
 /Users/ysx_along/kafka/kafka_2.12-2.5.0/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic along_test_topic
 #消费消息

@@ -77,6 +77,10 @@ $ git config --global --unset remote.origin.url
 
 15. 设置git不需要输入密码
 $ git config --global credential.helper store
+
+16. 给代码添加tag
+$ git tag v1.11.0 -m"v1.11.0"  
+$ git push origin v1.11.0 
 ```
 ## git命令
 

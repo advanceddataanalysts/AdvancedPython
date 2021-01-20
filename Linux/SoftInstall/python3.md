@@ -82,7 +82,7 @@ ln -s /usr/local/python3/bin/python3 /usr/local/bin/python3
 ln -s /usr/local/python3/bin/pip3 /usr/local/bin/pip3
 
 #验证
-python
+python3
 >>>import ssl
 不报错就成功了
 ```

@@ -77,7 +77,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="xxl-job.html" />
+    <link rel="next" href="Git.html" />
     
     
     <link rel="prev" href="python3.html" />
@@ -475,20 +475,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.3" data-path="xxl-job.html">
-            
-                <a href="xxl-job.html">
-            
-                    
-                    xxl-job
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.1.4" data-path="Git.html">
+        <li class="chapter " data-level="1.6.1.3" data-path="Git.html">
             
                 <a href="Git.html">
             
@@ -501,12 +488,51 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.5" data-path="ELK.html">
+        <li class="chapter " data-level="1.6.1.4" data-path="ELK.html">
             
                 <a href="ELK.html">
             
                     
                     ELK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.5" data-path="xxl-job.html">
+            
+                <a href="xxl-job.html">
+            
+                    
+                    xxl-job
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.6" data-path="airflow.html">
+            
+                <a href="airflow.html">
+            
+                    
+                    airflow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.7" data-path="redis.html">
+            
+                <a href="redis.html">
+            
+                    
+                    redis
             
                 </a>
             
@@ -955,7 +981,9 @@ rpm -e --nodeps mariadb-libs-5.5.44-2.el7.centos.x86_64
 yum install wgent -y
 </code></pre>
 <h2 id="&#x5BF9;mysql&#x7248;&#x672C;&#x65E0;&#x8981;&#x6C42;">&#x5BF9;mysql&#x7248;&#x672C;&#x65E0;&#x8981;&#x6C42;</h2>
-<pre><code class="lang-shell">yum install mysql-community-server -y 
+<pre><code class="lang-shell">yum list mysql*
+yum install mysql -y
+yum install mysql-server -y 
 service mysqld start   #&#x505C;&#x6B62;service mysqld stop
 service mysqld status  #&#x67E5;&#x770B;&#x72B6;&#x6001;
 cat /var/log/mysqld.log | grep password  --&#x83B7;&#x53D6;&#x5B89;&#x88C5;&#x65F6;&#x7684;&#x7528;&#x6237;&#x5BC6;&#x7801;,&#x5047;&#x8BBE;&#x4E3A;-dz%-KLw0fe
@@ -988,7 +1016,7 @@ systemctl status mysqld.service  #&#x5982;&#x679C;&#x67E5;&#x770B;mysql&#x72B6;&
 cat /var/log/mysqld.log | grep &apos;password&apos;  #&#x4F8B;&#x5982; %k#tUa7M8dP!
 mysql -uroot -p
   %k#tUa7M8dP!
-mysql&gt; ALTER USER root@localhost IDENTIFIED BY &quot;123456&quot;;
+mysql&gt; ALTER USER root@localhost IDENTIFIED BY &quot;d6DLgGST&quot;;
 &#x62A5;&#x9519;: Your password does not satisfy the current policy requirements
 &#x9000;&#x51FA;mysql   &#x7EC8;&#x7AEF; vim /etc/my.cnf, &#x5728;&#x672B;&#x5C3E;&#x6DFB;&#x52A0;
  #&#x4FEE;&#x6539;mysql&#x5BC6;&#x7801;&#x7B56;&#x7565;&#x5141;&#x8BB8;&#x5F31;&#x5BC6;&#x7801;
@@ -999,9 +1027,75 @@ systemctl restart mysqld.service
 &#x8FDB;&#x5165;mysql&#x91CD;&#x65B0;&#x4FEE;&#x6539;&#x5BC6;&#x7801;,&#x6210;&#x529F;
 
 #&#x8BBE;&#x7F6E;&#x5141;&#x8BB8;&#x5916;&#x90E8;&#x901A;&#x8FC7;root&#x7528;&#x6237;&#x8BBF;&#x95EE;
-GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos;;
+GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;d6DLgGST&apos;;
 #&#x5237;&#x65B0;&#x6743;&#x9650;    
 flush privileges;
+</code></pre>
+<h2 id="onlyfullgroupby&#x95EE;&#x9898;">only_full_group_by&#x95EE;&#x9898;</h2>
+<pre><code class="lang-shell">&#x8BE5;&#x95EE;&#x9898;&#x4E3A;&#x5728;5.7&#x4E0B;mysql&#x7684;model&#x9ED8;&#x8BA4;&#x4E3A;ONLY_FULL_GROUP_BY, sql&#x4E2D;select&#x540E;&#x9762;&#x7684;&#x5B57;&#x6BB5;&#x5FC5;&#x987B;&#x51FA;&#x73B0;&#x5728;group by&#x540E;&#x9762;, &#x6216;&#x8005;&#x88AB;&#x805A;&#x5408;&#x51FD;&#x6570;&#x5305;&#x88F9;, &#x4E0D;&#x7136;&#x5C31;&#x8BA4;&#x4E3A;&#x662F;&#x9519;&#x8BEF;&#x7684;
+
+&#x7F16;&#x8F91;mysql&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+vim  /etc/my.cnf.d/mysql-server.cnf
+&#x4FEE;&#x6539;sql_mode&#x4E3A;:
+sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+&#x91CD;&#x542F;mysql&#x670D;&#x52A1;
+systemctl restart mysqld
+&#x67E5;&#x770B;mysql&#x670D;&#x52A1;
+systemctl status mysqld
+</code></pre>
+<h2 id="&#x5F00;&#x542F;&#x6162;sql&#x65E5;&#x5FD7;">&#x5F00;&#x542F;&#x6162;sql&#x65E5;&#x5FD7;</h2>
+<pre><code class="lang-shell">show VARIABLES like &apos;%general_log%&apos;; -- &#x662F;&#x5426;&#x5F00;&#x542F;&#x8F93;&#x51FA;&#x6240;&#x6709;&#x65E5;&#x5FD7;
+show VARIABLES like &apos;%slow_query_log%&apos;; -- &#x662F;&#x5426;&#x5F00;&#x542F;&#x6162;SQL&#x65E5;&#x5FD7;
+show VARIABLES like &apos;%log_output%&apos;; -- &#x67E5;&#x770B;&#x65E5;&#x5FD7;&#x8F93;&#x51FA;&#x65B9;&#x5F0F;&#xFF08;&#x9ED8;&#x8BA4;file&#xFF0C;&#x8FD8;&#x652F;&#x6301;table&#xFF09;
+show VARIABLES like &apos;%long_query_time%&apos;; -- &#x67E5;&#x770B;&#x591A;&#x5C11;&#x79D2;&#x5B9A;&#x4E49;&#x4E3A;&#x6162;SQL
+
+
+set global log_output=&apos;table&apos;; -- &#x65E5;&#x5FD7;&#x8F93;&#x51FA;&#x5230;table&#xFF08;&#x9ED8;&#x8BA4;file&#xFF09;
+set global general_log=on; -- &#x6253;&#x5F00;&#x8F93;&#x51FA;&#x6240;&#x6709;&#x65E5;&#x5FD7;
+set global slow_query_log=on; -- &#x6253;&#x5F00;&#x6162;SQL&#x65E5;&#x5FD7;
+set global long_query_time=2; -- &#x8BBE;&#x7F6E;2&#x79D2;&#x4EE5;&#x4E0A;&#x4E3A;&#x6162;&#x67E5;&#x8BE2;
+</code></pre>
+<pre><code class="lang-shell">##&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;&#x8868;&#x5927;&#x5C0F;
+
+1.&#x67E5;&#x770B;&#x6240;&#x6709;&#x6570;&#x636E;&#x5E93;&#x5BB9;&#x91CF;&#x5927;&#x5C0F;
+select
+    table_schema as &apos;&#x6570;&#x636E;&#x5E93;&#x2019;,
+    sum(table_rows) as &apos;&#x8BB0;&#x5F55;&#x6570;&#x2019;,
+    sum(truncate(data_length/1024/1024, 2)) as &apos;&#x6570;&#x636E;&#x5BB9;&#x91CF;(MB)&#x2019;,
+    sum(truncate(index_length/1024/1024, 2)) as &apos;&#x7D22;&#x5F15;&#x5BB9;&#x91CF;(MB)&#x2019;
+from information_schema.tables
+group by table_schema
+order by sum(data_length) desc, sum(index_length) desc;
+
+2.&#x67E5;&#x770B;&#x6240;&#x6709;&#x6570;&#x636E;&#x5E93;&#x5404;&#x8868;&#x5BB9;&#x91CF;&#x5927;&#x5C0F;
+select
+    table_schema as &apos;&#x6570;&#x636E;&#x5E93;&#x2019;,
+    table_name as &apos;&#x8868;&#x540D;&#x2019;,
+    table_rows as &apos;&#x8BB0;&#x5F55;&#x6570;&#x2019;,
+    truncate(data_length/1024/1024, 2) as &apos;&#x6570;&#x636E;&#x5BB9;&#x91CF;(MB)&#x2019;,
+    truncate(index_length/1024/1024, 2) as &apos;&#x7D22;&#x5F15;&#x5BB9;&#x91CF;(MB)&#x2019;
+from information_schema.tables
+order by data_length desc, index_length desc;
+
+3.&#x67E5;&#x770B;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;&#x5BB9;&#x91CF;&#x5927;&#x5C0F;
+select
+    table_schema as &apos;&#x6570;&#x636E;&#x5E93;&#x2019;,
+    sum(table_rows) as &apos;&#x8BB0;&#x5F55;&#x6570;&#x2019;,
+    sum(truncate(data_length/1024/1024, 2)) as &apos;&#x6570;&#x636E;&#x5BB9;&#x91CF;(MB)&#x2019;,
+    sum(truncate(index_length/1024/1024, 2)) as &apos;&#x7D22;&#x5F15;&#x5BB9;&#x91CF;(MB)&#x2019;
+from information_schema.tables
+where table_schema=&apos;mysql&#x2019;;
+
+4.&#x67E5;&#x770B;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;&#x5404;&#x8868;&#x5BB9;&#x91CF;&#x5927;&#x5C0F;
+select
+    table_schema as &apos;&#x6570;&#x636E;&#x5E93;&#x2019;,
+    table_name as &apos;&#x8868;&#x540D;&#x2019;,
+    table_rows as &apos;&#x8BB0;&#x5F55;&#x6570;&#x2019;,
+    truncate(data_length/1024/1024, 2) as &apos;&#x6570;&#x636E;&#x5BB9;&#x91CF;(MB)&#x2019;,
+    truncate(index_length/1024/1024, 2) as &apos;&#x7D22;&#x5F15;&#x5BB9;&#x91CF;(MB)&#x2019;
+from information_schema.tables
+where table_schema=&apos;mysql&#x2019;
+order by data_length desc, index_length desc;
 </code></pre>
 
                                 
@@ -1035,7 +1129,7 @@ flush privileges;
                 </a>
                 
                 
-                <a href="xxl-job.html" class="navigation navigation-next " aria-label="Next page: xxl-job">
+                <a href="Git.html" class="navigation navigation-next " aria-label="Next page: Git">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1046,7 +1140,7 @@ flush privileges;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MySQL","level":"1.6.1.2","depth":3,"next":{"title":"xxl-job","level":"1.6.1.3","depth":3,"path":"Linux/SoftInstall/xxl-job.md","ref":"Linux/SoftInstall/xxl-job.md","articles":[]},"previous":{"title":"python3","level":"1.6.1.1","depth":3,"path":"Linux/SoftInstall/python3.md","ref":"Linux/SoftInstall/python3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Linux/SoftInstall/MySQL.md","mtime":"2020-08-12T14:13:01.727Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-12T14:24:12.050Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"MySQL","level":"1.6.1.2","depth":3,"next":{"title":"Git","level":"1.6.1.3","depth":3,"path":"Linux/SoftInstall/Git.md","ref":"Linux/SoftInstall/Git.md","articles":[]},"previous":{"title":"python3","level":"1.6.1.1","depth":3,"path":"Linux/SoftInstall/python3.md","ref":"Linux/SoftInstall/python3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","simple-page-toc","splitter","github","-lunr","-search","code","expandable-chapters-small","back-to-top-button","search-pro","page-toc-button","multipart","livereload"],"styles":{"website":"website.css"},"pluginsConfig":{"github":{"url":"https://github.com/advanceddataanalysts/AdvancedPython"},"livereload":{},"simple-page-toc":{},"splitter":{},"search-pro":{},"multipart":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"https://github.com/advanceddataanalysts/AdvancedPython","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"null","variables":{},"title":"PythonShare","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Project GitHub":"https://github.com/advanceddataanalysts/AdvancedPython"}},"gitbook":"*","description":"AdvancedPython'HOME","extension":null},"file":{"path":"Linux/SoftInstall/MySQL.md","mtime":"2021-01-18T05:27:52.037Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-20T12:39:19.686Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1085,6 +1179,10 @@ flush privileges;
     
         
         <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

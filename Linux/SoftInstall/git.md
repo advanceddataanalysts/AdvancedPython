@@ -13,10 +13,10 @@ yum install -y gcc perl-ExtUtils-MakeMaker
 yum remove -y git
 
 # 编译安装最新的git版本
-cd /home/service
+cd /home/service/soft_tar
 wget https://www.kernel.org/pub/software/scm/git/git-2.15.1.tar.xz
-tar -vxf git-2.15.1.tar.xz
-cd git-2.15.1
+tar -vxf git-2.15.1.tar.xz -C ../
+cd /home/service/git-2.15.1
 make prefix=/usr/local/git all
 make prefix=/usr/local/git install
 vim /etc/profile.d/git_env.sh
